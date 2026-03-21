@@ -1852,11 +1852,10 @@ function SlideInvestors() {
 // ─── CLIENT PROTECTION ────────────────────────────────────────────────────────
 function SlideGuarantees() {
   const milestones = [
-    { n: '20%', label: 'При подписании', note: 'Только после NDA. Закрывает Discovery + найм команды.' },
-    { n: '20%', label: 'После дизайна', note: 'Вы утверждаете каждый экран в Figma. Не нравится — не платите следующий этап.' },
-    { n: '20%', label: 'После Backend MVP', note: 'Работающее API с тестами. Stripe Connect подключён.' },
-    { n: '20%', label: 'После Mobile apps', note: 'Оба приложения (iOS + Android) установлены у вас на телефоне.' },
-    { n: '20%', label: 'При запуске', note: 'Приложение в App Store и Google Play. Первые клиенты в Майами.' },
+    { n: '1', label: 'Подписание', note: 'Первый ежемесячный платёж после подписания контракта и NDA.' },
+    { n: '2', label: 'Каждый месяц', note: 'Фиксированный платёж ежемесячно — только при подтверждённом прогрессе.' },
+    { n: '3', label: 'Этап не принят', note: 'Не приняли результат — платёж не идёт. Дорабатываем до приёмки.' },
+    { n: '4', label: 'Запуск', note: 'Последний платёж — после выхода в App Store и Google Play.' },
   ]
   const protections = [
     {
@@ -1866,8 +1865,8 @@ function SlideGuarantees() {
     },
     {
       icon: '⊙',
-      title: 'Milestone-платежи',
-      text: '5 платежей по 20% — только при достижении результата. Не понравился дизайн? Не принимаете этап — не платите следующий. Никаких авансов на весь проект.'
+      title: 'Оплата по результату',
+      text: 'Ежемесячная оплата — только при подтверждённом прогрессе. Не приняли результат месяца — платёж не идёт, дорабатываем. Никакого аванса на весь проект.'
     },
     {
       icon: '◻',
@@ -1943,7 +1942,7 @@ function SlideFAQ() {
     },
     {
       q: 'Что если мне не понравится результат этапа?',
-      a: 'Milestone-платежи устроены именно для этого. Не приняли дизайн — не платите следующий этап. Не приняли backend — не переходим к мобильным приложениям. Каждый этап имеет чёткие критерии приёмки, прописанные в контракте. «Не понравилось» — это повод доработать, не спор о деньгах.'
+      a: 'Оплата по результату устроена именно для этого. Не приняли дизайн — платёж не идёт, дорабатываем. Не приняли backend — не переходим к мобильным приложениям. Каждый этап имеет чёткие критерии приёмки, прописанные в контракте. «Не понравилось» — это повод доработать, не спор о деньгах.'
     },
     {
       q: 'Что если разработчик уйдёт во время проекта?',
@@ -2226,16 +2225,6 @@ const GROUPS = [
     ],
   },
   {
-    id: 'dev', label: 'Разработка',
-    slides: [
-      { id: 'infra', label: 'IT-архитектура', Component: Slide10Infra },
-      { id: 'techstack', label: 'Tech Stack + AI', Component: SlideTechStack },
-      { id: 'devstages', label: 'Этапы разработки', Component: SlideDevStages },
-      { id: 'phases', label: 'Сроки по фазам', Component: Slide07Phases },
-      { id: 'process', label: 'Как работаем', Component: Slide11Process },
-    ],
-  },
-  {
     id: 'business', label: 'Бизнес-кейс',
     slides: [
       { id: 'swot', label: 'SWOT-анализ', Component: SlideSWOT },
@@ -2243,11 +2232,13 @@ const GROUPS = [
     ],
   },
   {
-    id: 'trust', label: 'Как работаем',
+    id: 'dev', label: 'Разработка',
     slides: [
-      { id: 'guarantees', label: 'Защита клиента', Component: SlideGuarantees },
-      { id: 'faq', label: 'Вопросы и ответы', Component: SlideFAQ },
-      { id: 'day30', label: 'Первые 30 дней', Component: SlideDay30 },
+      { id: 'infra', label: 'IT-архитектура', Component: Slide10Infra },
+      { id: 'techstack', label: 'Tech Stack + AI', Component: SlideTechStack },
+      { id: 'devstages', label: 'Этапы разработки', Component: SlideDevStages },
+      { id: 'phases', label: 'Сроки по фазам', Component: Slide07Phases },
+      { id: 'process', label: 'Процесс', Component: Slide11Process },
     ],
   },
   {
@@ -2255,6 +2246,14 @@ const GROUPS = [
     slides: [
       { id: 'pricing', label: 'Варианты', Component: Slide08Pricing },
       { id: 'justify', label: 'Обоснование', Component: Slide09Market },
+    ],
+  },
+  {
+    id: 'trust', label: 'Условия',
+    slides: [
+      { id: 'guarantees', label: 'Защита клиента', Component: SlideGuarantees },
+      { id: 'faq', label: 'Вопросы и ответы', Component: SlideFAQ },
+      { id: 'day30', label: 'Первые 30 дней', Component: SlideDay30 },
     ],
   },
   {
