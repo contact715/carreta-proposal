@@ -2257,52 +2257,78 @@ function SlidePortfolio() {
     {
       n: '01', name: 'Vohha', tag: 'AI · iOS + Android',
       desc: 'Интеллектуальная система диспетчеризации на базе AI: оптимизирует координацию и управление в реальном времени. Наш первый production AI-продукт.',
-      links: ['App Store', 'Google Play'],
+      links: [
+        { label: 'App Store', url: 'https://apps.apple.com/us/app/vohha-app/id6478448549' },
+        { label: 'Google Play', url: 'https://play.google.com/store/apps/details?id=com.belgilabs.vohha' },
+      ],
     },
     {
       n: '03', name: 'Evolution: Битва за Утопию', tag: 'Стратегия · iOS + Android · Миллионы установок',
       desc: 'Крупная мультиплеерная стратегия с миллионами установок. Сложная игровая механика, мультиплеер, высоконагруженная серверная архитектура под большую базу игроков.',
-      links: ['App Store', 'Google Play'],
+      links: [
+        { label: 'App Store', url: 'https://apps.apple.com/ru/app/evolution-battle-for-utopia/id774652325' },
+        { label: 'Google Play', url: 'https://play.google.com/store/apps/details?id=com.my.evolution.android' },
+      ],
     },
     {
       n: '04', name: 'В небо — АОПА России', tag: 'Авиация · Flutter · Офлайн-синхронизация',
       desc: '1,5 года разработки. Картография, офлайн-синхронизация, сложная навигация. Продукт работает без интернета — требует нестандартной архитектуры данных.',
-      links: ['Google Play'],
+      links: [
+        { label: 'Google Play', url: 'https://play.google.com/store/apps/details?id=ru.vega.flightplan' },
+      ],
     },
     {
       n: '05', name: 'BBBoom', tag: 'AR · 3D · Мультиплеер',
       desc: 'Мобильный мультиплеерный 3D-футбол с дополненной реальностью. Трёхмерная графика, сетевое взаимодействие в реальном времени, AR-поле прямо перед вами.',
-      links: ['Google Play'],
+      links: [
+        { label: 'Google Play', url: 'https://play.google.com/store/apps/details?id=com.lodisgroup.bbboom' },
+      ],
     },
     {
       n: '06', name: 'QR AI для Таиланда', tag: 'AI · ML · Дообучение модели',
       desc: 'Быстрое сканирование и распознавание тайских чеков через DeepSeek AI, дообученный на реальных данных. Опыт работы с нестандартными форматами и fine-tuning ML-моделей.',
-      links: ['Figma дизайн'],
+      links: [
+        { label: 'Figma дизайн', url: 'https://www.figma.com/design/1JwAustUEWSY47bptgD52L/Qr?node-id=0-1&p=f' },
+      ],
     },
     {
       n: '07', name: 'Планетариум 4D', tag: 'AR · Образование · iOS + Android',
       desc: 'AR-приложение для изучения космоса: распознавание пространства, наложение планет и созвездий в реальном окружении. Immersive-опыт без специального оборудования.',
-      links: ['Google Play'],
+      links: [
+        { label: 'Google Play', url: 'https://play.google.com/store/apps/details?id=com.lodisgroup.kosmos4d' },
+      ],
     },
     {
       n: '08', name: 'Моя рыбалка', tag: 'Соцсеть · Геолокация · Карты',
       desc: 'Первая специализированная соцсеть для рыболовов России: геолокация мест, обмен опытом, сообщество. Сложная работа с картами и точками интереса.',
-      links: ['Веб-сайт', 'RuStore'],
+      links: [
+        { label: 'Веб-сайт', url: 'https://myfish.pro/' },
+        { label: 'RuStore', url: 'https://www.rustore.ru/catalog/app/pro.myfish.app' },
+      ],
     },
     {
       n: '09', name: 'Syntoks', tag: 'Соцсеть · Flutter · Legacy',
       desc: 'Текстовая социальная платформа. Работа с унаследованной кодовой базой: рефакторинг, добавление новой функциональности без разрушения существующей архитектуры.',
-      links: ['Веб-сайт'],
+      links: [
+        { label: 'Веб-сайт', url: 'https://syntoks.com/' },
+      ],
     },
     {
       n: '10', name: 'ShkolaApp', tag: 'EdTech · iOS + Android + RuStore',
       desc: 'Образовательная платформа с единой кодовой базой для трёх сторов: iOS App Store, Google Play и RuStore. Одна разработка — три markets одновременно.',
-      links: ['App Store', 'Google Play', 'RuStore'],
+      links: [
+        { label: 'Веб-сайт', url: 'https://shkola.app/' },
+        { label: 'App Store', url: 'https://apps.apple.com/ru/app/shkolaapp/id6736643540' },
+        { label: 'Google Play', url: 'https://play.google.com/store/apps/details?id=com.Versh.School' },
+      ],
     },
     {
       n: '11', name: 'Сибирская монета — Altai Palace', tag: 'Казино · Лояльность · iOS + Android',
       desc: 'Мобильное приложение казино-развлекательного комплекса: игровые механики, система лояльности, удержание пользователей. Production на iOS и Android.',
-      links: ['App Store', 'Google Play'],
+      links: [
+        { label: 'App Store', url: 'https://apps.apple.com/ru/app/%D1%81%D0%B8%D0%B1%D0%B8%D1%80%D1%81%D0%BA%D0%B0%D1%8F-%D0%BC%D0%BE%D0%BD%D0%B5%D1%82%D0%B0/id1586118621' },
+        { label: 'Google Play', url: 'https://play.google.com/store/apps/details?id=com.siberia.vegas' },
+      ],
     },
   ]
   return (
@@ -2321,7 +2347,10 @@ function SlidePortfolio() {
           <div className="port-feat-tag">SaaS · AI · $199–497/мес</div>
         </div>
         <p className="port-feat-desc">
-          Mosco.ai — это не CRM и не чат-бот. Это комбайн из 11 специализированных агентов: Frontline отвечает на звонки и сообщения 24/7, Dispatcher распределяет задания по команде, Vision Estimator оценивает объём работ по фотографии, The Closer ведёт сделку до подписания. Вместе они заменяют 5–10 SaaS-инструментов. Цель: бизнес работает, пока владелец не смотрит в телефон.
+          Mosco.ai — это не CRM и не чат-бот. Это операционная система на агентной архитектуре: каждый агент — отдельный специалист с конкретной задачей. Frontline отвечает на звонки и сообщения 24/7, Dispatcher распределяет задания по команде, Vision Estimator оценивает объём работ по фотографии, The Closer ведёт сделку до подписания. Вместе они заменяют 5–10 SaaS-инструментов.
+        </p>
+        <p className="port-feat-desc" style={{ marginTop: '0.6rem' }}>
+          Ключевая идея архитектуры: агентов можно создавать под любую задачу, которая только придёт в голову — новый агент добавляется в систему как новый модуль, не ломая существующее. Сегодня это 11 агентов для сервисного бизнеса. Завтра — столько, сколько нужно бизнесу.
         </p>
         <div className="port-feat-stats">
           {[
@@ -2357,7 +2386,9 @@ function SlidePortfolio() {
             <div className="port-card-name">{c.name}</div>
             <p className="port-card-desc">{c.desc}</p>
             <div className="port-card-links">
-              {c.links.map((l, j) => <span key={j} className="port-card-link">{l}</span>)}
+              {c.links.map((l, j) => (
+                <a key={j} href={l.url} target="_blank" rel="noopener noreferrer" className="port-card-link">{l.label}</a>
+              ))}
             </div>
           </motion.div>
         ))}
