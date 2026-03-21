@@ -3333,66 +3333,23 @@ body {
 }
 
 /* ══════════════════════════════════════════════════
-   READABILITY OVERRIDES — font-weight 500 for all card descriptions
-   Applied globally so text reads on both light and dark backgrounds
+   UNIFIED TYPOGRAPHY SYSTEM
+   6 semantic tiers — single source of truth.
+   Rule: every higher tier = larger size + heavier weight.
+   No tier may be overridden by a lower tier.
 ══════════════════════════════════════════════════ */
-.prob-card p,
-.pgrid-desc,
-.adj-text,
-.fail-text,
-.fail-title,
-.comp-card-text,
-.comp-lesson,
-.comp-insight-body span,
-.phase-items li,
-.hwc-text,
-.hwc-detail,
-.guar-text,
-.au-principle-text,
-.faq-a,
-.d30-steps li,
-.ds-stage-result,
-.ts-stack-note,
-.ts-ai-use,
-.swot-item,
-.inv-stage-need,
-.inv-ai-text,
-.inv-vc-note,
-.miami-point,
-.legal-list li,
-.bnpl-explain,
-.bnpl-conclusion,
-.subs-math-row,
-.oflow-body span,
-.risk-who, .risk-how,
-.arch-box-note,
-.eco-center-sub,
-.rate-col-sub,
-.mkt-note,
-.hero-stat-l,
+
+/* ── TIER 2: Section leads (intro paragraph under slide headline) ── */
 .ed-lead,
-.cta-lead,
-.scale-callout-text,
-.adj-lesson {
-  font-weight: 500;
+.cta-lead {
+  font-size: 1.1rem;
+  font-weight: 400;
   color: var(--fg-mid);
+  line-height: 1.72;
 }
 
-/* Key body text that should be fully opaque */
-.guar-title,
-.au-principle-title,
-.faq-q-text,
-.d30-title,
-.ds-stage-name,
-.fail-title,
-.ts-iface-name,
-.ts-ai-name,
-.legal-card-title {
-  font-weight: 600;
-  color: var(--fg);
-}
-
-/* Body text in cards — 0.95rem base, readable without being oversized */
+/* ── TIER 4: Card body text — descriptions, notes, details ── */
+/* weight 400 (NOT 500) — must read lighter than tier-3 titles */
 .prob-card p,
 .adj-text,
 .fail-text,
@@ -3410,6 +3367,8 @@ body {
 .comp-lesson,
 .adj-lesson,
 .hwc-detail,
+.hwc-text,
+.phase-items li,
 .eco-node span,
 .rate-col-sub,
 .arch-box-note,
@@ -3427,10 +3386,46 @@ body {
 .pgrid-desc,
 .plan-detail-note,
 .comp-stat-label,
-.oflow-footer {
+.oflow-footer,
+.oflow-body span,
+.eco-center-sub,
+.mkt-note,
+.hero-stat-l,
+.scale-callout-text,
+.bnpl-explain,
+.bnpl-conclusion,
+.subs-math-row,
+.miami-point span,
+.swot-item span,
+.market-miami-l,
+.comp-insight-body span {
   font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--fg-mid);
   line-height: 1.6;
 }
+
+/* ── TIER 5: Eyebrows & in-component section labels ── */
+/* Small uppercase labels — must never compete visually with titles */
+.ed-eyebrow,
+.hero-eyebrow,
+.ts-section-label,
+.guar-milestones-title,
+.d30-parallel-title,
+.au-meta-label,
+.inv-vc-title,
+.bnpl-title,
+.subs-title,
+.ds-total-left {
+  font-size: 0.76rem;
+  font-weight: 600;
+  font-family: var(--sans);
+  color: var(--fg-light);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+/* Slide eyebrow uses accent color */
+.ed-eyebrow { color: var(--accent); }
 
 /* Dark theme specific: make sure backgrounds cascade into all nested elements */
 .deck.dark .deck-sidebar { background: var(--bg); }
@@ -3505,11 +3500,13 @@ body {
 .deck.dark .au-meta-row { border-color: var(--border); }
 
 /* ══════════════════════════════════════════════════
-   CARD TITLE SIZES — must be visually larger than body text
+   TIER 3: CARD & ITEM TITLES
+   Must be clearly larger than tier-4 body (0.95rem / 400)
 ══════════════════════════════════════════════════ */
+
+/* ── TIER 3A: Primary card titles (main label of each card/item) ── */
 .adj-card-name,
 .comp-card-name,
-.fail-title,
 .phase-title,
 .hwc-title,
 .pgrid-name,
@@ -3517,13 +3514,28 @@ body {
 .inv-stage-name,
 .ts-iface-name,
 .ts-ai-name,
-.swot-q-title,
 .miami-side-title,
 .rate-col-title,
 .ue-term-name,
 .subs-benchmark strong,
-.market-miami-title { font-size: 1.35rem; font-weight: 600; font-family: var(--serif); line-height: 1.2; color: var(--fg); }
+.market-miami-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-family: var(--serif);
+  line-height: 1.2;
+  color: var(--fg);
+}
 
+/* fail-title: same tier but keeps semantic red */
+.fail-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-family: var(--serif);
+  line-height: 1.2;
+  color: var(--red);
+}
+
+/* ── TIER 3B: Secondary card titles ── */
 .guar-title,
 .au-principle-title,
 .d30-title,
@@ -3532,17 +3544,28 @@ body {
 .inv-vc-name,
 .arch-box-title,
 .plc-name,
-.eco-center-title { font-size: 1.2rem; font-weight: 600; font-family: var(--serif); line-height: 1.2; color: var(--fg); }
+.eco-center-title,
+.faq-q-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: var(--serif);
+  line-height: 1.3;
+  color: var(--fg);
+}
 
-.faq-q-text { font-size: 1.15rem; font-weight: 600; font-family: var(--serif); line-height: 1.3; color: var(--fg); }
+/* swot-q-title: eyebrow-style quadrant label, keeps semantic colors via specificity */
+.swot-q-title {
+  font-size: 0.76rem;
+  font-weight: 600;
+  font-family: var(--sans);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+}
 
-/* Scale back eyebrow labels so they don't compete */
-.ed-eyebrow,
-.ts-section-label,
-.guar-milestones-title,
-.d30-parallel-title,
-.au-meta-label,
-.inv-vc-title,
-.bnpl-title,
-.subs-title,
-.ds-total-left { font-size: 0.84rem; }
+/* ── Small accent numbers 1.3-1.5rem: weight 400 for readability ── */
+.d30-parallel-n,
+.ds-stage-n,
+.ue-term-n {
+  font-weight: 400;
+}
