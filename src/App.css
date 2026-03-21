@@ -518,8 +518,8 @@ body {
 
 .scale-callout-text {
   font-family: var(--serif);
-  font-size: 1.1rem;
-  line-height: 1.65;
+  font-size: 1.0rem;
+  line-height: 1.6;
   color: var(--fg-mid);
 }
 
@@ -599,10 +599,10 @@ body {
 
 .pgrid-card {
   background: var(--bg);
-  padding: 1.4rem 1.3rem;
+  padding: 1.6rem 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.35rem;
 }
 .pgrid-card:hover { background: var(--bg-card); }
 
@@ -610,7 +610,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.5rem;
 }
 
 .pgrid-n {
@@ -631,9 +631,10 @@ body {
 .pgrid-name {
   font-family: var(--serif);
   font-size: 1.05rem;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--fg);
-  line-height: 1.3;
+  line-height: 1.25;
+  margin-bottom: 0.1rem;
 }
 
 .pgrid-who {
@@ -821,8 +822,8 @@ body {
 .oflow-step {
   display: flex;
   align-items: flex-start;
-  gap: 0.75rem;
-  padding: 0.8rem 1rem;
+  gap: 1rem;
+  padding: 0.9rem 1.2rem;
   background: var(--bg);
   border-left: 3px solid transparent;
 }
@@ -849,15 +850,17 @@ body {
 }
 .oflow-body strong {
   font-family: var(--serif);
-  font-size: 0.92rem;
-  font-weight: 500;
+  font-size: 1.2rem;
+  font-weight: 600;
   color: var(--fg);
+  line-height: 1.25;
 }
 .oflow-body span {
   font-family: var(--sans);
-  font-size: 0.94rem;
+  font-size: 0.90rem;
   color: var(--fg-mid);
-  line-height: 1.4;
+  line-height: 1.45;
+  margin-top: 0.1rem;
 }
 
 .oflow-split {
@@ -1396,7 +1399,7 @@ body {
 
 .plan-detail-val {
   font-family: var(--serif);
-  font-size: 1.1rem;
+  font-size: 1.0rem;
   color: var(--fg);
   text-align: right;
 }
@@ -1901,7 +1904,7 @@ body {
   width: 100%;
   border-collapse: collapse;
   font-family: var(--sans);
-  font-size: 1.05rem;
+  font-size: 0.97rem;
 }
 .an-table th {
   text-align: left;
@@ -1915,17 +1918,17 @@ body {
   white-space: nowrap;
 }
 .an-table td {
-  padding: 0.65rem 1rem;
+  padding: 0.6rem 1rem;
   border-bottom: 1px solid var(--border);
   vertical-align: middle;
-  font-size: 1.05rem;
+  font-size: 0.97rem;
 }
 .an-table tr:last-child td { border-bottom: none; }
 
-.an-td-name { font-family: var(--serif); font-size: 1.05rem; color: var(--fg); }
-.an-td-num  { font-family: var(--serif); font-size: 1.05rem; font-weight: 400; color: var(--fg); white-space: nowrap; }
-.an-td-cagr { font-family: var(--sans); font-size: 1.15rem; color: var(--accent-dk); font-weight: 600; white-space: nowrap; }
-.an-td-note { font-family: var(--sans); font-size: 1.0rem; color: var(--fg-mid); line-height: 1.5; }
+.an-td-name { font-family: var(--serif); font-size: 0.97rem; color: var(--fg); }
+.an-td-num  { font-family: var(--serif); font-size: 0.97rem; font-weight: 400; color: var(--fg); white-space: nowrap; }
+.an-td-cagr { font-family: var(--sans); font-size: 1.1rem; color: var(--accent-dk); font-weight: 600; white-space: nowrap; }
+.an-td-note { font-family: var(--sans); font-size: 0.95rem; color: var(--fg-mid); line-height: 1.5; }
 
 .market-miami-grid {
   display: grid;
@@ -1956,18 +1959,18 @@ body {
   gap: 0.5rem;
 }
 .market-miami-row:last-child { border-bottom: none; }
-.market-miami-l { font-family: var(--sans); font-size: 1.0rem; color: var(--fg-mid); line-height: 1.45; }
-.market-miami-n { font-family: var(--serif); font-size: 1.15rem; font-weight: 400; color: var(--fg); }
+.market-miami-l { font-family: var(--sans); font-size: 0.95rem; color: var(--fg-mid); line-height: 1.45; }
+.market-miami-n { font-family: var(--serif); font-size: 1.1rem; font-weight: 500; color: var(--fg); }
 
 .market-trend-row {
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 0.8rem 1.1rem;
+  padding: 0.7rem 1rem;
   border: 1px solid var(--border);
   background: var(--bg);
-  margin-bottom: 0.5rem;
-  font-size: 1.05rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
   line-height: 1.5;
   color: var(--fg-mid);
 }
@@ -3394,7 +3397,7 @@ body {
   color: var(--fg);
 }
 
-/* Body text in cards — unified readable size 1.05rem */
+/* Body text in cards — 0.95rem base, readable without being oversized */
 .prob-card p,
 .adj-text,
 .fail-text,
@@ -3417,7 +3420,6 @@ body {
 .eco-node span,
 .rate-col-sub,
 .arch-box-note,
-.oflow-body span,
 .d30-result,
 .ts-stack-layer,
 .ts-stack-tech,
@@ -3433,8 +3435,8 @@ body {
 .plan-detail-note,
 .comp-stat-label,
 .oflow-footer {
-  font-size: 1.05rem;
-  line-height: 1.65;
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
 /* Dark theme specific: make sure backgrounds cascade into all nested elements */
@@ -3527,16 +3529,16 @@ body {
 .rate-col-title,
 .ue-term-name,
 .subs-benchmark strong,
-.market-miami-title { font-size: 1.45rem; font-weight: 500; font-family: var(--serif); line-height: 1.2; color: var(--fg); }
+.market-miami-title { font-size: 1.35rem; font-weight: 600; font-family: var(--serif); line-height: 1.2; color: var(--fg); }
 
 .guar-title,
 .au-principle-title,
 .d30-title,
 .ds-stage-name,
 .comp-insight-body strong,
-.inv-vc-name { font-size: 1.3rem; font-weight: 500; font-family: var(--serif); line-height: 1.2; color: var(--fg); }
+.inv-vc-name { font-size: 1.2rem; font-weight: 600; font-family: var(--serif); line-height: 1.2; color: var(--fg); }
 
-.faq-q-text { font-size: 1.2rem; font-weight: 500; font-family: var(--serif); line-height: 1.3; color: var(--fg); }
+.faq-q-text { font-size: 1.15rem; font-weight: 600; font-family: var(--serif); line-height: 1.3; color: var(--fg); }
 
 /* Scale back eyebrow labels so they don't compete */
 .ed-eyebrow,
