@@ -1055,7 +1055,7 @@ function Slide09Market() {
       id: 'economy', label: 'Economy', tag: 'Минимальный бюджет',
       sub: 'CA oversight + Middle-специалисты из СНГ',
       price: '$350K — $500K', priceSub: 'Срок 12–16 мес, уровень Middle',
-      color: '#7A7875', tagBg: 'rgba(122,120,117,0.08)', tagColor: '#7A7875',
+      color: '#9A8B5A', tagBg: 'rgba(154,139,90,0.08)', tagColor: '#9A8B5A',
       rows: [
         { role: 'Backend (Middle)', val: '$2–3.5K/мес' },
         { role: 'Mobile (Middle)', val: '$2–3.5K/мес' },
@@ -1068,7 +1068,7 @@ function Slide09Market() {
       ],
       footer: [
         { label: 'Зарплаты/мес', val: '$14–23K', bold: true },
-        { label: 'Срок', val: '12–16 мес', accent: '#7A7875' },
+        { label: 'Срок', val: '12–16 мес', accent: '#9A8B5A' },
       ],
     },
   ]
@@ -1113,11 +1113,31 @@ function Slide09Market() {
       <div className="mkt-bars" style={{ marginTop: '2rem' }}>
         <MktBar label="US-агентство (SF / NY)" value="$1.2M — $2.0M" pct={100} color="#B94040" note="Senior в SF = $150–250/час + markup агентства 30–50%" />
         <MktBar label="Наш план Premium — CA + US + СНГ Senior" value="$700K — $1.2M" pct={60} color="#C8860A" note="Все Senior, US-специалисты на AI/ML. Максимальная скорость." />
-        <MktBar label="Наш план Standard — CA тимлиды + СНГ Senior/Mid+" value="$450K — $700K" pct={42} color="#1C5C8F" note="CA тимлиды + Senior/Mid+ из Восточной Европы. Рекомендованный. Экономия 60–70% vs US." />
-        <MktBar label="Наш план Economy — CA oversight + СНГ Middle" value="$350K — $500K" pct={28} color="#7A7875" note="Middle-специалисты, срок 12–16 мес. Минимальный бюджет с контролем качества." />
+        <MktBar label="Наш план Standard — CA тимлиды + СНГ Senior/Mid+" value="$450K — $700K" pct={42} color="#1A9D8A" note="CA тимлиды + Senior/Mid+ из Восточной Европы. Рекомендованный. Экономия 60–70% vs US." />
+        <MktBar label="Наш план Economy — CA oversight + СНГ Middle" value="$350K — $500K" pct={28} color="#9A8B5A" note="Middle-специалисты, срок 12–16 мес. Минимальный бюджет с контролем качества." />
       </div>
       <div className="ed-pullquote">
         GitLab, WhatsApp, Grammarly — все строились командами из Восточной Европы. Гибридная модель даёт тот же результат за $450K–$700K. Если бы вы пошли в агентство в LA или NY — вам бы выставили минимум $1.2–2M.
+      </div>
+
+      <div className="rate-note-box">
+        <div className="rate-note-title">Как связаны ежемесячный платёж и срок</div>
+        <div className="rate-note-row">
+          <span className="rate-note-tag" style={{ background: 'rgba(200,134,10,0.10)', color: '#C8860A' }}>Premium $85–130K/мес</span>
+          <span className="rate-note-arrow">→</span>
+          <span>7–9 мес — большая команда работает параллельно, меньше ожидания</span>
+        </div>
+        <div className="rate-note-row">
+          <span className="rate-note-tag" style={{ background: 'rgba(26,157,138,0.10)', color: '#1A9D8A' }}>Standard $48–65K/мес</span>
+          <span className="rate-note-arrow">→</span>
+          <span>9–11 мес — оптимальный баланс стоимости и скорости</span>
+        </div>
+        <div className="rate-note-row">
+          <span className="rate-note-tag" style={{ background: 'rgba(154,139,90,0.10)', color: '#9A8B5A' }}>Economy $25–35K/мес</span>
+          <span className="rate-note-arrow">→</span>
+          <span>12–16 мес — меньше людей в параллели = дольше. Одинаковый результат, другая скорость</span>
+        </div>
+        <div className="rate-note-footer">Меньше ежемесячный платёж — меньше команда — дольше срок. Общий бюджет при этом остаётся примерно одинаковым.</div>
       </div>
     </div>
   )
@@ -1891,6 +1911,11 @@ function SlideGuarantees() {
       title: 'Поддержка после запуска',
       text: 'Support retainer ($5–10K/мес) или полный transfer на вашу in-house команду с документацией. Мы не исчезаем после запуска.'
     },
+    {
+      icon: '⇤',
+      title: 'Выход из договора — в любой момент',
+      text: 'Уведомление за 30 дней — и проект останавливается. Следующий платёж не идёт. Весь код, репозиторий и документация — ваши без условий. Никаких штрафов, никаких удержаний.',
+    },
   ]
   return (
     <div className="slide-content">
@@ -1922,6 +1947,32 @@ function SlideGuarantees() {
             {i < milestones.length - 1 && <div className="guar-ms-arrow">→</div>}
           </div>
         ))}
+      </div>
+
+      <div className="guar-scope-wrap">
+        <div className="guar-scope-col guar-scope-yes">
+          <div className="guar-scope-title" style={{ color: 'var(--green)' }}>Что мы гарантируем</div>
+          {[
+            'Работающее приложение по согласованному ТЗ — iOS, Android, Web',
+            'Код в вашем репозитории с первого дня',
+            'Еженедельные демо и полная прозрачность',
+            'Гарантийный период 90 дней после запуска: исправляем баги без дополнительной оплаты',
+            'Документация по архитектуре, API, дизайн-системе',
+          ].map((s, i) => (
+            <div key={i} className="guar-scope-row"><span className="guar-scope-dot" style={{ color: 'var(--green)' }}>✓</span>{s}</div>
+          ))}
+        </div>
+        <div className="guar-scope-col guar-scope-no">
+          <div className="guar-scope-title" style={{ color: 'var(--fg-mid)' }}>Что не входит в нашу ответственность</div>
+          {[
+            'Количество скачиваний и пользователей — это GTM и маркетинг Carreta',
+            'Выручка платформы и бизнес-метрики — зависит от продуктовых решений',
+            'Действия третьих сторон: App Store review, Stripe, Google API',
+            'Результат после изменений клиентом вне согласованного ТЗ',
+          ].map((s, i) => (
+            <div key={i} className="guar-scope-row"><span className="guar-scope-dot" style={{ color: 'var(--fg-light)' }}>—</span>{s}</div>
+          ))}
+        </div>
       </div>
     </div>
   )
@@ -1962,6 +2013,14 @@ function SlideFAQ() {
     {
       q: 'Почему не нанять свою команду?',
       a: 'Посчитайте: 1 Senior Full-Stack в LA — $180–220K/год. Вам нужно минимум 4–5 человек + CTO + QA + Designer. Это $1M+ в год только на зарплаты. Плюс поиск (3–6 мес на каждую роль), управление, HR, офис. Мы даём уже собранную команду с налаженными процессами — вы платите за результат, не за процесс найма.'
+    },
+    {
+      q: 'Вы гарантируете, что Carreta привлечёт пользователей и заработает деньги?',
+      a: 'Нет — и это честно. Мы строим техническую платформу: приложения, бэкенд, AI-ассистент, интеграции. Насколько платформа привлечёт шопы и клиентов — зависит от маркетинга, GTM-стратегии и команды Carreta. Разделение чёткое: наша зона — работающий продукт, ваша зона — его развитие на рынке. Это закреплено в контракте, чтобы не было недопонимания.'
+    },
+    {
+      q: 'Что если мы захотим остановить проект на полпути?',
+      a: 'Выход возможен в любой момент с уведомлением за 30 дней. Следующий ежемесячный платёж не идёт. Весь код, репозиторий и документация уже ваши — это прописано с первого дня. Частично выполненный этап передаётся в текущем состоянии со всей документацией и комментариями. Никаких штрафов, никаких «компенсаций за прекращение работы». Мы строим отношения на доверии, а не на страхе санкций.'
     },
   ]
   return (
@@ -2192,6 +2251,207 @@ function SlideDevStages() {
   )
 }
 
+// ─── PORTFOLIO ────────────────────────────────────────────────────────────────
+function SlidePortfolio() {
+  const cases = [
+    {
+      n: '01', name: 'Vohha', tag: 'AI · iOS + Android',
+      desc: 'Интеллектуальная система диспетчеризации на базе AI: оптимизирует координацию и управление в реальном времени. Наш первый production AI-продукт.',
+      links: ['App Store', 'Google Play'],
+    },
+    {
+      n: '03', name: 'Evolution: Битва за Утопию', tag: 'Стратегия · iOS + Android · Миллионы установок',
+      desc: 'Крупная мультиплеерная стратегия с миллионами установок. Сложная игровая механика, мультиплеер, высоконагруженная серверная архитектура под большую базу игроков.',
+      links: ['App Store', 'Google Play'],
+    },
+    {
+      n: '04', name: 'В небо — АОПА России', tag: 'Авиация · Flutter · Офлайн-синхронизация',
+      desc: '1,5 года разработки. Картография, офлайн-синхронизация, сложная навигация. Продукт работает без интернета — требует нестандартной архитектуры данных.',
+      links: ['Google Play'],
+    },
+    {
+      n: '05', name: 'BBBoom', tag: 'AR · 3D · Мультиплеер',
+      desc: 'Мобильный мультиплеерный 3D-футбол с дополненной реальностью. Трёхмерная графика, сетевое взаимодействие в реальном времени, AR-поле прямо перед вами.',
+      links: ['Google Play'],
+    },
+    {
+      n: '06', name: 'QR AI для Таиланда', tag: 'AI · ML · Дообучение модели',
+      desc: 'Быстрое сканирование и распознавание тайских чеков через DeepSeek AI, дообученный на реальных данных. Опыт работы с нестандартными форматами и fine-tuning ML-моделей.',
+      links: ['Figma дизайн'],
+    },
+    {
+      n: '07', name: 'Планетариум 4D', tag: 'AR · Образование · iOS + Android',
+      desc: 'AR-приложение для изучения космоса: распознавание пространства, наложение планет и созвездий в реальном окружении. Immersive-опыт без специального оборудования.',
+      links: ['Google Play'],
+    },
+    {
+      n: '08', name: 'Моя рыбалка', tag: 'Соцсеть · Геолокация · Карты',
+      desc: 'Первая специализированная соцсеть для рыболовов России: геолокация мест, обмен опытом, сообщество. Сложная работа с картами и точками интереса.',
+      links: ['Веб-сайт', 'RuStore'],
+    },
+    {
+      n: '09', name: 'Syntoks', tag: 'Соцсеть · Flutter · Legacy',
+      desc: 'Текстовая социальная платформа. Работа с унаследованной кодовой базой: рефакторинг, добавление новой функциональности без разрушения существующей архитектуры.',
+      links: ['Веб-сайт'],
+    },
+    {
+      n: '10', name: 'ShkolaApp', tag: 'EdTech · iOS + Android + RuStore',
+      desc: 'Образовательная платформа с единой кодовой базой для трёх сторов: iOS App Store, Google Play и RuStore. Одна разработка — три markets одновременно.',
+      links: ['App Store', 'Google Play', 'RuStore'],
+    },
+    {
+      n: '11', name: 'Сибирская монета — Altai Palace', tag: 'Казино · Лояльность · iOS + Android',
+      desc: 'Мобильное приложение казино-развлекательного комплекса: игровые механики, система лояльности, удержание пользователей. Production на iOS и Android.',
+      links: ['App Store', 'Google Play'],
+    },
+  ]
+  return (
+    <div className="slide-content">
+      <div className="ed-eyebrow">Кейсы · Что мы построили</div>
+      <h2 className="ed-title">Наши работы</h2>
+      <p className="ed-lead">AI-продукты, маркетплейсы, соцсети, AR-приложения — 10 лет разработки на iOS, Android и Web. Carreta по сложности и масштабу — в ряду того, что мы уже делали.</p>
+
+      <div className="port-featured">
+        <div className="port-feat-eyebrow">02 · Текущий проект</div>
+        <div className="port-feat-head">
+          <div>
+            <div className="port-feat-name">Mosco.ai — Multi-Agent Operating System</div>
+            <div className="port-feat-sub">Операционная система для сервисного бизнеса на базе 11 AI-агентов</div>
+          </div>
+          <div className="port-feat-tag">SaaS · AI · $199–497/мес</div>
+        </div>
+        <p className="port-feat-desc">
+          Mosco.ai — это не CRM и не чат-бот. Это комбайн из 11 специализированных агентов: Frontline отвечает на звонки и сообщения 24/7, Dispatcher распределяет задания по команде, Vision Estimator оценивает объём работ по фотографии, The Closer ведёт сделку до подписания. Вместе они заменяют 5–10 SaaS-инструментов. Цель: бизнес работает, пока владелец не смотрит в телефон.
+        </p>
+        <div className="port-feat-stats">
+          {[
+            { n: '11', l: 'AI-агентов' },
+            { n: '80+', l: 'страниц' },
+            { n: '224', l: 'React-компонента' },
+            { n: '9', l: 'интеграций prod' },
+            { n: '20', l: 'state-хранилищ' },
+          ].map((s, i) => (
+            <div key={i} className="port-feat-stat">
+              <span className="port-feat-stat-n">{s.n}</span>
+              <span className="port-feat-stat-l">{s.l}</span>
+            </div>
+          ))}
+        </div>
+        <div className="port-feat-tech">
+          Next.js 16 · React 19 · TypeScript · FastAPI (Python 3.13) · PostgreSQL · Twilio · WhatsApp · Meta · Google Ads · Stripe · OpenAI
+        </div>
+        <div className="port-feat-verticals">
+          Вертикали: HVAC · Кровля · Авто-детейлинг / PPF · Ремонт · Покраска · Витрины
+        </div>
+      </div>
+
+      <div className="port-grid">
+        {cases.map((c, i) => (
+          <motion.div key={i} className="port-card"
+            initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.4, delay: (i % 3) * 0.06 }}>
+            <div className="port-card-top">
+              <span className="port-card-n">{c.n}</span>
+              <span className="port-card-tag">{c.tag}</span>
+            </div>
+            <div className="port-card-name">{c.name}</div>
+            <p className="port-card-desc">{c.desc}</p>
+            <div className="port-card-links">
+              {c.links.map((l, j) => <span key={j} className="port-card-link">{l}</span>)}
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+// ─── POST-LAUNCH SUPPORT ───────────────────────────────────────────────────────
+function SlideSupport() {
+  const options = [
+    {
+      phase: 'A',
+      title: 'Support Retainer',
+      price: '$5–10K/мес',
+      color: '#1A9D8A',
+      timing: 'Начинается сразу после запуска',
+      desc: 'Мы остаёмся командой. Исправляем баги, мониторим систему, отвечаем на вопросы, вносим мелкие улучшения — без отдельного контракта на каждый тикет.',
+      items: [
+        'Гарантия ответа в течение 24 часов',
+        'Исправление критических багов в течение 48 часов',
+        'Мониторинг сервера и App Store reviews',
+        'Мелкие улучшения UI/UX (до 20 часов/мес)',
+        'Ежемесячная встреча по продукту',
+      ],
+      best: 'Лучший вариант для быстро растущего продукта',
+    },
+    {
+      phase: 'B',
+      title: 'Phase 2 — новый контракт',
+      price: 'По договорённости',
+      color: '#C8860A',
+      timing: 'Когда есть понимание следующих фич',
+      desc: 'Когда Carreta растёт и нужны новые функции — садимся за стол, согласовываем scope и бюджет Phase 2. Та же команда, та же прозрачность, новый контракт.',
+      items: [
+        'Новые фичи по приоритетам бизнеса',
+        'Масштабирование инфраструктуры под рост пользователей',
+        'Новые интеграции (страховые, B2B-клиенты, флиты)',
+        'Расширение на новые города и вертикали',
+        'Оценка и контракт за 1–2 недели',
+      ],
+      best: 'Оптимально, когда Carreta получила первых клиентов и видит, что строить дальше',
+    },
+    {
+      phase: 'C',
+      title: 'Full Handoff',
+      price: 'Разово',
+      color: '#7A7875',
+      timing: 'Если хотите в-house команду',
+      desc: 'Полная передача проекта вашей команде или другому подрядчику. Документируем всё, объясняем архитектурные решения, помогаем найти и онбордить новых разработчиков.',
+      items: [
+        'Полная техническая документация (архитектура, API, БД)',
+        'Видео-walkthrough по ключевым частям системы',
+        'Сессии Q&A с новой командой (до 10 часов)',
+        'Передача доступов, credentials, vendor-аккаунтов',
+        'Код уже ваш с первого дня — никаких юридических формальностей',
+      ],
+      best: 'Если хотите построить внутреннюю команду или сменить подрядчика',
+    },
+  ]
+  return (
+    <div className="slide-content">
+      <div className="ed-eyebrow">После запуска · Дальнейшее развитие</div>
+      <h2 className="ed-title">Что происходит после production</h2>
+      <p className="ed-lead">Мы сдаём работающий продукт — это не конец, а начало. Три варианта того, как мы работаем дальше. Выбор за вами в любой момент.</p>
+
+      <div className="sup-grid">
+        {options.map((o, i) => (
+          <motion.div key={i} className="sup-card"
+            initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.45, delay: i * 0.1 }}>
+            <div className="sup-phase" style={{ color: o.color, borderColor: o.color + '40' }}>{o.phase}</div>
+            <div className="sup-head">
+              <div className="sup-title">{o.title}</div>
+              <div className="sup-price" style={{ color: o.color }}>{o.price}</div>
+            </div>
+            <div className="sup-timing">{o.timing}</div>
+            <p className="sup-desc">{o.desc}</p>
+            <ul className="sup-items">
+              {o.items.map((item, j) => <li key={j}>{item}</li>)}
+            </ul>
+            <div className="sup-best">{o.best}</div>
+          </motion.div>
+        ))}
+      </div>
+
+      <div className="sup-note">
+        <div className="sup-note-title">Гарантийный период — без доплат</div>
+        <p>Первые 90 дней после запуска: все технические баги исправляем бесплатно. Это не «поддержка» — это часть обязательств по договору. Новые функции и расширения — уже отдельный разговор.</p>
+      </div>
+    </div>
+  )
+}
+
 // ─── NAVIGATION ───────────────────────────────────────────────────────────────
 const GROUPS = [
   {
@@ -2252,9 +2512,16 @@ const GROUPS = [
     ],
   },
   {
+    id: 'cases', label: 'Кейсы',
+    slides: [
+      { id: 'portfolio', label: 'Наши работы', Component: SlidePortfolio },
+    ],
+  },
+  {
     id: 'trust', label: 'Условия',
     slides: [
       { id: 'guarantees', label: 'Защита клиента', Component: SlideGuarantees },
+      { id: 'support', label: 'После запуска', Component: SlideSupport },
       { id: 'faq', label: 'Вопросы и ответы', Component: SlideFAQ },
       { id: 'day30', label: 'Первые 30 дней', Component: SlideDay30 },
     ],

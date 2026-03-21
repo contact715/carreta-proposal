@@ -3569,3 +3569,427 @@ body {
 .ue-term-n {
   font-weight: 400;
 }
+
+/* ═══════════════════════════════════════════════════════════
+   PORTFOLIO — SlidePortfolio
+   ═══════════════════════════════════════════════════════════ */
+
+.port-featured {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--accent);
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.port-feat-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 600;
+  font-family: var(--sans);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+.port-feat-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.port-feat-name {
+  font-family: var(--serif);
+  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+  font-weight: 600;
+  color: var(--fg);
+  line-height: 1.2;
+}
+
+.port-feat-sub {
+  font-size: 0.95rem;
+  color: var(--fg-mid);
+  margin-top: 0.25rem;
+}
+
+.port-feat-tag {
+  font-size: 0.76rem;
+  font-weight: 600;
+  font-family: var(--sans);
+  background: rgba(var(--accent-rgb, 212,175,55), 0.08);
+  color: var(--accent);
+  padding: 0.3rem 0.7rem;
+  border-radius: 3px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.port-feat-desc {
+  font-size: 0.97rem;
+  color: var(--fg-mid);
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+}
+
+.port-feat-stats {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.port-feat-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.port-feat-stat-n {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--fg);
+  line-height: 1;
+}
+
+.port-feat-stat-l {
+  font-size: 0.75rem;
+  color: var(--fg-light);
+  font-family: var(--sans);
+}
+
+.port-feat-tech {
+  font-size: 0.82rem;
+  color: var(--fg-light);
+  font-family: var(--sans);
+  border-top: 1px solid var(--border);
+  padding-top: 0.75rem;
+  line-height: 1.5;
+}
+
+.port-feat-verticals {
+  font-size: 0.82rem;
+  color: var(--fg-mid);
+  font-family: var(--sans);
+  margin-top: 0.4rem;
+}
+
+.port-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.9rem;
+}
+
+@media (max-width: 900px) {
+  .port-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.port-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.port-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.port-card-n {
+  font-family: var(--serif);
+  font-size: 0.85rem;
+  color: var(--fg-light);
+  font-weight: 500;
+}
+
+.port-card-tag {
+  font-size: 0.68rem;
+  font-weight: 600;
+  font-family: var(--sans);
+  color: var(--fg-light);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-align: right;
+  line-height: 1.3;
+}
+
+.port-card-name {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--fg);
+  line-height: 1.2;
+}
+
+.port-card-desc {
+  font-size: 0.88rem;
+  color: var(--fg-mid);
+  line-height: 1.55;
+  flex: 1;
+}
+
+.port-card-links {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-top: 0.3rem;
+}
+
+.port-card-link {
+  font-size: 0.72rem;
+  font-family: var(--sans);
+  color: var(--fg-light);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   POST-LAUNCH SUPPORT — SlideSupport
+   ═══════════════════════════════════════════════════════════ */
+
+.sup-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 900px) {
+  .sup-grid { grid-template-columns: 1fr; }
+}
+
+.sup-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sup-phase {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  border: 1px solid;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.sup-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.sup-title {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--fg);
+  line-height: 1.2;
+}
+
+.sup-price {
+  font-size: 0.88rem;
+  font-weight: 600;
+  font-family: var(--sans);
+}
+
+.sup-timing {
+  font-size: 0.76rem;
+  font-weight: 600;
+  font-family: var(--sans);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--fg-light);
+}
+
+.sup-desc {
+  font-size: 0.9rem;
+  color: var(--fg-mid);
+  line-height: 1.6;
+}
+
+.sup-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  flex: 1;
+}
+
+.sup-items li {
+  font-size: 0.87rem;
+  color: var(--fg-mid);
+  padding-left: 1rem;
+  position: relative;
+  line-height: 1.4;
+}
+
+.sup-items li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--fg-light);
+}
+
+.sup-best {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--fg-light);
+  border-top: 1px solid var(--border);
+  padding-top: 0.6rem;
+  margin-top: auto;
+  line-height: 1.4;
+}
+
+.sup-note {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--green);
+  border-radius: 4px;
+  padding: 1.1rem 1.25rem;
+}
+
+.sup-note-title {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--fg);
+  margin-bottom: 0.5rem;
+}
+
+.sup-note p {
+  font-size: 0.92rem;
+  color: var(--fg-mid);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   GUARANTEES SCOPE — новая секция в SlideGuarantees
+   ═══════════════════════════════════════════════════════════ */
+
+.guar-scope-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 800px) {
+  .guar-scope-wrap { grid-template-columns: 1fr; }
+}
+
+.guar-scope-col {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.guar-scope-title {
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  margin-bottom: 0.2rem;
+}
+
+.guar-scope-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--fg-mid);
+  line-height: 1.45;
+}
+
+.guar-scope-dot {
+  flex-shrink: 0;
+  font-weight: 700;
+  margin-top: 0.05rem;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RATE NOTE BOX — Slide09Market payment/timeline explainer
+   ═══════════════════════════════════════════════════════════ */
+
+.rate-note-box {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 1.2rem 1.4rem;
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.rate-note-title {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--fg);
+  margin-bottom: 0.2rem;
+}
+
+.rate-note-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--fg-mid);
+  flex-wrap: wrap;
+}
+
+.rate-note-tag {
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: var(--sans);
+  padding: 0.25rem 0.65rem;
+  border-radius: 3px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.rate-note-arrow {
+  color: var(--fg-light);
+  flex-shrink: 0;
+}
+
+.rate-note-footer {
+  font-size: 0.82rem;
+  color: var(--fg-light);
+  font-style: italic;
+  border-top: 1px solid var(--border);
+  padding-top: 0.6rem;
+}
