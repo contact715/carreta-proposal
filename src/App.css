@@ -256,6 +256,7 @@ body {
 .ink-circle-wrap {
   position: relative;
   display: inline-block;
+  align-self: flex-start;
 }
 .ink-circle-svg {
   position: absolute;
@@ -371,19 +372,18 @@ body {
 
 .hero-title-sub {
   font-family: var(--serif);
-  font-style: italic;
-  font-size: clamp(1.2rem, 2.5vw, 1.7rem);
-  font-weight: 300;
-  color: var(--accent);
-  line-height: 1.3;
-  margin-top: 0.4rem;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 400;
+  color: var(--fg);
+  line-height: 1.25;
+  margin-top: 0.5rem;
 }
 
 .hero-desc {
   font-family: var(--serif);
-  font-size: 1.05rem;
-  line-height: 1.72;
-  color: var(--fg-mid);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--fg);
   margin-bottom: 1.5rem;
 }
 
@@ -430,12 +430,13 @@ body {
 .hero-stat-n {
   font-family: var(--serif);
   font-size: 2.8rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1;
   color: var(--fg);
 }
 .hero-stat-large .hero-stat-n {
-  font-size: 3.8rem;
+  font-size: 4rem;
+  font-weight: 500;
   color: var(--accent);
 }
 
@@ -3369,7 +3370,6 @@ body {
 .rate-col-sub,
 .mkt-note,
 .hero-stat-l,
-.hero-desc,
 .ed-lead,
 .cta-lead,
 .scale-callout-text,
