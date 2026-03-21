@@ -1849,76 +1849,6 @@ function SlideInvestors() {
   )
 }
 
-// ─── ABOUT US ─────────────────────────────────────────────────────────────────
-function SlideAboutUs() {
-  const principles = [
-    {
-      n: '01',
-      title: 'Прямой контакт',
-      text: 'Вы работаете напрямую с разработчиками и тимлидами — не с аккаунт-менеджером, который пересказывает вам статусы. Slack, еженедельные демо, доступ к GitHub с первого дня.'
-    },
-    {
-      n: '02',
-      title: 'Никакого чёрного ящика',
-      text: 'Каждую неделю вы видите живой продукт — не слайды с прогрессом. Если что-то идёт не так, вы узнаёте первым, а не последним.'
-    },
-    {
-      n: '03',
-      title: 'Мы строим, чтобы работало',
-      text: 'Не MVP ради MVP. Код, который идёт в production с первого дня, уже написан так, чтобы выдержать рост. Технический долг = наш риск, не ваш.'
-    },
-    {
-      n: '04',
-      title: 'Узкая специализация',
-      text: 'Мы не беремся за всё. Наша ниша — marketplace-платформы с мобильными приложениями, платёжной интеграцией и AI-функциями. Carreta — это наш профиль.'
-    },
-  ]
-  const stack = [
-    { label: 'Студия', val: 'Castells Media, Inc.' },
-    { label: 'Локация', val: 'Roseville, California' },
-    { label: 'Специализация', val: 'Marketplaces · Mobile · AI · Payments' },
-    { label: 'Команда', val: 'CA тимлиды + Senior Eastern Europe' },
-    { label: 'Подход', val: 'Fixed-scope milestone-контракт' },
-    { label: 'Контакт', val: 'Прямой доступ 5 дней в неделю' },
-  ]
-  return (
-    <div className="slide-content">
-      <div className="ed-eyebrow">Кто мы</div>
-      <h2 className="ed-title">Castells Media, Inc.</h2>
-      <p className="ed-lead">Корпорация из Розвилла, Калифорния. Мы строим marketplace-платформы для основателей, которые создают реальный бизнес — не прототипы для демо.</p>
-
-      <div className="au-split">
-        <div className="au-left">
-          <div className="au-meta">
-            {stack.map((s, i) => (
-              <div key={i} className="au-meta-row">
-                <span className="au-meta-label">{s.label}</span>
-                <span className="au-meta-val">{s.val}</span>
-              </div>
-            ))}
-          </div>
-
-          <div className="au-quote">
-            Мы не работаем с заказчиками, которым нужен «сайт побыстрее». Мы работаем с основателями, которые строят что-то, что будет работать через пять лет.
-          </div>
-        </div>
-
-        <div className="au-right">
-          {principles.map((p, i) => (
-            <div key={i} className="au-principle">
-              <div className="au-principle-n">{p.n}</div>
-              <div className="au-principle-body">
-                <div className="au-principle-title">{p.title}</div>
-                <div className="au-principle-text">{p.text}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  )
-}
-
 // ─── CLIENT PROTECTION ────────────────────────────────────────────────────────
 function SlideGuarantees() {
   const milestones = [
@@ -2069,7 +1999,7 @@ function SlideDay30() {
         'Подписание NDA — до любых деталей о продукте',
         'Звонок-знакомство с CA тимлидом (1 час)',
         'Подписание контракта с milestone-структурой',
-        'Первый платёж 20% → команда зафиксирована за вами',
+        'Первый ежемесячный платёж → команда зафиксирована за вами',
       ],
       result: 'У вас есть подписанный контракт, NDA и зарезервированная команда'
     },
@@ -2313,9 +2243,8 @@ const GROUPS = [
     ],
   },
   {
-    id: 'trust', label: 'Доверие',
+    id: 'trust', label: 'Как работаем',
     slides: [
-      { id: 'about', label: 'Кто мы', Component: SlideAboutUs },
       { id: 'guarantees', label: 'Защита клиента', Component: SlideGuarantees },
       { id: 'faq', label: 'Вопросы и ответы', Component: SlideFAQ },
       { id: 'day30', label: 'Первые 30 дней', Component: SlideDay30 },

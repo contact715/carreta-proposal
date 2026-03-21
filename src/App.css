@@ -828,7 +828,7 @@ body {
   border-left: 3px solid transparent;
 }
 
-.oflow-client  { border-left-color: #1C5C8F; }
+.oflow-client  { border-left-color: #4A9AD4; }
 .oflow-ai      { border-left-color: var(--accent); }
 .oflow-system  { border-left-color: var(--green); }
 .oflow-shop    { border-left-color: #7A7875; }
@@ -960,7 +960,7 @@ body {
   font-weight: 500;
 }
 .rev-phase-mvp  { background: rgba(200,134,10,0.12); color: var(--accent-dk); }
-.rev-phase-p2   { background: rgba(28,90,143,0.1); color: #1C5C8F; }
+.rev-phase-p2   { background: rgba(74,154,212,0.12); color: #4A9AD4; }
 .rev-phase-p3   { background: rgba(26,26,24,0.07); color: var(--fg-mid); }
 
 .risk-grid {
@@ -1019,7 +1019,7 @@ body {
   text-transform: uppercase;
   margin-bottom: 0.8rem;
 }
-.arch-label-blue   { color: #1C5C8F; }
+.arch-label-blue   { color: #4A9AD4; }
 .arch-label-purple { color: #6B3FA0; }
 .arch-label-green  { color: var(--green); }
 .arch-label-grey   { color: var(--fg-light); }
@@ -2513,7 +2513,7 @@ body {
 
 .swot-s { border-top: 3px solid var(--green); }
 .swot-w { border-top: 3px solid var(--red); }
-.swot-o { border-top: 3px solid #1C5C8F; }
+.swot-o { border-top: 3px solid #4A9AD4; }
 .swot-t { border-top: 3px solid #8B5E00; }
 
 .swot-q-title {
@@ -2526,7 +2526,7 @@ body {
 }
 .swot-s .swot-q-title { color: var(--green); }
 .swot-w .swot-q-title { color: var(--red); }
-.swot-o .swot-q-title { color: #1C5C8F; }
+.swot-o .swot-q-title { color: #4A9AD4; }
 .swot-t .swot-q-title { color: #8B5E00; }
 
 .swot-item {
