@@ -67,7 +67,7 @@ body {
   background: var(--bg-card);
   cursor: pointer;
   font-family: var(--sans);
-  font-size: 0.7rem;
+  font-size: 0.80rem;
   font-weight: 500;
   color: var(--fg-mid);
   transition: color 0.2s, background 0.2s, border-color 0.2s;
@@ -159,7 +159,7 @@ body {
 
 .sidebar-group-label {
   font-family: var(--sans);
-  font-size: 0.6rem;
+  font-size: 0.76rem;
   letter-spacing: 0.14em;
   color: var(--fg-light);
   text-transform: uppercase;
@@ -277,7 +277,7 @@ body {
 ══════════════════════════════════════════════════ */
 .ed-eyebrow {
   font-family: var(--sans);
-  font-size: 0.65rem;
+  font-size: 0.82rem;
   letter-spacing: 0.14em;
   color: var(--accent);
   text-transform: uppercase;
@@ -347,7 +347,7 @@ body {
 
 .hero-eyebrow {
   font-family: var(--sans);
-  font-size: 0.65rem;
+  font-size: 0.82rem;
   letter-spacing: 0.16em;
   color: var(--fg-light);
   text-transform: uppercase;
@@ -456,7 +456,7 @@ body {
 
 .hero-scale-title {
   font-family: var(--sans);
-  font-size: 0.65rem;
+  font-size: 0.82rem;
   letter-spacing: 0.12em;
   color: var(--fg-light);
   text-transform: uppercase;
@@ -535,7 +535,7 @@ body {
 
 .prob-group-label {
   font-family: var(--sans);
-  font-size: 0.65rem;
+  font-size: 0.82rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--fg-light);
@@ -623,7 +623,7 @@ body {
 
 .pgrid-type {
   font-family: var(--sans);
-  font-size: 0.62rem;
+  font-size: 0.80rem;
   color: var(--fg-light);
   letter-spacing: 0.06em;
 }
@@ -638,7 +638,7 @@ body {
 
 .pgrid-who {
   font-family: var(--sans);
-  font-size: 0.73rem;
+  font-size: 0.90rem;
   color: var(--accent);
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -671,7 +671,7 @@ body {
 
 .bm-strip-label {
   font-family: var(--sans);
-  font-size: 0.62rem;
+  font-size: 0.80rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--fg-light);
@@ -679,7 +679,7 @@ body {
 
 .bm-strip-val {
   font-family: var(--serif);
-  font-size: 0.95rem;
+  font-size: 1.15rem;
   color: var(--fg);
   line-height: 1.5;
 }
@@ -698,7 +698,7 @@ body {
 .eco-row { padding: 1rem 1.5rem; border-bottom: 1px solid var(--border); }
 .eco-label-row {
   font-family: var(--sans);
-  font-size: 0.6rem;
+  font-size: 0.76rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--fg-light);
@@ -718,7 +718,7 @@ body {
   border-radius: 2px;
 }
 .eco-node span {
-  font-size: 0.62rem;
+  font-size: 0.80rem;
   color: var(--fg-light);
 }
 .eco-node-client { border-color: rgba(28,90,143,0.3); background: rgba(28,90,143,0.04); }
@@ -744,7 +744,7 @@ body {
 
 .eco-label-side {
   font-family: var(--sans);
-  font-size: 0.6rem;
+  font-size: 0.76rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--fg-light);
@@ -780,7 +780,7 @@ body {
 
 .eco-center-sub {
   font-family: var(--sans);
-  font-size: 0.62rem;
+  font-size: 0.80rem;
   color: var(--fg-mid);
   text-align: center;
   line-height: 1.4;
@@ -912,7 +912,7 @@ body {
 
 .mono-sub {
   font-family: var(--sans);
-  font-size: 0.65rem;
+  font-size: 0.82rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--fg-light);
@@ -932,7 +932,7 @@ body {
   text-align: left;
   font-weight: 500;
   color: var(--fg-light);
-  font-size: 0.65rem;
+  font-size: 0.82rem;
   letter-spacing: 0.06em;
   padding: 0.4rem 0.6rem;
   border-bottom: 1px solid var(--border-md);
@@ -952,7 +952,7 @@ body {
   display: inline-block;
   padding: 0.15rem 0.5rem;
   border-radius: 2px;
-  font-size: 0.62rem;
+  font-size: 0.80rem;
   letter-spacing: 0.04em;
   font-weight: 500;
 }
@@ -987,7 +987,7 @@ body {
 .risk-badge {
   grid-column: span 2;
   font-family: var(--sans);
-  font-size: 0.62rem;
+  font-size: 0.80rem;
   color: var(--green);
   font-weight: 500;
   letter-spacing: 0.04em;
@@ -1011,7 +1011,7 @@ body {
 
 .arch-layer-label {
   font-family: var(--sans);
-  font-size: 0.6rem;
+  font-size: 0.76rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   margin-bottom: 0.8rem;
@@ -1055,7 +1055,7 @@ body {
 }
 .arch-box-tags span {
   font-family: var(--sans);
-  font-size: 0.62rem;
+  font-size: 0.80rem;
   padding: 0.1rem 0.45rem;
   border: 1px solid var(--border-md);
   background: var(--bg);
@@ -1078,7 +1078,7 @@ body {
 
 .arch-module {
   font-family: var(--sans);
-  font-size: 0.65rem;
+  font-size: 0.82rem;
   padding: 0.2rem 0.6rem;
   border: 1px solid var(--border-md);
   background: var(--bg);
@@ -1108,7 +1108,7 @@ body {
 
 .arch-chip-note {
   font-family: var(--sans);
-  font-size: 0.6rem;
+  font-size: 0.76rem;
   color: var(--fg-light);
 }
 
@@ -1128,7 +1128,7 @@ body {
 .prob-tag {
   display: inline-block;
   font-family: var(--sans);
-  font-size: 0.65rem;
+  font-size: 0.82rem;
   padding: 0.15rem 0.5rem;
   border: 1px solid rgba(28,58,46,0.3);
   color: var(--green);
@@ -1172,7 +1172,7 @@ body {
 
 .phase-weeks {
   font-family: var(--sans);
-  font-size: 0.73rem;
+  font-size: 0.90rem;
   color: var(--fg-light);
   letter-spacing: 0.04em;
 }
@@ -1214,12 +1214,12 @@ body {
   position: absolute;
   left: 0;
   color: var(--accent);
-  font-size: 0.65rem;
+  font-size: 0.82rem;
 }
 
 .phase-analogy {
   font-family: var(--sans);
-  font-size: 0.65rem;
+  font-size: 0.82rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--fg-light);
@@ -1315,7 +1315,7 @@ body {
 
 .pl-rec-badge {
   font-family: var(--sans);
-  font-size: 0.58rem;
+  font-size: 0.86rem;
   color: var(--accent-dk);
   background: rgba(200,134,10,0.1);
   padding: 0.1rem 0.45rem;
@@ -1348,7 +1348,7 @@ body {
 
 .pl-level {
   font-family: var(--sans);
-  font-size: 0.62rem;
+  font-size: 0.80rem;
   border: 1px solid;
   padding: 0.1rem 0.4rem;
   display: inline-block;
@@ -1415,7 +1415,7 @@ body {
 
 .plan-detail-features-title {
   font-family: var(--sans);
-  font-size: 0.65rem;
+  font-size: 0.82rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--fg-light);
@@ -1507,7 +1507,7 @@ body {
 .rate-tag {
   display: inline-block;
   font-family: var(--sans);
-  font-size: 0.6rem;
+  font-size: 0.76rem;
   padding: 0.1rem 0.4rem;
   letter-spacing: 0.06em;
   border-radius: 2px;
@@ -1538,7 +1538,7 @@ body {
 
 .rate-col-price-sub {
   font-family: var(--sans);
-  font-size: 0.65rem;
+  font-size: 0.82rem;
   color: var(--fg-mid);
 }
 
@@ -1619,7 +1619,7 @@ body {
   align-items: center;
   padding-left: 0.4rem;
   font-family: var(--sans);
-  font-size: 0.55rem;
+  font-size: 0.86rem;
   color: rgba(255,255,255,0.9);
   font-weight: 600;
 }
@@ -1701,7 +1701,7 @@ body {
 
 .comp-badge {
   font-family: var(--sans);
-  font-size: 0.6rem;
+  font-size: 0.76rem;
   padding: 0.15rem 0.5rem;
   border-radius: 2px;
   letter-spacing: 0.04em;
@@ -1728,7 +1728,7 @@ body {
 
 .comp-section-title {
   font-family: var(--sans);
-  font-size: 0.65rem;
+  font-size: 0.82rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--fg-light);
@@ -1798,7 +1798,7 @@ body {
 
 .cta-eyebrow {
   font-family: var(--sans);
-  font-size: 0.65rem;
+  font-size: 0.82rem;
   letter-spacing: 0.14em;
   color: var(--fg-light);
   text-transform: uppercase;
@@ -1888,7 +1888,7 @@ body {
 
 .an-table-title {
   font-family: var(--sans);
-  font-size: 0.65rem;
+  font-size: 0.82rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--fg-light);
@@ -1906,7 +1906,7 @@ body {
 .an-table th {
   text-align: left;
   font-weight: 500;
-  font-size: 0.65rem;
+  font-size: 0.82rem;
   letter-spacing: 0.06em;
   color: var(--fg-light);
   padding: 0.4rem 0.75rem;
@@ -1938,7 +1938,7 @@ body {
 }
 .market-miami-title {
   font-family: var(--sans);
-  font-size: 0.65rem;
+  font-size: 0.82rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--fg-light);
@@ -1976,7 +1976,7 @@ body {
 ══════════════════════════════════════════════════ */
 .adj-section-title {
   font-family: var(--sans);
-  font-size: 0.65rem;
+  font-size: 0.82rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--fg-light);
@@ -2020,7 +2020,7 @@ body {
 }
 .adj-badge {
   font-family: var(--sans);
-  font-size: 0.58rem;
+  font-size: 0.86rem;
   padding: 0.12rem 0.45rem;
   border-radius: 2px;
   font-weight: 500;
@@ -2051,7 +2051,7 @@ body {
 }
 .adj-stat span {
   font-family: var(--sans);
-  font-size: 0.62rem;
+  font-size: 0.80rem;
   color: var(--fg-light);
 }
 
@@ -2134,7 +2134,7 @@ body {
 
 .miami-side-title {
   font-family: var(--sans);
-  font-size: 0.65rem;
+  font-size: 0.82rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: 0.8rem;
@@ -2231,7 +2231,7 @@ body {
 
 .legal-section {
   font-family: var(--sans);
-  font-size: 0.65rem;
+  font-size: 0.82rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--fg-light);
@@ -2275,7 +2275,7 @@ body {
   position: absolute;
   left: 0;
   color: var(--accent);
-  font-size: 0.62rem;
+  font-size: 0.80rem;
 }
 
 .legal-explain {
@@ -2292,7 +2292,7 @@ body {
 .legal-explain-block:last-child { margin-bottom: 0; }
 .legal-explain-label {
   font-family: var(--sans);
-  font-size: 0.65rem;
+  font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -2350,7 +2350,7 @@ body {
 }
 .ue-term-key {
   font-family: var(--sans);
-  font-size: 0.65rem;
+  font-size: 0.82rem;
   color: var(--green);
   font-weight: 500;
   letter-spacing: 0.04em;
@@ -2362,7 +2362,7 @@ body {
 .bnpl-section { margin-bottom: 1.5rem; }
 .bnpl-title {
   font-family: var(--sans);
-  font-size: 0.65rem;
+  font-size: 0.82rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--fg-light);
@@ -2419,7 +2419,7 @@ body {
 .subs-section { margin-bottom: 1.5rem; }
 .subs-title {
   font-family: var(--sans);
-  font-size: 0.65rem;
+  font-size: 0.82rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--fg-light);
@@ -2450,7 +2450,7 @@ body {
 }
 .subs-benchmark span {
   font-family: var(--sans);
-  font-size: 0.73rem;
+  font-size: 0.90rem;
   color: var(--fg-mid);
   line-height: 1.4;
 }
@@ -2506,7 +2506,7 @@ body {
 
 .swot-q-title {
   font-family: var(--sans);
-  font-size: 0.65rem;
+  font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -2548,7 +2548,7 @@ body {
 }
 .inv-explain-title {
   font-family: var(--sans);
-  font-size: 0.65rem;
+  font-size: 0.82rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--fg-light);
@@ -2613,7 +2613,7 @@ body {
 }
 .inv-stage-label {
   font-family: var(--sans);
-  font-size: 0.62rem;
+  font-size: 0.80rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--fg-light);
@@ -2658,7 +2658,7 @@ body {
 
 .inv-vc-title {
   font-family: var(--sans);
-  font-size: 0.65rem;
+  font-size: 0.82rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--fg-light);
@@ -2690,7 +2690,7 @@ body {
 }
 .inv-vc-note {
   font-family: var(--sans);
-  font-size: 0.73rem;
+  font-size: 0.90rem;
   color: var(--fg-mid);
   line-height: 1.45;
 }
@@ -2720,7 +2720,7 @@ body {
 .au-meta-row:last-child { border-bottom: none; }
 .au-meta-label {
   font-family: var(--sans);
-  font-size: 0.7rem;
+  font-size: 0.80rem;
   color: var(--fg-light);
   flex-shrink: 0;
 }
@@ -2831,7 +2831,7 @@ body {
 
 .guar-milestones-title {
   font-family: var(--sans);
-  font-size: 0.65rem;
+  font-size: 0.82rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--fg-light);
@@ -2876,7 +2876,7 @@ body {
 }
 .guar-ms-note {
   font-family: var(--sans);
-  font-size: 0.7rem;
+  font-size: 0.80rem;
   color: var(--fg-mid);
   line-height: 1.5;
 }
@@ -2962,7 +2962,7 @@ body {
 
 .d30-period {
   font-family: var(--sans);
-  font-size: 0.65rem;
+  font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -2997,12 +2997,12 @@ body {
   position: absolute;
   left: 0;
   color: var(--accent);
-  font-size: 0.65rem;
+  font-size: 0.82rem;
 }
 
 .d30-result {
   font-family: var(--sans);
-  font-size: 0.73rem;
+  font-size: 0.90rem;
   font-weight: 500;
   color: var(--green);
   border-top: 1px solid var(--border);
@@ -3013,7 +3013,7 @@ body {
 
 .d30-parallel-title {
   font-family: var(--sans);
-  font-size: 0.65rem;
+  font-size: 0.82rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--fg-light);
@@ -3055,7 +3055,7 @@ body {
 ══════════════════════════════════════════════════ */
 .ts-section-label {
   font-family: var(--sans);
-  font-size: 0.65rem;
+  font-size: 0.82rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--fg-light);
@@ -3101,7 +3101,7 @@ body {
 
 .ts-stack-note {
   font-family: var(--sans);
-  font-size: 0.75rem;
+  font-size: 0.84rem;
   color: var(--fg-mid);
   padding: 0.65rem 1.1rem;
   line-height: 1.5;
@@ -3140,12 +3140,12 @@ body {
 }
 .ts-iface-who {
   font-family: var(--sans);
-  font-size: 0.73rem;
+  font-size: 0.90rem;
   color: var(--fg-mid);
 }
 .ts-iface-badge {
   font-family: var(--sans);
-  font-size: 0.65rem;
+  font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -3182,7 +3182,7 @@ body {
 }
 .ts-ai-badge {
   font-family: var(--sans);
-  font-size: 0.6rem;
+  font-size: 0.76rem;
   padding: 0.12rem 0.45rem;
   border-radius: 2px;
   background: rgba(200,134,10,0.1);
@@ -3192,19 +3192,19 @@ body {
 }
 .ts-ai-accuracy {
   font-family: var(--sans);
-  font-size: 0.73rem;
+  font-size: 0.90rem;
   color: var(--green);
   font-weight: 500;
 }
 .ts-ai-use {
   font-family: var(--sans);
-  font-size: 0.75rem;
+  font-size: 0.84rem;
   color: var(--fg-mid);
   line-height: 1.5;
 }
 .ts-ai-cost {
   font-family: var(--sans);
-  font-size: 0.73rem;
+  font-size: 0.90rem;
   color: var(--fg-light);
   border-top: 1px solid var(--border);
   padding-top: 0.35rem;
@@ -3255,7 +3255,7 @@ body {
 }
 .ds-stage-analogy {
   font-family: var(--sans);
-  font-size: 0.68rem;
+  font-size: 0.84rem;
   color: var(--fg-light);
   font-style: italic;
   margin-top: 0.15rem;
@@ -3270,7 +3270,7 @@ body {
 }
 .ds-stage-weeks {
   font-family: var(--sans);
-  font-size: 0.73rem;
+  font-size: 0.90rem;
   font-weight: 600;
   color: var(--fg-mid);
   text-align: center;
@@ -3297,7 +3297,7 @@ body {
 }
 .ds-total-left {
   font-family: var(--sans);
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -3401,7 +3401,22 @@ body {
 .ts-stack-note,
 .ts-ai-use,
 .swot-item,
-.inv-ai-text {
+.inv-ai-text,
+.pgrid-who,
+.inv-vc-note,
+.phase-weeks,
+.miami-point,
+.legal-list li,
+.comp-lesson,
+.adj-lesson,
+.hwc-detail,
+.eco-node span,
+.rate-col-sub,
+.arch-box-note,
+.mkt-note,
+.oflow-body span,
+.ed-lead,
+.hero-desc {
   font-size: 0.96rem;
   line-height: 1.65;
 }
@@ -3516,4 +3531,4 @@ body {
 .inv-vc-title,
 .bnpl-title,
 .subs-title,
-.ds-total-left { font-size: 0.68rem; }
+.ds-total-left { font-size: 0.84rem; }
