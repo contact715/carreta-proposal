@@ -104,7 +104,7 @@ const plans = [
   {
     id: 'b', name: 'Standard', badge: 'Рекомендованный', rec: true,
     price: '$450K — $700K', mo: '$48–65K/мес', time: '9–11 мес', team: '7–8 чел', where: 'CA + Восточная Европа',
-    color: '#4A9AD4',
+    color: '#1A9D8A',
     level: 'Mid+ / Senior', levelNote: 'Mid+ и Senior из СНГ под контролем CA-тимлидов. Тот же результат без US-переплаты.',
     features: [
       'Разработчики уровня Mid+ и Senior из Восточной Европы',
@@ -118,7 +118,7 @@ const plans = [
   {
     id: 'c', name: 'Economy', badge: 'Минимальный бюджет',
     price: '$350K — $500K', mo: '$25–35K/мес', time: '12–16 мес', team: '5–6 чел', where: 'CA + смешанный',
-    color: '#7A7875',
+    color: '#9A8B5A',
     level: 'Middle', levelNote: 'Middle-специалисты из СНГ. Медленнее Senior — отсюда срок +3–7 мес.',
     features: [
       'Специалисты уровня Middle из СНГ',
@@ -1034,7 +1034,7 @@ function Slide09Market() {
       id: 'hybrid', label: 'Гибрид (наш план)', tag: 'Standard + Premium',
       sub: 'CA тимлиды + Mid+/Senior из Восточной Европы',
       price: '$450K — $1.2M', priceSub: 'Standard $450K–$700K / Premium $700K–$1.2M',
-      color: '#4A9AD4', tagBg: 'rgba(74,154,212,0.08)', tagColor: '#4A9AD4',
+      color: '#1A9D8A', tagBg: 'rgba(26,157,138,0.08)', tagColor: '#1A9D8A',
       highlight: true,
       rows: [
         { role: 'Senior backend', val: '$3.5–5K/мес' },

@@ -1421,7 +1421,7 @@ body {
   align-items: flex-start;
   gap: 0.6rem;
   font-family: var(--serif);
-  font-size: 0.97rem;
+  font-size: 1.05rem;
   color: var(--fg);
   line-height: 1.5;
 }
