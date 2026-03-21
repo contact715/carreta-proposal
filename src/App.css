@@ -518,8 +518,8 @@ body {
 
 .scale-callout-text {
   font-family: var(--serif);
-  font-size: 0.98rem;
-  line-height: 1.6;
+  font-size: 1.1rem;
+  line-height: 1.65;
   color: var(--fg-mid);
 }
 
@@ -1396,7 +1396,7 @@ body {
 
 .plan-detail-val {
   font-family: var(--serif);
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   color: var(--fg);
   text-align: right;
 }
@@ -1901,28 +1901,31 @@ body {
   width: 100%;
   border-collapse: collapse;
   font-family: var(--sans);
-  font-size: 0.97rem;
+  font-size: 1.05rem;
 }
 .an-table th {
   text-align: left;
   font-weight: 500;
   font-size: 0.82rem;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--fg-light);
-  padding: 0.4rem 0.75rem;
+  padding: 0.5rem 1rem;
   border-bottom: 1px solid var(--border-md);
+  white-space: nowrap;
 }
 .an-table td {
-  padding: 0.5rem 0.75rem;
+  padding: 0.65rem 1rem;
   border-bottom: 1px solid var(--border);
   vertical-align: middle;
+  font-size: 1.05rem;
 }
 .an-table tr:last-child td { border-bottom: none; }
 
-.an-td-name { font-family: var(--serif); font-size: 0.92rem; color: var(--fg); }
-.an-td-num  { font-family: var(--serif); font-size: 1rem; font-weight: 300; color: var(--fg); }
-.an-td-cagr { font-family: var(--sans); font-size: 0.94rem; color: var(--accent-dk); font-weight: 500; }
-.an-td-note { font-family: var(--sans); font-size: 1.0rem; color: var(--fg-mid); line-height: 1.45; }
+.an-td-name { font-family: var(--serif); font-size: 1.05rem; color: var(--fg); }
+.an-td-num  { font-family: var(--serif); font-size: 1.05rem; font-weight: 400; color: var(--fg); white-space: nowrap; }
+.an-td-cagr { font-family: var(--sans); font-size: 1.15rem; color: var(--accent-dk); font-weight: 600; white-space: nowrap; }
+.an-td-note { font-family: var(--sans); font-size: 1.0rem; color: var(--fg-mid); line-height: 1.5; }
 
 .market-miami-grid {
   display: grid;
@@ -1953,17 +1956,20 @@ body {
   gap: 0.5rem;
 }
 .market-miami-row:last-child { border-bottom: none; }
-.market-miami-l { font-family: var(--sans); font-size: 0.94rem; color: var(--fg-mid); }
-.market-miami-n { font-family: var(--serif); font-size: 1rem; font-weight: 300; color: var(--fg); }
+.market-miami-l { font-family: var(--sans); font-size: 1.0rem; color: var(--fg-mid); line-height: 1.45; }
+.market-miami-n { font-family: var(--serif); font-size: 1.15rem; font-weight: 400; color: var(--fg); }
 
 .market-trend-row {
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 0.7rem 1rem;
+  padding: 0.8rem 1.1rem;
   border: 1px solid var(--border);
   background: var(--bg);
   margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: var(--fg-mid);
 }
 .market-trend-icon {
   font-size: 1.2rem;
@@ -3388,7 +3394,7 @@ body {
   color: var(--fg);
 }
 
-/* Increase body text size one more level — descriptions in cards */
+/* Body text in cards — unified readable size 1.05rem */
 .prob-card p,
 .adj-text,
 .fail-text,
@@ -3402,9 +3408,7 @@ body {
 .ts-ai-use,
 .swot-item,
 .inv-ai-text,
-.pgrid-who,
 .inv-vc-note,
-.phase-weeks,
 .miami-point,
 .legal-list li,
 .comp-lesson,
@@ -3413,11 +3417,23 @@ body {
 .eco-node span,
 .rate-col-sub,
 .arch-box-note,
-.mkt-note,
 .oflow-body span,
-.ed-lead,
-.hero-desc {
-  font-size: 0.96rem;
+.d30-result,
+.ts-stack-layer,
+.ts-stack-tech,
+.ts-iface-who,
+.ts-ai-accuracy,
+.ts-ai-cost,
+.inv-stage-need,
+.ue-term-def,
+.subs-benchmark span,
+.risk-who,
+.risk-how,
+.pgrid-desc,
+.plan-detail-note,
+.comp-stat-label,
+.oflow-footer {
+  font-size: 1.05rem;
   line-height: 1.65;
 }
 
