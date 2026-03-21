@@ -76,7 +76,7 @@ function MktBar({ label, value, pct, color, note }) {
 // ─── DATA ────────────────────────────────────────────────────────────────────
 const plans = [
   {
-    id: 'us', name: 'US-агентство', badge: 'Рыночный ориентир', ref: true,
+    id: 'us', name: 'US-агентство', badge: 'Рыночный ориентир',
     price: '$1.2M — $2.0M', mo: '$150–250K/мес', time: '10–14 мес', team: '10–15 чел', where: 'SF / New York',
     color: '#B94040',
     features: [
@@ -164,8 +164,8 @@ function Slide01Hero() {
       <div className="hero-right">
         <div className="hero-stats">
           {[
-            { n: 300, suf: 'B$', label: 'объём рынка\nавтосервиса в США', large: true },
-            { n: 280, suf: 'M', label: 'зарегистрированных\nавтомобилей в США' },
+            { n: 435, suf: 'B', label: 'объём рынка\nавтосервиса в США ($)', large: true },
+            { n: 289, suf: 'M', label: 'зарегистрированных\nавтомобилей в США' },
             { n: 67, suf: '%', label: 'звонков в шоп\nостаются без ответа' },
             { n: 1400, suf: '$', label: 'в год тратит\nсредний американец\nна уход за машиной' },
           ].map((s, i) => (
@@ -421,7 +421,7 @@ function Slide03Product() {
       </div>
       <div className="bm-strip">
         {[
-          { label: 'Как зарабатывает', val: 'Комиссия 15–25% с каждого заказа + ежемесячная подписка клиентов и шопов' },
+          { label: 'Как зарабатывает', val: 'Комиссия 18% с каждого заказа + ежемесячная подписка от шопов' },
           { label: 'Мастера — не сотрудники', val: 'Работают как самозанятые. Carreta не несёт затрат на их содержание — как Uber не содержит водителей.' },
           { label: 'Деньги — не у Carreta', val: 'Оплата идёт через Stripe. Carreta получает только свою комиссию — риск неоплаты минимален.' },
         ].map((b, i) => (
@@ -2160,7 +2160,7 @@ function SlideTechStack() {
   ]
   return (
     <div className="slide-content">
-      <div className="ed-eyebrow">Блок 7 — Технологии</div>
+      <div className="ed-eyebrow">Технологии · Стек</div>
       <h2 className="ed-title">Технологический ландшафт</h2>
       <p className="ed-lead">6 интерфейсов, AI-диагностика, Stripe Connect. Выбор стека определяет скорость и стоимость разработки.</p>
 
@@ -2225,7 +2225,7 @@ function SlideDevStages() {
   ]
   return (
     <div className="slide-content">
-      <div className="ed-eyebrow">Блок 10 — Разработка</div>
+      <div className="ed-eyebrow">Разработка · Этапы</div>
       <h2 className="ed-title">Как строится платформа</h2>
       <p className="ed-lead">8 этапов, аналогия со строительством дома. Каждый этап — конкретный результат, который можно потрогать.</p>
 
