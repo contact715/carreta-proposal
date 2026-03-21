@@ -1151,7 +1151,7 @@ function Slide12CTA() {
           Предложение действительно <strong>30 дней.</strong> Ставки растут на <strong>5–10% в год.</strong>
         </div>
         <div className="cta-contact-block">
-          <a href="mailto:hello@castells.media" className="cta-contact-link">hello@castells.media</a>
+          <a href="mailto:contact@castells.media" className="cta-contact-link">contact@castells.media</a>
         </div>
       </div>
     </div>
