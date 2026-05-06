@@ -6857,3 +6857,436 @@ body {
   .apx-case-result { grid-template-columns: 1fr; }
   .aes-kpi-row { flex-direction: column; align-items: flex-start; gap: 0.2rem; }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   WAVE 3 COMMIT 2 — slides 8-14 enrichment CSS
+   Strategic, Top10, Competition, Impact, Providers, Questions, Roadmap
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── lnch-rec-analog / lnch-rec-action (Strategic recs) ── */
+.lnch-rec-analog,
+.lnch-rec-action {
+  font-family: var(--sans);
+  font-size: 0.84rem;
+  color: var(--fg-mid);
+  line-height: 1.5;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Top10 economics chips ── */
+.lnch-top10-economics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.45rem;
+}
+
+.lnch-econ-chip {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.2rem 0.5rem;
+  border-radius: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--fg-mid);
+  white-space: nowrap;
+}
+
+/* ── Month-1 Revenue Table (lnch-m1-*) ── */
+.lnch-m1-table {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.lnch-m1-head {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr 1fr 0.8fr;
+  background: var(--bg-card);
+  padding: 0.65rem 1rem;
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fg-mid);
+  gap: 0.5rem;
+}
+
+.lnch-m1-row {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr 1fr 0.8fr;
+  gap: 0.5rem;
+  padding: 0.7rem 1rem;
+  background: var(--bg);
+  align-items: center;
+  transition: background 0.15s;
+}
+.lnch-m1-row:hover { background: var(--bg-card); }
+
+.lnch-m1-service {
+  font-family: var(--sans);
+  font-size: 0.87rem;
+  color: var(--fg);
+}
+
+.lnch-m1-rev {
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.lnch-m1-margin {
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.lnch-m1-pct {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  color: var(--fg-mid);
+  text-align: center;
+}
+
+.lnch-m1-total {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr 1fr 0.8fr;
+  gap: 0.5rem;
+  padding: 0.85rem 1rem;
+  background: rgba(200,134,10,0.07);
+  border-top: 2px solid rgba(200,134,10,0.25);
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  align-items: center;
+}
+
+/* ── Competitor deep cards (lnch-comp-deep-*) ── */
+.lnch-comp-deep-card {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+}
+
+.lnch-comp-deep-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.1rem;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.lnch-comp-deep-name {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--fg);
+}
+
+.lnch-comp-deep-meta {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  color: var(--fg-mid);
+}
+
+.lnch-comp-deep-body {
+  padding: 0.8rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.lnch-comp-deep-row {
+  display: flex;
+  gap: 0.6rem;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--fg-mid);
+  line-height: 1.45;
+  align-items: flex-start;
+}
+
+.lnch-comp-deep-label {
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  min-width: 5.5rem;
+  flex-shrink: 0;
+  padding-top: 0.1rem;
+  color: var(--fg-mid);
+}
+
+/* ── Risk Register (adv-risk-*) ── */
+.adv-risk-table {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.adv-risk-head {
+  display: grid;
+  grid-template-columns: 2fr 1fr 0.7fr 2fr;
+  gap: 0.5rem;
+  padding: 0.65rem 1rem;
+  background: var(--bg-card);
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fg-mid);
+}
+
+.adv-risk-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 0.7fr 2fr;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: var(--bg);
+  align-items: start;
+  transition: background 0.15s;
+}
+.adv-risk-row:hover { background: var(--bg-card); }
+
+.adv-risk-name {
+  font-family: var(--sans);
+  font-size: 0.87rem;
+  color: var(--fg);
+  line-height: 1.4;
+}
+
+.adv-risk-type {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  color: var(--fg-mid);
+}
+
+.adv-risk-badge {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 0.25rem 0.55rem;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.adv-risk-mitigation {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  color: var(--fg-mid);
+  line-height: 1.45;
+}
+
+/* ── Provider economics grid (apv-econ-*) ── */
+.apv-econ-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+@media (max-width: 900px) {
+  .apv-econ-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px) {
+  .apv-econ-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.apv-econ-cell {
+  background: var(--bg);
+  padding: 0.9rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.apv-econ-val {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.apv-econ-label {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--fg);
+}
+
+.apv-econ-note {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  color: var(--fg-mid);
+  line-height: 1.35;
+}
+
+/* ── Provider lifecycle (apv-lifecycle-*) ── */
+.apv-lifecycle {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+@media (max-width: 900px) {
+  .apv-lifecycle { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px) {
+  .apv-lifecycle { grid-template-columns: 1fr; }
+}
+
+.apv-lifecycle-phase {
+  background: var(--bg-card);
+  border-radius: 6px;
+  padding: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.apv-lifecycle-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+}
+
+.apv-lifecycle-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.apv-lifecycle-phase-label {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.apv-lifecycle-label {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--fg);
+}
+
+.apv-lifecycle-steps {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.apv-lifecycle-steps li {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  color: var(--fg-mid);
+  line-height: 1.4;
+}
+
+/* ── Question why-matters / what-it-means blocks ── */
+.lnch-question-why,
+.lnch-question-what {
+  font-family: var(--sans);
+  font-size: 0.83rem;
+  color: var(--fg-mid);
+  line-height: 1.5;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.lnch-question-why-label,
+.lnch-question-what-label {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-mid);
+  opacity: 0.7;
+}
+
+/* ── Roadmap meta block (owner / deliverable / criteria) ── */
+.lnch-roadmap-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-top: 0.75rem;
+  padding: 0.7rem 0.9rem;
+  background: rgba(200,134,10,0.05);
+  border-radius: 5px;
+  border-left: 3px solid rgba(200,134,10,0.3);
+}
+
+.lnch-roadmap-meta-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  font-family: var(--sans);
+  font-size: 0.82rem;
+}
+
+.lnch-roadmap-meta-label {
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--fg-mid);
+  min-width: 6.5rem;
+  flex-shrink: 0;
+}
+
+.lnch-roadmap-meta-val {
+  color: var(--fg);
+  line-height: 1.4;
+}
+
+/* ── Responsive for wave 3 commit 2 ── */
+@media (max-width: 768px) {
+  .lnch-m1-head,
+  .lnch-m1-row,
+  .lnch-m1-total {
+    grid-template-columns: 1.8fr 1fr 1fr 0.7fr;
+  }
+  .adv-risk-head,
+  .adv-risk-row {
+    grid-template-columns: 1fr 0.8fr 0.6fr 1.5fr;
+  }
+  .lnch-comp-deep-header { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
+}
+
+@media (max-width: 520px) {
+  .lnch-m1-head,
+  .lnch-m1-row,
+  .lnch-m1-total {
+    grid-template-columns: 1fr 1fr;
+  }
+  .adv-risk-head { display: none; }
+  .adv-risk-row { grid-template-columns: 1fr 1fr; }
+  .lnch-top10-economics { display: none; }
+}

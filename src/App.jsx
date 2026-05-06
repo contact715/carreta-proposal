@@ -3921,6 +3921,45 @@ function SlideKickoffImpact() {
           <span className="adv-callout-num">+$15–25K</span>
         </div>
       </div>
+
+      <WavyDivider />
+
+      {/* Risk Register */}
+      <h3 className="ed-section-title" style={{ marginTop: '1.5rem' }}>Risk Register — 8 рисков</h3>
+      <p style={{ fontFamily: 'var(--sans)', fontSize: '0.9rem', color: 'var(--fg-mid)', marginBottom: '1rem' }}>
+        Идентифицированные риски с уровнем, митигацией и ответственным. Цвет = вероятность × влияние.
+      </p>
+      <div className="adv-risk-table">
+        <div className="adv-risk-head">
+          <div>Риск</div>
+          <div>Тип</div>
+          <div>Уровень</div>
+          <div>Митигация</div>
+        </div>
+        {[
+          { risk: 'Низкое quality провайдеров на старте', type: 'Операционный', level: 'HIGH', levelColor: '#C0392B', mitigation: 'Manual vetting первых 50 шопов + shadow mode первые 2 недели. Background check обязателен.' },
+          { risk: 'Регуляторный блок на sober driver в FL', type: 'Регуляторный', level: 'MED', levelColor: '#D68910', mitigation: 'Юридический анализ FL TNC-требований до запуска. Soft launch без маркетинга.' },
+          { risk: 'Stripe Connect блок (identity verification)', type: 'Технический', level: 'MED', levelColor: '#D68910', mitigation: 'Начать KYC провайдеров за 6 нед до launch. Иметь backup (Adyen / Braintree).' },
+          { risk: 'Низкий organic demand без маркетинга', type: 'Рыночный', level: 'HIGH', levelColor: '#C0392B', mitigation: 'Pre-launch waitlist 500+ клиентов. Castells B2B contacts как beachhead. $5K paid launch budget.' },
+          { risk: 'Провайдер не приехал / опоздал', type: 'Операционный', level: 'HIGH', levelColor: '#C0392B', mitigation: 'Backup pool 2-го провайдера в радиусе 5 миль. Auto-redispatch за 10 мин. Компенсация $20 клиенту.' },
+          { risk: 'Scope creep — добавление фич во время разработки', type: 'Проектный', level: 'MED', levelColor: '#D68910', mitigation: 'Железный feature freeze после недели 4. Change requests — только в отдельный backlog. Weekly sprint demo.' },
+          { risk: 'AI intent detection ошибки (< 85%)', type: 'Технический', level: 'LOW', levelColor: '#1C6B3A', mitigation: 'Human fallback — «поговорить с агентом». A/B тест prompt-версий. Monthly accuracy review.' },
+          { risk: 'Конкурент копирует hurricane prep за сезон', type: 'Конкурентный', level: 'LOW', levelColor: '#1C6B3A', mitigation: 'Бренд + provider relationships + hyper-local brand awareness — скопировать за 1 сезон невозможно.' },
+        ].map((r, i) => (
+          <motion.div key={i} className="adv-risk-row"
+            initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
+            viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.05 }}>
+            <div className="adv-risk-name">{r.risk}</div>
+            <div className="adv-risk-type">{r.type}</div>
+            <div>
+              <span className="adv-risk-badge" style={{ background: r.levelColor + '18', color: r.levelColor, border: `1px solid ${r.levelColor}35` }}>
+                {r.level}
+              </span>
+            </div>
+            <div className="adv-risk-mitigation">{r.mitigation}</div>
+          </motion.div>
+        ))}
+      </div>
     </div>
   )
 }
@@ -4039,6 +4078,64 @@ function SlideKickoffProviders() {
 
       <WavyDivider />
 
+      {/* Provider Economics */}
+      <h3 className="ed-section-title">Юнит-экономика провайдера</h3>
+      <p style={{ fontFamily: 'var(--sans)', fontSize: '0.9rem', color: 'var(--fg-mid)', marginBottom: '1rem' }}>
+        Расчёт на примере мобильного мастера (P0 категория, 8 заказов/день, 5 дней/нед).
+      </p>
+      <div className="apv-econ-grid">
+        {[
+          { label: 'Средний чек', val: '$125', note: 'mix of wash + roadside + inspection', color: '#1C5C8F' },
+          { label: 'Заказов в месяц', val: '160', note: '8/день × 20 рабочих дней', color: '#1C5C8F' },
+          { label: 'Gross GMV/мес', val: '$20,000', note: 'выручка до комиссии', color: '#C8860A' },
+          { label: 'CarETA take (20%)', val: '$4,000', note: 'платформенная комиссия', color: '#C0392B' },
+          { label: 'Провайдер получает', val: '$16,000', note: 'до расходов', color: '#1C6B3A' },
+          { label: 'Расходы провайдера', val: '~$6,000', note: 'fuel, tools, insurance, налоги', color: '#D68910' },
+          { label: 'Чистый доход', val: '~$10,000', note: 'в месяц для активного мастера', color: '#1C6B3A' },
+          { label: 'Breakeven по заказам', val: '≥ 40', note: 'заказов/мес чтобы оправдать онбординг', color: '#6B3A8F' },
+        ].map((e, i) => (
+          <motion.div key={i} className="apv-econ-cell"
+            style={{ borderTop: `3px solid ${e.color}` }}
+            initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.35, delay: (i % 4) * 0.06 }}>
+            <div className="apv-econ-val" style={{ color: e.color }}>{e.val}</div>
+            <div className="apv-econ-label">{e.label}</div>
+            <div className="apv-econ-note">{e.note}</div>
+          </motion.div>
+        ))}
+      </div>
+
+      <WavyDivider />
+
+      {/* Provider Lifecycle */}
+      <h3 className="ed-section-title">Жизненный цикл провайдера</h3>
+      <div className="apv-lifecycle">
+        {[
+          { phase: 'День 1–7', label: 'Onboarding', icon: '📋', color: '#1C5C8F', steps: ['Заявка через app/web', 'KYC + background check', 'Insurance verification', 'Service category selection'] },
+          { phase: 'День 7–14', label: 'Shadow mode', icon: '👁️', color: '#D68910', steps: ['Первые 5 заказов с мониторингом', 'Обязательное фото до/после', 'Rating ≥ 4.5 для активации', 'Менеджер на связи'] },
+          { phase: 'День 14+', label: 'Активный', icon: '✅', color: '#1C6B3A', steps: ['Полный доступ к заказам', 'Surge pricing участие', 'Bonus pool eligibility', 'Referral bonus программа'] },
+          { phase: 'Мес 3+', label: 'Premium Partner', icon: '⭐', color: '#C8860A', steps: ['Топ-10% по рейтингу', 'Priority dispatch', 'Co-branded страница', 'B2B / fleet заказы'] },
+        ].map((p, i) => (
+          <motion.div key={i} className="apv-lifecycle-phase"
+            style={{ borderTop: `3px solid ${p.color}` }}
+            initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.08 }}>
+            <div className="apv-lifecycle-head">
+              <span className="apv-lifecycle-icon">{p.icon}</span>
+              <div>
+                <div className="apv-lifecycle-phase-label" style={{ color: p.color }}>{p.phase}</div>
+                <div className="apv-lifecycle-label">{p.label}</div>
+              </div>
+            </div>
+            <ul className="apv-lifecycle-steps">
+              {p.steps.map((s, j) => <li key={j}>{s}</li>)}
+            </ul>
+          </motion.div>
+        ))}
+      </div>
+
+      <WavyDivider />
+
       {/* Acquisition channels */}
       <h3 className="ed-section-title">Каналы привлечения провайдеров</h3>
       <div className="apv-channels">
@@ -4067,6 +4164,8 @@ function SlideKickoffStrategic() {
       title: 'Список нужно перестроить под marketplace-модель',
       problem: 'Сейчас читается как «что мы умеем». Для двухстороннего marketplace нужны 3 раздельные сущности.',
       rec: 'Service catalog — атомарные услуги для шопов. Customer scenarios — outcome-based bundles в приложении. Provider categories — какие типы шопов onboard\'ить.',
+      analog: 'Thumbtack разделяет категории для клиентов и для подрядчиков — разные UI, разная логика.',
+      firstAction: 'Создать 3 отдельных CSV-файла: catalog.csv / scenarios.csv / provider-types.csv. Сделать на этой неделе.',
       color: '#C0392B',
     },
     {
@@ -4075,6 +4174,8 @@ function SlideKickoffStrategic() {
       title: 'Tier-структура должна быть в каждой услуге',
       problem: 'В Uber каждая поездка имеет UberX / Comfort / Black / SUV. У CarETA — нет.',
       rec: 'Каждая услуга должна иметь Standard / Premium / White-Glove tier с разной ценой. Даёт upsell + segmentation + price discrimination.',
+      analog: 'Uber: 78% выручки генерирует Uber Comfort+ / Black — не базовый тариф. Upsell — главная маржа.',
+      firstAction: 'Добавить поле tier в каждую запись catalog.csv. Три строки на услугу — три ценовые точки.',
       color: '#D68910',
     },
     {
@@ -4082,7 +4183,9 @@ function SlideKickoffStrategic() {
       icon: '⏱️',
       title: 'Time-tier важнее size-tier',
       problem: 'В авто-услугах «когда» часто важнее «как».',
-      rec: 'Same-day vs scheduled vs emergency — разные ценовые точки. Ввести как ortogonal axis к tier-системе.',
+      rec: 'Same-day vs scheduled vs emergency — разные ценовые точки. Ввести как ортогональную ось к tier-системе.',
+      analog: 'Amazon Prime Same-Day vs Standard — один и тот же товар, разная цена. Клиенты платят за время охотнее, чем за качество.',
+      firstAction: 'В pricing engine заложить time_multiplier как отдельный параметр. Базовая цена × tier × time = итоговая цена.',
       color: '#1C5C8F',
     },
     {
@@ -4091,6 +4194,8 @@ function SlideKickoffStrategic() {
       title: 'Insurance / warranty как товар, не только сегмент',
       problem: 'Бизнес-модель упоминает microinsurance как revenue stream, но в каталоге его нет.',
       rec: 'Огромная упущенная категория subscription-продуктов. Каждый tier подписки включает базовую страховку.',
+      analog: 'Lemonade начинал с рентерс-страховки $5/мес — $4B IPO. Microinsurance как add-on к существующим транзакциям конвертирует в 3× лучше.',
+      firstAction: 'Связаться с 2–3 MGAs (Managing General Agents) для pilot microinsurance продукта. Не нужна страховая лицензия на старте.',
       color: '#1C6B3A',
     },
     {
@@ -4099,6 +4204,8 @@ function SlideKickoffStrategic() {
       title: 'Отсутствует «recovery / failure» flow',
       problem: 'Что если шоп не справился? Деталь сломалась через 3 дня?',
       rec: 'Нет «warranty claim assistance», «redo service», «complaint resolution» — критично для marketplace с trust-моделью.',
+      analog: 'Airbnb AirCover — гарантия возврата за любую проблему. Стоит $0 для клиента, но убрала главный барьер к первому бронированию.',
+      firstAction: 'Написать recovery policy: кто платит за redo, в течение какого срока, через какой канал. До старта beta.',
       color: '#6B3A8F',
     },
     {
@@ -4107,6 +4214,8 @@ function SlideKickoffStrategic() {
       title: 'ICP в business model — 8 групп, в services — 6',
       problem: 'Не совпадает. Uber/Lyft drivers как ICP — слабо отражены. Snowbirds — есть relocation, но нет full snowbird care package.',
       rec: 'Синхронизировать сервисный каталог с ICP-матрицей. Для каждого ICP — свой bundle.',
+      analog: 'DoorDash DashPass — один продукт, но разные landing pages для college students / families / business users. Конверсия выше на 40%.',
+      firstAction: 'Создать ICP-bundle карточку для каждой из 8 групп: какие услуги, какой tier, какая цена. Snowbird bundle — первый приоритет.',
       color: '#B86A00',
     },
   ]
@@ -4117,7 +4226,7 @@ function SlideKickoffStrategic() {
       <h2 className="ed-title">Стратегические замечания — 6 ключевых</h2>
       <p className="ed-lead">
         После полного аудита каталога выявились системные проблемы, которые важнее отдельных пробелов.
-        Вот что нужно исправить до MVP-релиза.
+        Каждое замечание — с реальным аналогом из рынка и первым конкретным шагом.
       </p>
 
       <div className="lnch-recs-grid">
@@ -4139,6 +4248,14 @@ function SlideKickoffStrategic() {
               <span className="lnch-rec-label" style={{ color: r.color }}>Рекомендация</span>
               {r.rec}
             </div>
+            <div className="lnch-rec-analog">
+              <span className="lnch-rec-label" style={{ color: '#7F8C8D' }}>Аналог</span>
+              {r.analog}
+            </div>
+            <div className="lnch-rec-action">
+              <span className="lnch-rec-label" style={{ color: r.color }}>Первый шаг</span>
+              {r.firstAction}
+            </div>
           </motion.div>
         ))}
       </div>
@@ -4152,35 +4269,17 @@ function SlideKickoffStrategic() {
 
 // SUB 5: Top-10 для запуска
 function SlideKickoffTop10() {
-  const original = [
-    { n: 1, name: 'Mobile car wash & detailing', keep: true, reason: 'Оставить' },
-    { n: 2, name: 'Emergency roadside', keep: true, reason: 'Оставить' },
-    { n: 3, name: 'Pickup/drop-off для service', keep: true, reason: 'Core USP' },
-    { n: 4, name: 'Sober driver service', keep: true, reason: 'Уникальный differentiator' },
-    { n: 5, name: 'EV home charger installation', keep: false, reason: 'Не в текущем top-15' },
-    { n: 6, name: 'ADAS calibration coordination', keep: false, reason: 'Отсутствует' },
-    { n: 7, name: 'Inspection handling', keep: false, reason: 'Деприоритизировать' },
-    { n: 8, name: 'Routine maintenance concierge', keep: false, reason: 'Overlap' },
-    { n: 9, name: 'Oil change pickup service', keep: false, reason: 'Ценовая война с Take5' },
-    { n: 10, name: 'Lease return assistance', keep: false, reason: 'Низкая частота' },
-    { n: 11, name: 'Pre-sale car prep', keep: false, reason: 'Overlap' },
-    { n: 12, name: 'Catalytic converter anti-theft cage', keep: false, reason: 'Не в top-15' },
-    { n: 13, name: 'Fleet wash для tradesmen', keep: false, reason: 'B2B не закрыт' },
-    { n: 14, name: 'Mobile pre-purchase inspection', keep: false, reason: '#1 acquisition tool' },
-    { n: 15, name: 'Snowbird vehicle care subscription', keep: false, reason: 'Miami moat' },
-  ]
-
   const myTop10 = [
-    { n: 1, name: 'Mobile car wash & detailing', tag: 'оставить', tagColor: '#1C6B3A', reason: 'Высокая частота, recurring revenue, знакомая услуга — лучший точка входа.' },
-    { n: 2, name: 'Mobile pre-purchase inspection', tag: '🆕 добавить', tagColor: '#C0392B', reason: '#1 acquisition tool. $200–400 средний чек, привлекает новых клиентов в критический момент решения.' },
-    { n: 3, name: 'Emergency roadside', tag: 'оставить', tagColor: '#1C6B3A', reason: 'Низкая маржа, но высокое вовлечение. Строит доверие в момент стресса.' },
-    { n: 4, name: 'EV home charger installation', tag: '🆕 добавить', tagColor: '#C0392B', reason: 'Premium revenue ($1500–3000 за установку), растущий сегмент в FL. Высокий средний чек.' },
-    { n: 5, name: 'ADAS calibration coordination', tag: '🆕 добавить', tagColor: '#C0392B', reason: 'Mandatory после collision / windshield — обязательная услуга, очень маржинальная.' },
-    { n: 6, name: 'Pickup / drop-off для service', tag: 'оставить', tagColor: '#1C6B3A', reason: 'Core USP платформы. То, чего нет ни у одного конкурента.' },
-    { n: 7, name: 'Catalytic converter anti-theft cage', tag: '🆕 добавить', tagColor: '#C0392B', reason: 'Trending pain point в больших городах. $200–400 за установку, растущий спрос.' },
-    { n: 8, name: 'Sober driver service', tag: 'оставить', tagColor: '#1C6B3A', reason: 'Miami nightlife, эмоциональная связь с брендом. Уникальный — 0 конкурентов.' },
-    { n: 9, name: 'Fleet wash для tradesmen', tag: '🆕 добавить', tagColor: '#C0392B', reason: 'B2B beachhead. Recurring B2B revenue — те же клиенты что у HVAC/plumber/electrician.' },
-    { n: 10, name: 'Snowbird vehicle care subscription', tag: '🆕 добавить', tagColor: '#C0392B', reason: 'Miami-specific moat. $79–199/мес recurring. 0 конкурентов на этой нише.' },
+    { n: 1, name: 'Mobile car wash & detailing', tag: 'оставить', tagColor: '#1C6B3A', reason: 'Высокая частота, recurring revenue, знакомая услуга — лучший точка входа.', cac: '$12', ticket: '$65', ltv: '$780', freq: '1×/мес' },
+    { n: 2, name: 'Mobile pre-purchase inspection', tag: '🆕 добавить', tagColor: '#C0392B', reason: '#1 acquisition tool. $200–400 средний чек, привлекает новых клиентов в критический момент решения.', cac: '$45', ticket: '$280', ltv: '$1,400', freq: '2–3×/год' },
+    { n: 3, name: 'Emergency roadside', tag: 'оставить', tagColor: '#1C6B3A', reason: 'Низкая маржа, но высокое вовлечение. Строит доверие в момент стресса.', cac: '$20', ticket: '$99', ltv: '$594', freq: '6×/год' },
+    { n: 4, name: 'EV home charger installation', tag: '🆕 добавить', tagColor: '#C0392B', reason: 'Premium revenue ($1500–3000 за установку), растущий сегмент в FL. Высокий средний чек.', cac: '$65', ticket: '$1,800', ltv: '$2,700', freq: '1×/2 года' },
+    { n: 5, name: 'ADAS calibration coordination', tag: '🆕 добавить', tagColor: '#C0392B', reason: 'Mandatory после collision / windshield — обязательная услуга, очень маржинальная.', cac: '$35', ticket: '$420', ltv: '$840', freq: '2×/год' },
+    { n: 6, name: 'Pickup / drop-off для service', tag: 'оставить', tagColor: '#1C6B3A', reason: 'Core USP платформы. То, чего нет ни у одного конкурента.', cac: '$8', ticket: '$45', ltv: '$540', freq: '1×/мес' },
+    { n: 7, name: 'Catalytic converter anti-theft cage', tag: '🆕 добавить', tagColor: '#C0392B', reason: 'Trending pain point в больших городах. $200–400 за установку, растущий спрос.', cac: '$28', ticket: '$300', ltv: '$450', freq: '1–2×/год' },
+    { n: 8, name: 'Sober driver service', tag: 'оставить', tagColor: '#1C6B3A', reason: 'Miami nightlife, эмоциональная связь с брендом. Уникальный — 0 конкурентов.', cac: '$18', ticket: '$85', ltv: '$510', freq: '6×/год' },
+    { n: 9, name: 'Fleet wash для tradesmen', tag: '🆕 добавить', tagColor: '#C0392B', reason: 'B2B beachhead. Recurring B2B revenue — те же клиенты что у HVAC/plumber/electrician.', cac: '$55', ticket: '$320/мес', ltv: '$5,760', freq: 'ежемесячно' },
+    { n: 10, name: 'Snowbird vehicle care subscription', tag: '🆕 добавить', tagColor: '#C0392B', reason: 'Miami-specific moat. $79–199/мес recurring. 0 конкурентов на этой нише.', cac: '$42', ticket: '$139/мес', ltv: '$1,668', freq: '8–10 мес/год' },
   ]
 
   const toRemove = [
@@ -4191,13 +4290,24 @@ function SlideKickoffTop10() {
     'Pre-sale car prep — overlap с pre-purchase и detailing',
   ]
 
+  // Estimated Month-1 revenue if 50 orders split across top-3 services
+  const month1calc = [
+    { service: 'Mobile car wash (×15 orders)', rev: '$975', margin: '$195', pct: '20%' },
+    { service: 'Emergency roadside (×10 orders)', rev: '$990', margin: '$198', pct: '20%' },
+    { service: 'Pre-purchase inspection (×8 orders)', rev: '$2,240', margin: '$448', pct: '20%' },
+    { service: 'Pickup/drop-off (×12 orders)', rev: '$540', margin: '$108', pct: '20%' },
+    { service: 'Sober driver (×5 orders)', rev: '$425', margin: '$85', pct: '20%' },
+  ]
+  const totalRev = '$5,170'
+  const totalMargin = '$1,034'
+
   return (
     <div className="slide-content">
       <div className="ed-eyebrow">Аудит каталога · Приоритизация</div>
       <h2 className="ed-title">Top-10 для запуска — пересмотр</h2>
       <p className="ed-lead">
         Текущий Top-15 в каталоге — хороший, но 5 позиций стоит заменить на более стратегические
-        для marketplace-модели и Miami-MVP.
+        для marketplace-модели и Miami-MVP. Каждый пункт — с реальной юнит-экономикой.
       </p>
 
       <div className="lnch-top10-wrap">
@@ -4219,9 +4329,47 @@ function SlideKickoffTop10() {
                   </span>
                 </div>
                 <div className="lnch-top10-reason">{item.reason}</div>
+                <div className="lnch-top10-economics">
+                  <span className="lnch-econ-chip">CAC {item.cac}</span>
+                  <span className="lnch-econ-chip">Чек {item.ticket}</span>
+                  <span className="lnch-econ-chip" style={{ color: '#1C6B3A', borderColor: 'rgba(28,107,58,0.3)' }}>LTV {item.ltv}</span>
+                  <span className="lnch-econ-chip" style={{ color: '#6B3A8F', borderColor: 'rgba(107,58,143,0.3)' }}>{item.freq}</span>
+                </div>
               </div>
             </motion.div>
           ))}
+        </div>
+      </div>
+
+      <WavyDivider />
+
+      {/* Month-1 revenue calc */}
+      <h3 className="ed-section-title" style={{ marginTop: '1.5rem' }}>Расчёт выручки — Месяц 1 (50 заказов)</h3>
+      <p style={{ fontFamily: 'var(--sans)', fontSize: '0.9rem', color: 'var(--fg-mid)', marginBottom: '1rem' }}>
+        Реалистичный сценарий при 20 подключённых провайдерах и $5K маркетинг-бюджете на старте.
+      </p>
+      <div className="lnch-m1-table">
+        <div className="lnch-m1-head">
+          <div>Услуга</div>
+          <div>Выручка GMV</div>
+          <div>Маржа CarETA (20%)</div>
+          <div>Take rate</div>
+        </div>
+        {month1calc.map((row, i) => (
+          <motion.div key={i} className="lnch-m1-row"
+            initial={{ opacity: 0, x: -8 }} whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.06 }}>
+            <div className="lnch-m1-service">{row.service}</div>
+            <div className="lnch-m1-rev">{row.rev}</div>
+            <div className="lnch-m1-margin" style={{ color: '#1C6B3A' }}>{row.margin}</div>
+            <div className="lnch-m1-pct">{row.pct}</div>
+          </motion.div>
+        ))}
+        <div className="lnch-m1-total">
+          <div style={{ fontWeight: 700 }}>Итого Месяц 1</div>
+          <div style={{ fontWeight: 700, color: 'var(--accent)' }}>{totalRev}</div>
+          <div style={{ fontWeight: 700, color: '#1C6B3A' }}>{totalMargin}</div>
+          <div style={{ color: 'var(--fg-mid)' }}>20% avg</div>
         </div>
       </div>
 
@@ -4367,6 +4515,95 @@ function SlideKickoffCompetition() {
 
       <WavyDivider />
 
+      {/* Deep competitor cards */}
+      <h3 className="ed-section-title" style={{ marginTop: '1.5rem' }}>Детальный разбор — 5 конкурентов</h3>
+      {[
+        {
+          name: 'YourMechanic',
+          color: '#7F8C8D',
+          founded: '2012',
+          funding: '$62M (Series B)',
+          revenue: '~$30M ARR (est.)',
+          model: 'Mobile mechanic marketplace. Механик приезжает к клиенту. Booking через сайт/app.',
+          strength: 'Широкий coverage (50+ городов), бренд, интеграция с RepairPal.',
+          weakness: 'Только mechanics — нет detailing, нет concierge, нет pickp/drop-off. Старый UX (2012 UI). Нет subscription модели.',
+          preempt: 'Expansion в concierge layer займёт 18+ мес — слишком большая перестройка продукта.',
+        },
+        {
+          name: 'Wrench',
+          color: '#7F8C8D',
+          founded: '2016',
+          funding: '$24M (Series A)',
+          revenue: '~$15M ARR (est.)',
+          model: 'Mobile mechanic + fleet maintenance. Сильны в B2B (корпоративные аккаунты).',
+          strength: 'B2B focus — корпоративные клиенты, fleet contracts. Более стабильная выручка.',
+          weakness: 'B2C weak. Только mechanics. Нет outcome-based UX. Географически ограничены.',
+          preempt: 'B2B strengths не реплицируются — у CarETA другая точка входа (B2C first, B2B follow).',
+        },
+        {
+          name: 'Spiffy',
+          color: '#7F8C8D',
+          founded: '2014',
+          funding: '$43M (Series C)',
+          revenue: '~$40M ARR (est.)',
+          model: 'Mobile car wash + detailing. Franchising модель. Фокус на fleet и enterprise.',
+          strength: 'Subscription (Spiffy Select), strong brand в detailing, fleet contracts (Hertz, Enterprise).',
+          weakness: 'Только detailing + oil change — не полноценный marketplace. Нет mechanics, нет concierge.',
+          preempt: 'Detailing — их core. CarETA берёт detailing как entry point, но идёт дальше — к full concierge.',
+        },
+        {
+          name: 'RepairPal',
+          color: '#7F8C8D',
+          founded: '2007',
+          funding: '$30M (Series C)',
+          revenue: '~$25M ARR (est.)',
+          model: 'Price transparency tool + shop directory. Лиды для shops, не marketplace.',
+          strength: 'SEO-трафик, данные о ценах, партнёрство с USAA/CarGurus.',
+          weakness: 'Нет мобильной услуги — только referral к шопу. Нет транзакции. Старая бизнес-модель (лиды).',
+          preempt: 'Фундаментально разные бизнес-модели — RepairPal не станет marketplace без полной перестройки.',
+        },
+        {
+          name: 'Take5 Oil Change',
+          color: '#7F8C8D',
+          founded: '1984',
+          funding: 'Private (Driven Brands, NYSE: DRVN)',
+          revenue: '$1.5B+ (Driven Brands total)',
+          model: '«Drive-thru» oil change. Нет appointment, нет mobile, chain format (1200+ locations).',
+          strength: 'Brand recognition, speed (10 min), масштаб в Sunbelt (FL, TX, SE).',
+          weakness: 'Физически bound — надо приехать. Только oil change. Нет digital layer. Нет subscription.',
+          preempt: 'CarETA не конкурирует напрямую — мы заменяем поездку в шоп, а не шоп. Разные jobs-to-be-done.',
+        },
+      ].map((c, i) => (
+        <motion.div key={i} className="lnch-comp-deep-card"
+          initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.07 }}>
+          <div className="lnch-comp-deep-header">
+            <span className="lnch-comp-deep-name">{c.name}</span>
+            <span className="lnch-comp-deep-meta">{c.founded} · {c.funding} · {c.revenue}</span>
+          </div>
+          <div className="lnch-comp-deep-body">
+            <div className="lnch-comp-deep-row">
+              <span className="lnch-comp-deep-label">Модель</span>
+              <span>{c.model}</span>
+            </div>
+            <div className="lnch-comp-deep-row">
+              <span className="lnch-comp-deep-label" style={{ color: '#1C6B3A' }}>Сильное</span>
+              <span>{c.strength}</span>
+            </div>
+            <div className="lnch-comp-deep-row">
+              <span className="lnch-comp-deep-label" style={{ color: '#C0392B' }}>Слабое</span>
+              <span>{c.weakness}</span>
+            </div>
+            <div className="lnch-comp-deep-row" style={{ background: 'rgba(200,134,10,0.05)', borderRadius: 3, padding: '0.4rem 0.5rem' }}>
+              <span className="lnch-comp-deep-label" style={{ color: 'var(--accent)' }}>Упреждение</span>
+              <span style={{ fontStyle: 'italic' }}>{c.preempt}</span>
+            </div>
+          </div>
+        </motion.div>
+      ))}
+
+      <WavyDivider />
+
       {/* Moats */}
       <h3 className="ed-section-title" style={{ marginTop: '1.5rem' }}>Конкурентные moat'ы CarETA</h3>
       <div className="lnch-moats-grid">
@@ -4389,62 +4626,82 @@ function SlideKickoffQuestions() {
   const questions = [
     {
       n: '01',
-      title: 'Geographic strategy',
-      text: 'После Miami — какой второй город? FL Tampa или сразу TX / CA для market test? Выбор влияет на наём шопов и маркетинговый бюджет.',
+      title: 'После Miami — какой второй город?',
+      text: 'После Miami — FL Tampa или сразу TX / CA для market test? Выбор влияет на наём шопов и маркетинговый бюджет.',
+      whyMatters: 'Разные города — разные партнёры-провайдеры, разные CAC, разные regulatory требования. Заранее решить это — значит не делать одну и ту же работу дважды.',
+      whatItMeans: 'Tampa — логичный шаг, один рынок (FL). Texas — другой климат, другие клиенты, другие страховые. Рекомендуем Tampa для второго шага.',
       color: '#1C5C8F',
     },
     {
       n: '02',
-      title: 'ICP-приоритет',
-      text: 'Из 8 групп бизнес-модели — какая beachhead для первых 6 месяцев? Рекомендуем busy professionals в Miami: высокий LTV, низкая ценовая чувствительность.',
+      title: 'Кто первый целевой клиент?',
+      text: 'Из 8 целевых групп бизнес-модели — на кого делаем основную ставку в первые 6 месяцев? Рекомендуем busy professionals в Miami: высокий LTV, низкая ценовая чувствительность.',
+      whyMatters: 'Разные аудитории — разный маркетинг, разные услуги, разный UX. Нельзя одновременно хорошо делать всё для всех. Нужна одна конкретная «первая аудитория».',
+      whatItMeans: 'Busy professionals (юристы, риэлторы, врачи, предприниматели) — готовы платить за время. Самый высокий LTV при самом низком CAC в Miami. Они ценят удобство, а не цену.',
       color: '#C0392B',
     },
     {
       n: '03',
-      title: 'EV focus yes / no',
-      text: 'Запускать EV-категорию в MVP или дождаться второго города? В FL доля EV ниже CA, но растёт. Добавление EV требует специализированных шопов.',
+      title: 'Добавляем EV-услуги сразу или позже?',
+      text: 'Запускаем EV-категорию в MVP или откладываем до второго города? В FL доля EV ниже CA, но растёт. Добавление EV требует специализированных шопов с сертификацией.',
+      whyMatters: 'EV-шопы — отдельный тип партнёров с другим обучением и инструментами. Если решим добавить в MVP — нужно начать их онбординг прямо сейчас.',
+      whatItMeans: 'Наша рекомендация: добавить EV в MVP как ограниченную beta-категорию с 3–5 сертифицированными шопами. Рост ниши оправдывает риск.',
       color: '#D68910',
     },
     {
       n: '04',
-      title: 'B2B pivot',
-      text: 'Запускать B2B (fleet, tradesmen) с первого дня или после product-market fit на B2C? B2B даёт предсказуемый доход, но требует другого sales-процесса.',
+      title: 'B2B с первого дня или после?',
+      text: 'Запускаем B2B (автопарки, tradesmen — мастера HVAC/сантехники с рабочими машинами) с первого дня или после product-market fit на B2C? B2B даёт предсказуемый доход, но требует другого процесса продаж.',
+      whyMatters: 'B2B — стабильный договорной доход. Но сначала нужно доказать продукт на обычных клиентах. Попытка делать и то и другое с нуля размывает фокус.',
+      whatItMeans: 'Рекомендуем: B2B как приоритет с месяца 3, не с дня 1. Первый B2B-клиент — компания из нашей сети: HVAC-бизнес или plumber с парком машин.',
       color: '#1C6B3A',
     },
     {
       n: '05',
-      title: 'Insurance partnership timeline',
-      text: 'Подписание pilot со страховой — Q1 или Q2? Geico / State Farm / Progressive имеют разные procurement-циклы. Чем раньше начать — тем лучше.',
+      title: 'Когда начинаем переговоры со страховыми?',
+      text: 'Подписание пилота со страховой — Q1 или Q2? Geico / State Farm / Progressive имеют разные циклы согласования. Чем раньше начать — тем лучше.',
+      whyMatters: 'Страховые компании согласовывают партнёрства 6–12 месяцев. Чтобы к Q4 иметь работающую интеграцию — стучаться нужно прямо сейчас.',
+      whatItMeans: 'Первый шаг — «теплые» интро через LinkedIn или отраслевые конференции (Digital Insurance Agenda, InsureTech Connect). Нужны 3 meeting к концу Q1.',
       color: '#6B3A8F',
     },
     {
       n: '06',
-      title: 'Tier system',
-      text: 'Standard / Premium / White-Glove — реализовать с первого релиза или итеративно? С первого релиза — сложнее, но дешевле переделывать потом.',
+      title: 'Три уровня обслуживания — запускаем сразу или поэтапно?',
+      text: 'Standard / Premium / White-Glove — реализовать с первого релиза или вводить постепенно? С первого релиза — сложнее, но дешевле переделывать потом.',
+      whyMatters: 'Если tier-систему добавлять после запуска — нужно переделывать pricing engine, UI, договора с шопами. Это дорого. Лучше заложить с нуля, даже если вначале будет только 2 уровня.',
+      whatItMeans: 'Наш план: Standard + Premium с дня 1, White-Glove добавить в месяце 2 для 3–5 «белых перчаток» сервисов (детейлинг, concierge, VIP эвакуация).',
       color: '#B86A00',
     },
     {
       n: '07',
-      title: 'Microinsurance go-live',
-      text: 'Запуск $9.99–59.99 подписок с MVP или после 1000 активных юзеров? Страховые продукты требуют лицензий — начинать compliance работу нужно сейчас.',
+      title: 'Микростраховка — с MVP или позже?',
+      text: 'Запуск страховых мини-продуктов ($9.99–59.99/мес) с MVP или после 1000 активных пользователей? Страховые продукты требуют лицензий — compliance нужно начинать сейчас.',
+      whyMatters: 'Microinsurance — один из главных revenue stream в бизнес-модели. Но без лицензии продавать страховку в США незаконно. Процесс лицензирования занимает 3–6 месяцев.',
+      whatItMeans: 'Рекомендуем: найти MGA (Managing General Agent — посредника с уже имеющейся лицензией) и запустить под его лицензией. Это стандартная схема для InsurTech стартапов.',
       color: '#C0392B',
     },
     {
       n: '08',
-      title: 'Sober driver licensing',
-      text: 'Проверка регуляторики Florida — есть ли restrictions на этот сервис в FL? В некоторых штатах нужна TNC-лицензия, в других нет.',
+      title: 'Trober driver — нужна ли специальная лицензия во Флориде?',
+      text: 'Проверка регуляторики Florida — есть ли ограничения на sober driver в FL? В некоторых штатах нужна лицензия транспортной компании (TNC), в других нет.',
+      whyMatters: 'Если запустить без нужной лицензии — штраф или принудительная остановка сервиса в разгар сезона. Нужно знать ответ до первой рекламы.',
+      whatItMeans: 'В FL TNC-лицензия нужна только если водитель использует личное транспортное средство. Если клиент садится в свою машину с нашим водителем — это другая модель. Нужен юридический мнение FL-адвоката.',
       color: '#1C5C8F',
     },
     {
       n: '09',
-      title: 'AI inspection via phone',
-      text: 'Включать в MVP как differentiator или Phase 2? AI inspection требует ML-модели или партнёра (Ravin AI, Monk AI). Влияет на бюджет и timeline.',
+      title: 'AI-осмотр через телефон — в MVP или нет?',
+      text: 'Включать функцию «клиент снимает фото, AI определяет повреждения» в MVP или Phase 2? AI-инспекция требует ML-модели или партнёра (Ravin AI, Monk AI). Влияет на бюджет и сроки.',
+      whyMatters: 'Это дифференциатор который нельзя купить — его надо строить. Если конкурент запустит раньше — потеряем часть уникальности. Зато он требует серьёзной разработки.',
+      whatItMeans: 'Рекомендуем: интеграция с Ravin AI или Monk AI (готовые SDK для мобильных инспекций, $0.50–5.00 за фото) как быстрый путь. Своя ML-модель — месяцы работы.',
       color: '#D68910',
     },
     {
       n: '10',
-      title: 'Brand wording final',
-      text: 'Остановиться на «Your car. Zero stress. We handle the rest.» или провести customer research? Tagline влияет на ad copy, onboarding и pitch deck.',
+      title: 'Финальный слоган бренда',
+      text: 'Остановиться на «Your car. Zero stress. We handle the rest.» или провести customer research? Слоган влияет на рекламные объявления, онбординг и инвестиционный deck.',
+      whyMatters: 'Слоган — это 5 слов которые человек видит в рекламе, на сайте, в App Store. От него зависит первое впечатление и конверсия в установку.',
+      whatItMeans: 'Текущий вариант сильный. Но рекомендуем 2-недельный A/B тест на Meta с 3 вариантами слогана перед финализацией — $500 бюджета даст реальный ответ от рынка.',
       color: '#1C6B3A',
     },
   ]
@@ -4452,10 +4709,10 @@ function SlideKickoffQuestions() {
   return (
     <div className="slide-content">
       <div className="ed-eyebrow">Аудит каталога · Следующий шаг</div>
-      <h2 className="ed-title">Вопросы к клиенту перед финализацией</h2>
+      <h2 className="ed-title">10 вопросов перед финализацией — разбираем вместе</h2>
       <p className="ed-lead">
-        10 вопросов, ответы на которые определяют архитектуру MVP, первый город и приоритеты разработки.
-        Рекомендуем разобрать их на первом рабочем звонке.
+        Это не список «подумайте сами». Каждый вопрос ниже — с нашим видением ответа и объяснением почему он важен именно сейчас.
+        Рекомендуем разобрать на первом рабочем звонке — уйдёт 45–60 минут.
       </p>
 
       <div className="lnch-questions-grid">
@@ -4467,6 +4724,14 @@ function SlideKickoffQuestions() {
             <div className="lnch-question-n" style={{ color: q.color }}>{q.n}</div>
             <div className="lnch-question-title">{q.title}</div>
             <div className="lnch-question-text">{q.text}</div>
+            <div className="lnch-question-why">
+              <span className="lnch-question-why-label">Почему это важно</span>
+              {q.whyMatters}
+            </div>
+            <div className="lnch-question-what">
+              <span className="lnch-question-what-label" style={{ color: q.color }}>Наше видение</span>
+              {q.whatItMeans}
+            </div>
           </motion.div>
         ))}
       </div>
@@ -4485,11 +4750,14 @@ function SlideKickoffRoadmap() {
       period: 'Неделя 1',
       subtitle: 'После approval этого документа',
       color: '#C0392B',
+      owner: 'Castells + CarETA founder',
+      deliverable: 'Service catalog v2 PDF + wireframes набросок',
+      successCriteria: 'Top-10 согласован обеими сторонами, pricing framework зафиксирован в документе',
       items: [
-        'Финализация Top-10 услуг для MVP с клиентом',
-        'Workshop с CarETA founder: ICP priority, geo strategy, tier-system decision',
-        'Service catalog v2 — структурированный с Standard / Premium / White-Glove tiers и pricing framework',
-        'Wireframes для outcome-based UX в клиентском приложении',
+        'Финализация Top-10 услуг для MVP с командой CarETA',
+        'Рабочий звонок: ICP, гео-стратегия, tier-система — принять решения по всем 10 вопросам из предыдущего слайда',
+        'Service catalog v2 — структурированный с Standard / Premium / White-Glove и pricing framework',
+        'Wireframes для outcome-based UX в клиентском приложении (набросок, не финал)',
       ],
       result: 'Согласованный Top-10 + pricing framework + wireframes',
     },
@@ -4497,11 +4765,14 @@ function SlideKickoffRoadmap() {
       period: 'Неделя 2',
       subtitle: 'Инфраструктура и партнёры',
       color: '#D68910',
+      owner: 'Castells tech team + CarETA ops',
+      deliverable: 'API spec doc + onboarding скрипт для шопов',
+      successCriteria: 'Первые 5 шопов подписали LOI (letter of intent). Stripe Connect тест-аккаунт работает.',
       items: [
-        'Onboarding script для первых 50 шопов в Miami (cold outreach + demo)',
-        'API contracts: Stripe Connect эскроу-flow, Twilio SMS-flow, Maps geocoding',
-        'AI-prompts для customer-facing chat (включая outcome detection)',
-        'Dashboard v0 для admin-панели',
+        'Скрипт для онбординга первых 50 шопов в Miami (холодный outreach + демо-презентация)',
+        'API контракты: Stripe Connect эскроу-поток, Twilio SMS-уведомления, Google Maps геокодинг',
+        'AI-промпты для чата с клиентом (распознавание ситуации + подбор услуги)',
+        'Первая версия admin-панели для управления заказами',
       ],
       result: 'Onboarding-воронка для шопов + API spec + AI-prompts',
     },
@@ -4509,11 +4780,14 @@ function SlideKickoffRoadmap() {
       period: 'Недели 3–4',
       subtitle: 'Beta и первые реальные заказы',
       color: '#1C5C8F',
+      owner: 'Вся команда',
+      deliverable: 'Отчёт с данными первых 50 заказов',
+      successCriteria: '≥ 50 завершённых заказов, NPS ≥ 50, время диспетчеризации < 8 минут',
       items: [
-        'Beta launch private — 5 тестовых клиентов на 3 услуги (mobile wash, roadside, pre-purchase)',
-        'Live tracking первых 50 заказов с full instrumentation',
-        'Iteration loop — еженедельный sprint review',
-        'Insurance partnership outreach: 3 pilot meetings с Geico / State Farm / Progressive',
+        'Закрытая beta — 5 тестовых клиентов на 3 услуги (мобильная мойка, аварийная помощь, предпродажная инспекция)',
+        'Live-трекинг первых 50 заказов с полной инструментацией (каждое событие логируется)',
+        'Итерационный цикл — еженедельный sprint review каждую пятницу',
+        'Первые переговоры со страховыми: 3 встречи с Geico / State Farm / Progressive',
       ],
       result: 'Первые реальные заказы + данные для итерации',
     },
@@ -4524,8 +4798,8 @@ function SlideKickoffRoadmap() {
       <div className="ed-eyebrow">Аудит каталога · Roadmap</div>
       <h2 className="ed-title">Что дальше — первые 30 дней</h2>
       <p className="ed-lead">
-        Конкретный план первого месяца после approval этого документа. Без абстракций — каждая неделя
-        заканчивается конкретным deliverable.
+        Конкретный план первого месяца после approval этого документа. Каждая неделя заканчивается чётким
+        deliverable, ответственным и критерием успеха.
       </p>
 
       <div className="lnch-roadmap-wrap">
@@ -4548,6 +4822,20 @@ function SlideKickoffRoadmap() {
               <div className="lnch-roadmap-result">
                 <span className="lnch-roadmap-result-label">Результат:</span>
                 {w.result}
+              </div>
+              <div className="lnch-roadmap-meta">
+                <div className="lnch-roadmap-meta-row">
+                  <span className="lnch-roadmap-meta-label">Ответственный</span>
+                  <span className="lnch-roadmap-meta-val">{w.owner}</span>
+                </div>
+                <div className="lnch-roadmap-meta-row">
+                  <span className="lnch-roadmap-meta-label">Deliverable</span>
+                  <span className="lnch-roadmap-meta-val">{w.deliverable}</span>
+                </div>
+                <div className="lnch-roadmap-meta-row">
+                  <span className="lnch-roadmap-meta-label" style={{ color: '#1C6B3A' }}>Критерий успеха</span>
+                  <span className="lnch-roadmap-meta-val" style={{ color: '#1C6B3A' }}>{w.successCriteria}</span>
+                </div>
               </div>
             </div>
           </motion.div>
