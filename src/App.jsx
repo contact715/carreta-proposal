@@ -2050,6 +2050,1479 @@ function SlideFAQ() {
   )
 }
 
+// ─── PARTNERSHIP SLIDES ──────────────────────────────────────────────────────
+
+function SlidePartnershipDeal() {
+  return (
+    <div className="slide-content">
+      <div className="ed-eyebrow">Партнерство · Итоги переговоров</div>
+      <h2 className="ed-title">Формат сотрудничества</h2>
+      <p className="ed-lead" style={{ maxWidth: 720 }}>
+        После серии переговоров мы пришли к модели, которая устраивает обе стороны.
+        Полный фокус на Carreta с параллельным развитием Mosco AI за счет собственных продаж.
+      </p>
+
+      <div className="prob-cards" style={{ maxWidth: 780 }}>
+        {[
+          {
+            n: '01',
+            title: '15% от Carreta',
+            text: 'Команда Castells Media получает 15% от чистой прибыли Carreta как компенсацию за разработку, архитектуру и управление проектом. Это не зарплата, это доля в результате.'
+          },
+          {
+            n: '02',
+            title: '15% от Mosco AI',
+            text: 'Партнеры получают 15% от чистой прибыли Mosco AI. Проект развивается параллельно на средства от текущих продаж и клиентов. Уже сейчас приносит доход.'
+          },
+          {
+            n: '03',
+            title: 'Перспектива интеграции',
+            text: 'Carreta и Mosco AI работают в смежных рынках. Когда Carreta выйдет на 90% готовности, интегрируем Mosco AI для автоматизации шопов. Два продукта усиливают друг друга.'
+          },
+        ].map((p, i) => (
+          <motion.div key={i} className="prob-card"
+            initial={{ opacity: 0, x: -12 }} whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.1 }}>
+            <div className="prob-num">{p.n}</div>
+            <div>
+              <h4>{p.title}</h4>
+              <p>{p.text}</p>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      <WavyDivider />
+
+      <div className="ed-pullquote" style={{ textAlign: 'center', borderLeft: 'none', paddingLeft: 0, maxWidth: 640 }}>
+        Мы не нанимаемся на работу. Мы заходим как партнеры с прямой мотивацией довести продукт до результата.
+        Наша выгода привязана к вашей выгоде.
+      </div>
+    </div>
+  )
+}
+
+function SlideRoadmapStartup() {
+  const phases = [
+    {
+      month: 'Месяц 1',
+      title: 'Дизайн + Архитектура',
+      hiring: 'UI/UX дизайнер ($2K), Backend ($4K)',
+      tasks: [
+        'Согласование всех экранов клиентского и шоп-приложения',
+        'Архитектурный документ: база данных, API, безопасность',
+        'Настройка GitHub, CI/CD, разграничение доступов',
+        'Backend-разработчик начинает серверную часть параллельно с дизайном',
+      ],
+      result: 'Утвержденный дизайн + работающий скелет backend',
+    },
+    {
+      month: 'Месяц 2',
+      title: 'Мобилка + Backend',
+      hiring: 'Mobile ($3K), Продажник ($2K+%)',
+      tasks: [
+        'Верстка клиентского приложения по утвержденному дизайну',
+        'Backend: API для заказов, оплаты, геолокации',
+        'Интеграция Stripe Connect для платежей',
+        'Продажник начинает подключать первые шопы',
+      ],
+      result: 'Рабочий прототип мобилки + первые шопы в воронке',
+    },
+    {
+      month: 'Месяц 3-4',
+      title: 'MVP + Первые заказы',
+      hiring: 'Frontend ($3K) для веб-кабинета',
+      tasks: [
+        'Доработка мобилки до стабильного MVP',
+        'Веб-кабинет для шопов: управление заказами, расписание',
+        'Admin-панель Carreta: мониторинг, аналитика',
+        'Beta-тестирование с 5-10 реальными шопами в Майами',
+      ],
+      result: 'Работающий MVP с первыми реальными заказами',
+    },
+    {
+      month: 'Месяц 5-6',
+      title: 'Масштабирование',
+      hiring: 'Оптимизация команды по результатам',
+      tasks: [
+        'AI фото-диагностика состояния авто',
+        'Push-уведомления, рейтинги, отзывы',
+        'Запуск в App Store и Google Play',
+        'Активное привлечение шопов и клиентов',
+      ],
+      result: '50+ шопов, первые стабильные заказы через платформу',
+    },
+  ]
+  return (
+    <div className="slide-content">
+      <div className="ed-eyebrow">Партнерство · Roadmap</div>
+      <h2 className="ed-title">Этапы разработки и найм</h2>
+      <p className="ed-lead">Конкретный план по месяцам: кого нанимаем, что делаем, какой результат получаем.</p>
+
+      <div className="ds-stages">
+        {phases.map((p, i) => (
+          <div key={i} className="ds-stage-row">
+            <div className="ds-stage-left">
+              <div className="ds-stage-n">{i + 1}</div>
+              <div className="ds-stage-name">{p.month}</div>
+              <div className="ds-stage-analogy">{p.title}</div>
+            </div>
+            <div className="ds-stage-mid">
+              <div className="ds-stage-weeks" style={{ fontSize: '0.75rem' }}>{p.hiring}</div>
+            </div>
+            <div className="ds-stage-right">
+              <div className="ds-stage-result">{p.result}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <WavyDivider />
+
+      <div className="ed-pullquote" style={{ marginTop: '1rem' }}>
+        Если кто-то не нужен после определенного этапа, сокращаем. Если нужно усилить, нанимаем.
+        Команда гибкая, не раздутая.
+      </div>
+    </div>
+  )
+}
+
+function SlideBudgetPlan() {
+  const rows = [
+    { role: 'Backend-разработчик (core)', cost: '$4,000', when: 'С 1-го месяца', note: 'Senior, опыт в enterprise. Архитектура, API, безопасность.' },
+    { role: 'Mobile-разработчик', cost: '$3,000', when: 'Со 2-го месяца', note: 'iOS + Android (React Native / Flutter).' },
+    { role: 'UI/UX дизайнер', cost: '$2,000', when: 'С 1-го месяца', note: 'Все экраны, согласование. Можно сократить после 2-3 мес.' },
+    { role: 'Продажник', cost: '$2,000 + %', when: 'Со 2-го месяца', note: 'Подключение шопов. Оклад минимальный, доход с продаж.' },
+    { role: 'Маркетинг / SMM', cost: '$1,500', when: 'С 3-го месяца', note: 'Google Ads, контент, дизайн. Можно стартовать позже.' },
+    { role: 'Рекламный бюджет', cost: '$2,500', when: 'С 3-го месяца', note: 'Google Ads, Facebook. Масштабируется по результатам.' },
+  ]
+  return (
+    <div className="slide-content">
+      <div className="ed-eyebrow">Партнерство · Бюджет</div>
+      <h2 className="ed-title">Распределение средств</h2>
+      <p className="ed-lead">Прозрачная структура расходов. Каждый доллар привязан к конкретному человеку или задаче.</p>
+
+      <div className="an-table-wrap">
+        <table className="an-table">
+          <thead>
+            <tr><th>Роль</th><th>Стоимость/мес</th><th>Когда</th><th>Зачем</th></tr>
+          </thead>
+          <tbody>
+            {rows.map((r, i) => (
+              <tr key={i}>
+                <td className="an-td-name">{r.role}</td>
+                <td className="an-td-num" style={{ color: 'var(--green, #2a7d4f)' }}>{r.cost}</td>
+                <td>{r.when}</td>
+                <td className="an-td-note">{r.note}</td>
+              </tr>
+            ))}
+            <tr style={{ fontWeight: 600, borderTop: '2px solid var(--border)' }}>
+              <td>Итого (месяц 1-2)</td>
+              <td className="an-td-num">~$15,000/мес</td>
+              <td colSpan={2}>$30,000 на первые два месяца. Далее $15K/мес пока строим Carreta.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div className="prob-cards" style={{ maxWidth: 780, marginTop: '2rem' }}>
+        {[
+          {
+            n: '01',
+            title: 'Первые 2 месяца: $30,000',
+            text: 'Стартовая инвестиция. Нанимаем core-команду, запускаем дизайн и backend. Через 2 месяца оцениваем прогресс и решаем по дальнейшему финансированию.'
+          },
+          {
+            n: '02',
+            title: 'Далее: $15K/мес пока строим Carreta',
+            text: 'Пока идет разработка Carreta, ежемесячно $15K на команду и маркетинг. Это фиксированная сумма на весь период строительства продукта до запуска.'
+          },
+          {
+            n: '03',
+            title: 'Контроль и прозрачность',
+            text: 'GitHub с первого дня. Еженедельные демо. Можете подключить своего технического специалиста для ревью кода. Полная прозрачность.'
+          },
+        ].map((p, i) => (
+          <motion.div key={i} className="prob-card"
+            initial={{ opacity: 0, x: -12 }} whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.1 }}>
+            <div className="prob-num">{p.n}</div>
+            <div>
+              <h4>{p.title}</h4>
+              <p>{p.text}</p>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function SlideMoscoSynergy() {
+  return (
+    <div className="slide-content">
+      <div className="ed-eyebrow">Партнерство · Mosco AI</div>
+      <h2 className="ed-title">Mosco AI и Carreta: одна экосистема</h2>
+      <p className="ed-lead" style={{ maxWidth: 720 }}>
+        Mosco AI уже работает и приносит доход. Вчера подключили Enterprise-клиента на $3,000/мес.
+        8 активных клиентов. Продукт на 90% готов. Он не конкурирует с Carreta, а дополняет ее.
+      </p>
+
+      <div className="prob-cards" style={{ maxWidth: 780 }}>
+        {[
+          {
+            n: '01',
+            title: 'Что такое Mosco AI',
+            text: 'Платформа AI-агентов для локальных бизнесов. Агенты отвечают на звонки, переписываются в мессенджерах, букают клиентов, отправляют напоминания. Работает 24/7.'
+          },
+          {
+            n: '02',
+            title: 'Как это помогает Carreta',
+            text: 'Когда Carreta подключит шопы, им понадобится автоматизация. Mosco AI может стать встроенным модулем: AI-ассистент для каждого шопа. Дополнительная ценность и retention.'
+          },
+          {
+            n: '03',
+            title: 'Текущая стратегия',
+            text: 'Полный фокус на Carreta. Mosco AI развивается параллельно на доходы от клиентов. $30K стартовой инвестиции идет целиком в Carreta. Когда Carreta будет на 90%, обсуждаем интеграцию.'
+          },
+        ].map((p, i) => (
+          <motion.div key={i} className="prob-card"
+            initial={{ opacity: 0, x: -12 }} whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.1 }}>
+            <div className="prob-num">{p.n}</div>
+            <div>
+              <h4>{p.title}</h4>
+              <p>{p.text}</p>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      <WavyDivider />
+
+      <div className="ed-pullquote" style={{ textAlign: 'center', borderLeft: 'none', paddingLeft: 0, maxWidth: 640 }}>
+        Mosco AI генерирует доход. Carreta будет генерировать масштаб.
+        Вместе они создают замкнутую экосистему: маркетплейс + автоматизация шопов.
+      </div>
+    </div>
+  )
+}
+
+// ─── CHAPTER: ЗАПУСК УЖЕ ИДЁТ ────────────────────────────────────────────────
+
+// SUB 1: Статус запуска
+function SlideAuditLaunchStatus() {
+  const [activeTracker, setActiveTracker] = useState(null)
+
+  const columns = [
+    {
+      id: 'done',
+      label: 'Готово',
+      color: '#1C6B3A',
+      bg: 'rgba(28,107,58,0.08)',
+      borderColor: 'rgba(28,107,58,0.3)',
+      pill: '#1C6B3A',
+      items: [
+        'Бизнес-модель и финансовая структура (Uber-модель)',
+        'Юридическая архитектура (Delaware C-Corp + 1099 + ABC-test)',
+        'IT-архитектура: 6 интерфейсов + бэкенд + 4 интеграции',
+        'Маркетплейс-стек: Stripe Connect + Twilio + Maps + AI',
+        'Брендинг и позиционирование',
+        'Аудит каталога — 17 пробелов, 100+ услуг (этот документ)',
+      ],
+    },
+    {
+      id: 'wip',
+      label: 'В работе',
+      color: '#B86A00',
+      bg: 'rgba(184,106,0,0.07)',
+      borderColor: 'rgba(184,106,0,0.3)',
+      pill: '#B86A00',
+      items: [
+        'Клиентское приложение — каталог, AI-ассистент, оплата',
+        'Приложение шопа — заявки, навигация, выплаты',
+        'Веб-кабинет шопа — профиль, прайс, аналитика',
+        'Admin-панель Carreta — модерация, KPI, саппорт',
+        'Бэкенд API — заказы, рейтинги, OBD',
+        'Onboarding первых 20 шопов в Miami',
+      ],
+    },
+    {
+      id: 'next',
+      label: 'Следующий этап',
+      color: '#1C5C8F',
+      bg: 'rgba(28,92,143,0.07)',
+      borderColor: 'rgba(28,92,143,0.3)',
+      pill: '#1C5C8F',
+      items: [
+        'Beta-launch Miami: 50 шопов, 500 клиентов',
+        'Страховая партнёрка (Geico / State Farm pilot)',
+        'Микрострахование колёс и стекла',
+        'BNPL-интеграция (Affirm / Klarna)',
+        'Франшизная программа для мобильных моек',
+      ],
+    },
+    {
+      id: 'q3',
+      label: 'Q3 и далее',
+      color: '#6B3A8F',
+      bg: 'rgba(107,58,143,0.07)',
+      borderColor: 'rgba(107,58,143,0.3)',
+      pill: '#6B3A8F',
+      items: [
+        'Расширение: FL, TX, CA, NY (5–10 городов)',
+        'OBD-устройства собственного бренда',
+        'Корпоративный портал для fleet-клиентов',
+        'Международный запуск (EU pilot)',
+      ],
+    },
+  ]
+
+  const trackers = [
+    { label: 'Frontend MVP', pct: 65, color: '#1C5C8F' },
+    { label: 'Backend MVP', pct: 70, color: '#1C6B3A' },
+    { label: 'Admin-панель', pct: 40, color: '#B86A00' },
+    { label: 'Shop-кабинет', pct: 35, color: '#6B3A8F' },
+    { label: 'AI-ассистент', pct: 25, color: '#C8860A' },
+    { label: 'Onboarding (шопы)', pct: 30, color: '#1C6B3A' },
+  ]
+
+  return (
+    <div className="slide-content">
+      <div className="ed-eyebrow">Запуск уже идёт · Статус</div>
+      <h2 className="ed-title">Что уже в работе</h2>
+      <p className="ed-lead">
+        Команда Castells начала разработку платформы. Ниже — актуальный статус по каждому направлению.
+        Зелёное уже сделано. Оранжевое строится прямо сейчас.
+      </p>
+
+      <div className="lnch-status-board">
+        {columns.map((col, ci) => (
+          <motion.div key={col.id} className="lnch-status-col"
+            style={{ borderTop: `3px solid ${col.color}`, background: col.bg }}
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.5, delay: ci * 0.1 }}>
+            <div className="lnch-status-col-header" style={{ color: col.color }}>
+              {col.label}
+            </div>
+            <div className="lnch-status-items">
+              {col.items.map((item, ii) => (
+                <div key={ii} className="lnch-status-item">
+                  <span className="lnch-pill" style={{ background: col.pill + '20', color: col.pill, border: `1px solid ${col.pill}40` }}>
+                    {col.id === 'done' ? '✓' : col.id === 'wip' ? '●' : col.id === 'next' ? '→' : '◇'}
+                  </span>
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      <WavyDivider />
+
+      <h3 className="ed-section-title">Live Status Tracker</h3>
+      <p style={{ fontFamily: 'var(--sans)', fontSize: '0.95rem', color: 'var(--fg-mid)', marginBottom: '1.2rem' }}>
+        Текущий прогресс по ключевым модулям платформы
+      </p>
+      <div className="lnch-tracker-grid">
+        {trackers.map((t, i) => (
+          <motion.div key={i} className="lnch-tracker-row"
+            initial={{ opacity: 0, x: -16 }} whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.07 }}>
+            <div className="lnch-tracker-label">{t.label}</div>
+            <div className="lnch-tracker-bar-wrap">
+              <motion.div className="lnch-tracker-bar"
+                style={{ background: t.color }}
+                initial={{ width: 0 }}
+                whileInView={{ width: `${t.pct}%` }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.0, delay: i * 0.07 + 0.2, ease: [0.22, 1, 0.36, 1] }} />
+            </div>
+            <div className="lnch-tracker-pct" style={{ color: t.color }}>{t.pct}%</div>
+          </motion.div>
+        ))}
+      </div>
+
+      <div className="ed-pullquote" style={{ marginTop: '2rem' }}>
+        Это не питч «мы планируем». Это питч «мы уже строим». Каждый день в репозитории появляются новые коммиты.
+      </div>
+    </div>
+  )
+}
+
+// SUB 2: 17 пробелов
+function SlideAuditGaps() {
+  const gaps = [
+    { n: 1, title: 'EV-сегмент почти не закрыт', priority: 'High', color: '#C0392B', services: 14, why: '9% новых машин в США — электрики, в Калифорнии уже 20%+. Текущий каталог упоминает EV лишь в 3 пунктах. Растущий сегмент без конкурентного покрытия — открытое окно для захвата.', icon: '⚡' },
+    { n: 2, title: 'ADAS calibration отсутствует', priority: 'High', color: '#C0392B', services: 7, why: 'После любой замены лобового стекла, бампера или зеркала — обязательна по NHTSA с 2024 года. Очень маржинальная услуга, слабо конкурентная на marketplace.', icon: '🎯' },
+    { n: 3, title: 'Aftermarket / customization', priority: 'High', color: '#C0392B', services: 22, why: 'Рынок $60B+ в год в США. Идеальный формат для marketplace: разнотипные шопы, высокий средний чек, низкая ценовая эластичность.', icon: '🔧' },
+    { n: 4, title: 'Anti-theft / Security', priority: 'Medium', color: '#D68910', services: 10, why: 'Кражи каталитических конвертеров взорвались с 2021 года. Отдельная маржинальная ниша с нарастающим спросом в Miami и крупных городах.', icon: '🔒' },
+    { n: 5, title: 'Glass / windshield (полная категория)', priority: 'High', color: '#C0392B', services: 11, why: 'В каталоге слабо представлен. Rock chip repair — до $100, идеальна для мобильной модели. Высокая частота, быстрая сделка.', icon: '🪟' },
+    { n: 6, title: 'RV / Camper / Trailer / Boat', priority: 'Medium', color: '#D68910', services: 14, why: 'Огромный рынок Florida / Arizona / Texas. В текущем каталоге только "motor home cleaning". Сезонный но высокочековый сегмент.', icon: '🚐' },
+    { n: 7, title: 'Motorcycle / Powersports', priority: 'Low', color: '#27AE60', services: 8, why: 'Если CarETA = «всё что катается» — мотоциклы и ATV дают трафик и ширину охвата без существенных затрат на добавление.', icon: '🏍️' },
+    { n: 8, title: 'Pre-purchase / Selling — отдельный продукт', priority: 'High', color: '#C0392B', services: 11, why: 'Decision-point с максимальной готовностью платить. Mobile pre-purchase inspection — $200–400 средний чек, привлекает новых клиентов в воронку.', icon: '🔍' },
+    { n: 9, title: 'Hurricane / disaster services', priority: 'High', color: '#C0392B', services: 11, why: 'Miami-specific! Hurricane season — идеальный moment of relevance. В текущем каталоге — ноль. Конкурентный moat для регионального лидерства.', icon: '🌀' },
+    { n: 10, title: 'Microinsurance / warranty', priority: 'High', color: '#C0392B', services: 12, why: 'В бизнес-модели отдельный revenue stream ($12–20/мес), но в services list нет конкретных продуктов. Огромная упущенная подписочная категория.', icon: '🛡️' },
+    { n: 11, title: 'B2B сегменты не закрыты', priority: 'High', color: '#C0392B', services: 13, why: 'Used car dealers, auctions, rental cleanup, last-mile vans, government fleets — упущены. B2B дает предсказуемый recurring revenue с первого месяца.', icon: '🏢' },
+    { n: 12, title: 'Childcare / accessibility', priority: 'Medium', color: '#D68910', services: 9, why: 'CPST-сертифицированный inspection — премиум-услуга. Wheelchair conversion и hand controls — медленный рост, но высокая лояльность и уникальность.', icon: '👶' },
+    { n: 13, title: 'Documentation / digital twin', priority: 'High', color: '#C0392B', services: 12, why: 'Retention moat для платформы. Digital vehicle file = customer lock-in. Клиент уходит туда, где хранится история его машины.', icon: '📋' },
+    { n: 14, title: 'Outcome-based packages', priority: 'High', color: '#C0392B', services: 8, why: 'В разделе 25 обозначено, но не доведено. Для marketplace критично: клиент выбирает «I\'m stuck», а не «coolant flush».', icon: '📦' },
+    { n: 15, title: 'Membership tiers недостаточно дифференцированы', priority: 'Medium', color: '#D68910', services: 0, why: '16 планов без чёткой иерархии. Нужно 4–5 tier\'ов с upgrade path и visible value gap между уровнями.', icon: '⭐' },
+    { n: 16, title: 'Регуляторно-критичные услуги', priority: 'High', color: '#C0392B', services: 13, why: 'DOT inspection, smog check, VIN verification, bonded title, lemon law — compliance-pieces, обязательные для полноты платформы и доверия клиентов.', icon: '⚖️' },
+    { n: 17, title: 'Modern trends 2026', priority: 'Medium', color: '#D68910', services: 11, why: 'AI inspection via phone, live mechanic video consult, OBD-prediction — создают «wow it\'s 2026» ощущение и укрепляют бренд как инновационную платформу.', icon: '🤖' },
+  ]
+
+  const priorityLabel = { High: 'Высокий', Medium: 'Средний', Low: 'Низкий' }
+  const priorityColor = { High: '#C0392B', Medium: '#D68910', Low: '#27AE60' }
+
+  // Impact vs Effort positions for heatmap (x=effort 0-100, y=impact 0-100)
+  const heatmapDots = [
+    { n: 1, x: 45, y: 88, label: 'EV' },
+    { n: 2, x: 30, y: 92, label: 'ADAS' },
+    { n: 3, x: 60, y: 85, label: 'Aftermarket' },
+    { n: 4, x: 25, y: 68, label: 'Anti-theft' },
+    { n: 5, x: 20, y: 82, label: 'Glass' },
+    { n: 6, x: 55, y: 60, label: 'RV/Boat' },
+    { n: 7, x: 35, y: 45, label: 'Moto' },
+    { n: 8, x: 22, y: 90, label: 'Pre-purchase' },
+    { n: 9, x: 28, y: 78, label: 'Hurricane' },
+    { n: 10, x: 50, y: 88, label: 'Insurance' },
+    { n: 11, x: 65, y: 86, label: 'B2B' },
+    { n: 12, x: 70, y: 52, label: 'Childcare' },
+    { n: 13, x: 40, y: 80, label: 'Doc/Twin' },
+    { n: 14, x: 55, y: 84, label: 'Outcomes' },
+    { n: 15, x: 30, y: 62, label: 'Tiers' },
+    { n: 16, x: 35, y: 76, label: 'Regulatory' },
+    { n: 17, x: 45, y: 65, label: '2026 trends' },
+  ]
+
+  return (
+    <div className="slide-content">
+      <div className="ed-eyebrow">Аудит каталога · 17 пробелов</div>
+      <h2 className="ed-title">Глубокий аудит каталога услуг</h2>
+      <p className="ed-lead">
+        Текущий каталог из 31 категории — мощная база. Но в нём отсутствуют 17 крупных пластов услуг,
+        которые в 2026 году либо обязательны (ADAS calibration), либо растут двузначными процентами (EV),
+        либо являются маржинальными moat'ами для marketplace-модели.
+      </p>
+
+      {/* Heatmap — Impact vs Effort */}
+      <h3 className="ed-section-title">Матрица Impact × Effort</h3>
+      <p style={{ fontFamily: 'var(--sans)', fontSize: '0.9rem', color: 'var(--fg-mid)', marginBottom: '1rem' }}>
+        Высокий Impact + низкий Effort = приоритет первого дня
+      </p>
+      <div className="lnch-heatmap-wrap">
+        <svg className="lnch-heatmap-svg" viewBox="0 0 500 340" preserveAspectRatio="xMidYMid meet">
+          {/* Background zones */}
+          <rect x="0" y="0" width="250" height="170" fill="rgba(192,57,43,0.06)" rx="0" />
+          <rect x="250" y="0" width="250" height="170" fill="rgba(214,137,16,0.06)" rx="0" />
+          <rect x="0" y="170" width="250" height="170" fill="rgba(214,137,16,0.06)" rx="0" />
+          <rect x="250" y="170" width="250" height="170" fill="rgba(127,140,141,0.04)" rx="0" />
+          {/* Zone labels */}
+          <text x="125" y="20" textAnchor="middle" fill="rgba(192,57,43,0.5)" fontSize="10" fontFamily="Inter, sans-serif" fontWeight="600" letterSpacing="0.1em">ПРИОРИТЕТ 1</text>
+          <text x="375" y="20" textAnchor="middle" fill="rgba(214,137,16,0.5)" fontSize="10" fontFamily="Inter, sans-serif" fontWeight="600" letterSpacing="0.1em">ПРИОРИТЕТ 2</text>
+          <text x="125" y="188" textAnchor="middle" fill="rgba(214,137,16,0.4)" fontSize="9" fontFamily="Inter, sans-serif">Средний</text>
+          <text x="375" y="188" textAnchor="middle" fill="rgba(127,140,141,0.4)" fontSize="9" fontFamily="Inter, sans-serif">Отложить</text>
+          {/* Grid lines */}
+          <line x1="250" y1="0" x2="250" y2="340" stroke="rgba(15,15,14,0.1)" strokeWidth="1" strokeDasharray="4,4" />
+          <line x1="0" y1="170" x2="500" y2="170" stroke="rgba(15,15,14,0.1)" strokeWidth="1" strokeDasharray="4,4" />
+          {/* Axes labels */}
+          <text x="250" y="332" textAnchor="middle" fill="rgba(15,15,14,0.4)" fontSize="9" fontFamily="Inter, sans-serif">EFFORT →</text>
+          <text x="8" y="170" textAnchor="middle" fill="rgba(15,15,14,0.4)" fontSize="9" fontFamily="Inter, sans-serif" transform="rotate(-90,8,170)">IMPACT ↑</text>
+          <text x="12" y="12" fill="rgba(15,15,14,0.3)" fontSize="8" fontFamily="Inter, sans-serif">Высокий</text>
+          <text x="12" y="328" fill="rgba(15,15,14,0.3)" fontSize="8" fontFamily="Inter, sans-serif">Низкий</text>
+          <text x="8" y="12" fill="rgba(15,15,14,0.3)" fontSize="8" fontFamily="Inter, sans-serif">Низкий</text>
+          <text x="460" y="330" fill="rgba(15,15,14,0.3)" fontSize="8" fontFamily="Inter, sans-serif">Высокий</text>
+          {/* Dots */}
+          {heatmapDots.map((d) => {
+            const cx = (d.x / 100) * 500
+            const cy = (1 - d.y / 100) * 340
+            const dotColor = d.x < 50 && d.y > 70 ? '#C0392B' : d.x >= 50 && d.y > 70 ? '#D68910' : '#7F8C8D'
+            return (
+              <g key={d.n}>
+                <circle cx={cx} cy={cy} r="13" fill={dotColor} fillOpacity="0.15" stroke={dotColor} strokeWidth="1.5" />
+                <text x={cx} y={cy + 1} textAnchor="middle" dominantBaseline="middle" fill={dotColor} fontSize="9" fontFamily="Inter, sans-serif" fontWeight="700">{d.n}</text>
+                <text x={cx} y={cy + 18} textAnchor="middle" fill={dotColor} fontSize="7.5" fontFamily="Inter, sans-serif">{d.label}</text>
+              </g>
+            )
+          })}
+        </svg>
+      </div>
+
+      <WavyDivider />
+
+      <h3 className="ed-section-title" style={{ marginTop: '1.5rem' }}>Все 17 пробелов с деталями</h3>
+      <div className="lnch-gaps-grid">
+        {gaps.map((g, i) => (
+          <motion.div key={g.n} className="lnch-gap-card"
+            style={{ borderTop: `3px solid ${g.color}` }}
+            initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.4, delay: (i % 4) * 0.08 }}>
+            <div className="lnch-gap-top">
+              <span className="lnch-gap-num" style={{ color: g.color }}>{g.n}</span>
+              <span className="lnch-gap-icon">{g.icon}</span>
+            </div>
+            <div className="lnch-gap-title">{g.title}</div>
+            <div className="lnch-gap-why">{g.why}</div>
+            <div className="lnch-gap-footer">
+              <span className="lnch-priority-badge" style={{ background: g.color + '15', color: g.color, border: `1px solid ${g.color}40` }}>
+                {priorityLabel[g.priority]}
+              </span>
+              {g.services > 0 && (
+                <span className="lnch-services-count">+{g.services} услуг</span>
+              )}
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+// SUB 3: 100+ услуг — полный каталог
+function SlideAuditCatalog() {
+  const [openSection, setOpenSection] = useState([0, 1, 7, 9, 10])
+
+  const toggleSection = (i) => {
+    setOpenSection(prev =>
+      prev.includes(i) ? prev.filter(x => x !== i) : [...prev, i]
+    )
+  }
+
+  const catalog = [
+    {
+      title: 'EV-сегмент',
+      icon: '⚡',
+      color: '#C0392B',
+      count: 14,
+      services: [
+        'EV battery health diagnostics (через OBD-II + brand-specific tools)',
+        '12V auxiliary battery service (Tesla, Rivian — частая поломка)',
+        'Home charger installation coordination (Tesla Wall Connector, ChargePoint, Wallbox) — $1500–3000 за установку',
+        'Public charger troubleshooting',
+        'EV trip planning service (Plugshare / A Better Routeplanner консультация)',
+        'Battery pre-conditioning перед дальней поездкой',
+        'Software / firmware update assistance (Tesla OTA, обновление навигации)',
+        'EV tire service (специальные шины, частая ротация)',
+        'Regen brake fluid service',
+        'High-voltage battery coolant service',
+        'EV-specific detailing (без воды на high-voltage компонентах)',
+        'V2H / V2L setup (Vehicle-to-Home для F-150 Lightning, Ioniq 5)',
+        'DC fast charger coordination для сломавшихся EV',
+        'Range anxiety concierge — выезд с power bank / portable charger',
+      ],
+    },
+    {
+      title: 'ADAS calibration',
+      icon: '🎯',
+      color: '#C0392B',
+      count: 7,
+      services: [
+        'Front-facing camera calibration',
+        'Radar sensor calibration (после замены бампера)',
+        '360° camera system recalibration',
+        'Blind spot monitor calibration',
+        'Park assist sensor calibration',
+        'ADAS calibration coordination после collision',
+        'Pre-collision system diagnostic',
+      ],
+    },
+    {
+      title: 'Aftermarket / customization',
+      icon: '🔧',
+      color: '#C0392B',
+      count: 22,
+      services: [
+        'Window tinting (различный % VLT, ceramic vs dyed)',
+        'Aftermarket headlight upgrade (LED retrofit, HID conversion)',
+        'Fog light installation',
+        'Underglow / interior LED installation',
+        'Audio system upgrade (head unit, amps, subs)',
+        'Apple CarPlay / Android Auto retrofit для старых машин',
+        'Backup camera retrofit',
+        'Remote start retrofit',
+        'Dash cam install (front + rear + interior)',
+        'GPS tracker installation (anti-theft)',
+        'AirTag stash spot installation',
+        'Performance chip / ECU tune',
+        'Cold air intake installation',
+        'Cat-back exhaust installation',
+        'Lowering springs / coilovers',
+        'Lift kit installation (trucks / SUVs)',
+        'Roof rack / cargo box installation',
+        'Trailer hitch installation',
+        'Bike rack / ski rack installation',
+        'Running boards / step bars',
+        'Bedliner installation (trucks)',
+        'Tonneau cover installation (trucks)',
+      ],
+    },
+    {
+      title: 'Anti-theft / Security',
+      icon: '🔒',
+      color: '#D68910',
+      count: 10,
+      services: [
+        'Catalytic converter shield / cage installation (CatStrap, MillerCAT)',
+        'Catalytic converter etching (anti-theft VIN engraving)',
+        'VIN window etching',
+        'Steering wheel lock fitting (Club, Disklok)',
+        'Aftermarket alarm system install',
+        'Kill switch installation',
+        'GPS tracker subscription service',
+        'Faraday key pouch service (anti-relay attack)',
+        'Garage Defender installation',
+        'Tire lug nut lock installation',
+      ],
+    },
+    {
+      title: 'Glass / windshield',
+      icon: '🪟',
+      color: '#C0392B',
+      count: 11,
+      services: [
+        'Windshield rock chip repair (до $100, мобильная)',
+        'Windshield crack repair',
+        'Side window replacement',
+        'Rear window replacement',
+        'Sunroof / moonroof glass replacement',
+        'Sunroof leak diagnosis & repair',
+        'Window regulator + motor replacement',
+        'Privacy glass installation',
+        'Anti-theft window film',
+        'Heat-rejection ceramic film',
+        'Headlight lens replacement',
+      ],
+    },
+    {
+      title: 'RV / Camper / Trailer / Boat',
+      icon: '🚐',
+      color: '#D68910',
+      count: 14,
+      services: [
+        'RV pre-trip inspection',
+        'RV winterization / de-winterization',
+        'RV slide-out maintenance',
+        'RV roof seal check & repair',
+        'RV awning repair',
+        'RV waste tank cleaning',
+        'RV battery system check',
+        'Boat trailer service',
+        'Boat winterization',
+        'Travel trailer inspection',
+        '5th wheel inspection',
+        'Camper van conversion service',
+        'Trailer brake controller installation',
+        'Trailer light wiring repair',
+      ],
+    },
+    {
+      title: 'Motorcycle / Powersports',
+      icon: '🏍️',
+      color: '#27AE60',
+      count: 8,
+      services: [
+        'Motorcycle pickup / drop-off',
+        'Motorcycle inspection',
+        'Motorcycle winter storage prep',
+        'Motorcycle battery service',
+        'ATV / UTV service coordination',
+        'Scooter service',
+        'Track day prep service',
+        'Motorcycle apparel / gear delivery',
+      ],
+    },
+    {
+      title: 'Pre-purchase / Selling',
+      icon: '🔍',
+      color: '#C0392B',
+      count: 11,
+      services: [
+        'Mobile pre-purchase inspection ($200–400)',
+        'Carfax + AutoCheck report pulling',
+        'VIN history verification',
+        'Title check service (liens, salvage, flood)',
+        'Test drive accompaniment (механик едет с покупателем)',
+        'Independent mechanic second opinion',
+        'Negotiation coaching (что просить срезать с цены)',
+        'Off-site inspection at auction (Manheim / Copart)',
+        'Online listing analysis',
+        'Dealership F&I review',
+        'Trade-in valuation independent',
+      ],
+    },
+    {
+      title: 'Hurricane / disaster services',
+      icon: '🌀',
+      color: '#C0392B',
+      count: 11,
+      services: [
+        'Pre-hurricane vehicle prep',
+        'Hurricane garage relocation service',
+        'Window taping / mylar protection',
+        'Post-flood vehicle assessment',
+        'Flood damage cleanup (interior, electronics)',
+        'Saltwater corrosion protection',
+        'Salt-air detail (Miami coastal)',
+        'Wildfire evacuation prep (CA)',
+        'Tornado shelter relocation (TX)',
+        'Snow emergency preparation kit installation',
+        'Winter survival kit installation',
+      ],
+    },
+    {
+      title: 'Microinsurance / warranty',
+      icon: '🛡️',
+      color: '#C0392B',
+      count: 12,
+      services: [
+        'Tire & wheel protection plan ($12–15/мес)',
+        'Windshield / glass coverage ($8–10/мес)',
+        'Key fob replacement plan ($5–7/мес)',
+        'Interior protection plan',
+        'Paint protection plan',
+        'Roadside premium membership',
+        'Lockout coverage',
+        'Battery replacement coverage',
+        'Wear & tear waiver (для leased vehicles)',
+        'Pet damage coverage',
+        'Lost item recovery service',
+        'Diminished value claim assistance',
+      ],
+    },
+    {
+      title: 'B2B сегменты',
+      icon: '🏢',
+      color: '#C0392B',
+      count: 13,
+      services: [
+        'Used car dealer prep packages',
+        'Auction prep services (Manheim sellers)',
+        'Repossession recovery services',
+        'Rental car turnover service',
+        'Last-mile delivery van fleet maintenance',
+        'Rideshare driver fleet service',
+        'Government fleet',
+        'Construction company truck fleet',
+        'Plumber / electrician / HVAC tradesmen vans',
+        'School bus inspection coordination',
+        'Limo / black car service',
+        'Wedding car prep',
+        'Corporate executive fleet detail',
+      ],
+    },
+    {
+      title: 'Childcare / accessibility',
+      icon: '👶',
+      color: '#D68910',
+      count: 9,
+      services: [
+        'Certified Child Passenger Safety Technician inspection',
+        'LATCH system inspection',
+        'Booster seat fitting service',
+        'Child seat re-installation после детейлинга',
+        'Wheelchair-accessible vehicle conversion',
+        'Hand controls installation для disabled drivers',
+        'Pedal extender installation',
+        'Swivel seat installation (elderly)',
+        'Ramp / lift maintenance',
+      ],
+    },
+    {
+      title: 'Documentation / digital twin',
+      icon: '📋',
+      color: '#C0392B',
+      count: 12,
+      services: [
+        'Digital vehicle file creation',
+        'Lost service record reconstruction',
+        'Service history audit',
+        'VIN-decoded original equipment list',
+        'Maintenance schedule personalization',
+        'Annual vehicle health report (PDF от CarETA)',
+        'Cost-of-ownership tracking',
+        'Tax-deductible mileage log service',
+        'Insurance documentation organizer',
+        'Warranty tracking',
+        'Recall monitoring',
+        'Service due alerts',
+      ],
+    },
+    {
+      title: 'Регуляторно-критичные услуги',
+      icon: '⚖️',
+      color: '#C0392B',
+      count: 13,
+      services: [
+        'DOT inspection (commercial drivers — federal mandate)',
+        'CDL medical card coordination',
+        'Smog check / emissions (CA, NY обязательно)',
+        'VIN verification (CA, HI, ME)',
+        'Out-of-state title transfer',
+        'Bonded title processing',
+        'Salvage title rebuild documentation',
+        'Lemon law claim assistance',
+        'Recall completion verification',
+        'Diplomat plate process (NY, DC)',
+        'Apostille для vehicle export',
+        'Custom plate ordering',
+        'Disabled placard application',
+      ],
+    },
+    {
+      title: 'Modern trends 2026',
+      icon: '🤖',
+      color: '#D68910',
+      count: 11,
+      services: [
+        'Subscription-based car care (ежемесячная коробка как Dollar Shave Club для cars)',
+        'AI vehicle inspection via phone (клиент снимает 360° → AI оценивает)',
+        'Live video consultation with mechanic',
+        'Photo report после каждой услуги (premium tier always)',
+        'Before / after с AR markup',
+        'Maintenance prediction via OBD telemetry',
+        '«Next service» AI-планировщик',
+        'Carbon footprint tracking',
+        'Sustainable detail packages (eco-friendly only)',
+        'Vehicle longevity coaching',
+        'Resale-value optimization service',
+      ],
+    },
+  ]
+
+  const outcomePkgs = [
+    { scenario: '«Рожать поехала, машина не заводится»', trigger: '911-style', stack: 'jump-start mobile + 24/7 dispatch + emergency rideshare credit', tier: 'Premium', color: '#C0392B' },
+    { scenario: '«Завтра показ в риэлтор-агентстве»', trigger: 'Same-day', stack: 'exterior wash + interior vacuum + tire shine + freshener (2hr)', tier: 'Express', color: '#D68910' },
+    { scenario: '«Ушёл на свадьбу, нужно домой»', trigger: 'Late night', stack: 'sober driver + drive-home-in-your-car', tier: 'Standard', color: '#1C5C8F' },
+    { scenario: '«Лизинг возвращать через неделю»', trigger: 'Schedule', stack: 'inspection + spot detail + minor cosmetic + paperwork', tier: 'Lease Return', color: '#6B3A8F' },
+    { scenario: '«Купил машину, не знаю что с ней»', trigger: 'Onboarding', stack: 'full inspection + service history pull + mech consultation + plan', tier: 'New Owner', color: '#1C6B3A' },
+    { scenario: '«Уезжаю на 3 месяца»', trigger: 'Schedule', stack: 'storage prep + battery tender + cover + monthly check-in', tier: 'Snowbird', color: '#B86A00' },
+    { scenario: '«Ребёнка отвезти на первый день школы»', trigger: 'Trigger', stack: 'car wash + air freshener + child seat check', tier: 'Family', color: '#27AE60' },
+    { scenario: '«Hurricane на горизонте»', trigger: 'Weather alert', stack: 'move to higher ground + window taping + emergency kit', tier: 'Storm', color: '#8B2E2E' },
+  ]
+
+  const memberTiers = [
+    { tier: 'Free', price: '$0', included: '1 заявка/мес, скидка 5%', who: 'Онбординг', color: '#7F8C8D' },
+    { tier: 'Essential', price: '$19', included: '3 заявки/мес, 10% off, бесплатный jump-start', who: 'Бытовой', color: '#1C5C8F' },
+    { tier: 'Pro', price: '$49', included: 'Unlimited, 15% off, pickup, priority booking', who: 'Busy professional', color: '#1C6B3A' },
+    { tier: 'Family', price: '$79', included: 'До 3 машин, kid services, school-run backup', who: 'Семья', color: '#D68910' },
+    { tier: 'Executive', price: '$199', included: 'Concierge + chauffeur 4hrs/мес + white-glove', who: 'Premium', color: '#B86A00' },
+    { tier: 'Fleet', price: 'от $299', included: 'Per-vehicle, multi-vehicle dashboard', who: 'B2B', color: '#6B3A8F' },
+  ]
+
+  return (
+    <div className="slide-content">
+      <div className="ed-eyebrow">Аудит каталога · Полный список</div>
+      <h2 className="ed-title">100+ услуг к добавлению</h2>
+      <p className="ed-lead">
+        Конкретные услуги по каждому из 17 пробелов. Список не финальный — у клиента будет возможность
+        отметить must-have / nice-to-have и приоритизировать перед MVP-релизом.
+      </p>
+
+      {/* Accordion catalog */}
+      <div className="lnch-catalog-accordion">
+        {catalog.map((cat, i) => {
+          const isOpen = openSection.includes(i)
+          return (
+            <div key={i} className="lnch-cat-item" style={{ borderLeft: `3px solid ${cat.color}` }}>
+              <button
+                className="lnch-cat-header"
+                onClick={() => toggleSection(i)}
+                aria-expanded={isOpen}>
+                <div className="lnch-cat-header-left">
+                  <span className="lnch-cat-icon">{cat.icon}</span>
+                  <span className="lnch-cat-name">{cat.title}</span>
+                  <span className="lnch-cat-count" style={{ color: cat.color }}>+{cat.count} услуг</span>
+                </div>
+                <span className="lnch-cat-chevron" style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}>
+                  ▾
+                </span>
+              </button>
+              {isOpen && (
+                <motion.div
+                  className="lnch-cat-body"
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3 }}>
+                  <ul className="lnch-services-list">
+                    {cat.services.map((s, j) => (
+                      <li key={j}>{s}</li>
+                    ))}
+                  </ul>
+                </motion.div>
+              )}
+            </div>
+          )
+        })}
+      </div>
+
+      <WavyDivider />
+
+      {/* Outcome-based packages */}
+      <h3 className="ed-section-title" style={{ marginTop: '1.5rem' }}>Outcome-based packages — 8 сценариев</h3>
+      <p style={{ fontFamily: 'var(--sans)', fontSize: '0.95rem', color: 'var(--fg-mid)', marginBottom: '1.2rem' }}>
+        Клиент выбирает сценарий «I'm stuck», а не «coolant flush». Каждый пакет — конкретный job-to-be-done.
+      </p>
+      <div className="lnch-outcomes-table">
+        <div className="lnch-outcomes-head">
+          <div>Сценарий</div>
+          <div>Trigger</div>
+          <div>Состав пакета</div>
+          <div>Tier</div>
+        </div>
+        {outcomePkgs.map((pkg, i) => (
+          <motion.div key={i} className="lnch-outcomes-row"
+            initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.35, delay: i * 0.06 }}>
+            <div className="lnch-outcomes-scenario">{pkg.scenario}</div>
+            <div className="lnch-outcomes-trigger">
+              <span className="lnch-trigger-tag" style={{ background: pkg.color + '15', color: pkg.color, border: `1px solid ${pkg.color}30` }}>{pkg.trigger}</span>
+            </div>
+            <div className="lnch-outcomes-stack">{pkg.stack}</div>
+            <div>
+              <span className="lnch-tier-badge" style={{ background: pkg.color, color: '#fff' }}>{pkg.tier}</span>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      <WavyDivider />
+
+      {/* Membership tiers */}
+      <h3 className="ed-section-title" style={{ marginTop: '1.5rem' }}>Membership tiers — реструктура</h3>
+      <p style={{ fontFamily: 'var(--sans)', fontSize: '0.95rem', color: 'var(--fg-mid)', marginBottom: '1.2rem' }}>
+        5 уровней с чётким upgrade path. Каждый tier имеет видимый value gap.
+      </p>
+      <div className="lnch-tiers-grid">
+        {memberTiers.map((t, i) => (
+          <motion.div key={i} className="lnch-tier-card"
+            style={{ borderTop: `3px solid ${t.color}` }}
+            initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.07 }}>
+            <div className="lnch-tier-name" style={{ color: t.color }}>{t.tier}</div>
+            <div className="lnch-tier-price">{t.price}</div>
+            <div className="lnch-tier-who">{t.who}</div>
+            <div className="lnch-tier-included">{t.included}</div>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+// SUB 4: Стратегические замечания
+function SlideAuditStrategic() {
+  const recs = [
+    {
+      n: '01',
+      icon: '🏗️',
+      title: 'Список нужно перестроить под marketplace-модель',
+      problem: 'Сейчас читается как «что мы умеем». Для двухстороннего marketplace нужны 3 раздельные сущности.',
+      rec: 'Service catalog — атомарные услуги для шопов. Customer scenarios — outcome-based bundles в приложении. Provider categories — какие типы шопов onboard\'ить.',
+      color: '#C0392B',
+    },
+    {
+      n: '02',
+      icon: '📊',
+      title: 'Tier-структура должна быть в каждой услуге',
+      problem: 'В Uber каждая поездка имеет UberX / Comfort / Black / SUV. У CarETA — нет.',
+      rec: 'Каждая услуга должна иметь Standard / Premium / White-Glove tier с разной ценой. Даёт upsell + segmentation + price discrimination.',
+      color: '#D68910',
+    },
+    {
+      n: '03',
+      icon: '⏱️',
+      title: 'Time-tier важнее size-tier',
+      problem: 'В авто-услугах «когда» часто важнее «как».',
+      rec: 'Same-day vs scheduled vs emergency — разные ценовые точки. Ввести как ortogonal axis к tier-системе.',
+      color: '#1C5C8F',
+    },
+    {
+      n: '04',
+      icon: '🛡️',
+      title: 'Insurance / warranty как товар, не только сегмент',
+      problem: 'Бизнес-модель упоминает microinsurance как revenue stream, но в каталоге его нет.',
+      rec: 'Огромная упущенная категория subscription-продуктов. Каждый tier подписки включает базовую страховку.',
+      color: '#1C6B3A',
+    },
+    {
+      n: '05',
+      icon: '🔄',
+      title: 'Отсутствует «recovery / failure» flow',
+      problem: 'Что если шоп не справился? Деталь сломалась через 3 дня?',
+      rec: 'Нет «warranty claim assistance», «redo service», «complaint resolution» — критично для marketplace с trust-моделью.',
+      color: '#6B3A8F',
+    },
+    {
+      n: '06',
+      icon: '🎯',
+      title: 'ICP в business model — 8 групп, в services — 6',
+      problem: 'Не совпадает. Uber/Lyft drivers как ICP — слабо отражены. Snowbirds — есть relocation, но нет full snowbird care package.',
+      rec: 'Синхронизировать сервисный каталог с ICP-матрицей. Для каждого ICP — свой bundle.',
+      color: '#B86A00',
+    },
+  ]
+
+  return (
+    <div className="slide-content">
+      <div className="ed-eyebrow">Аудит каталога · Стратегия</div>
+      <h2 className="ed-title">Стратегические замечания — 6 ключевых</h2>
+      <p className="ed-lead">
+        После полного аудита каталога выявились системные проблемы, которые важнее отдельных пробелов.
+        Вот что нужно исправить до MVP-релиза.
+      </p>
+
+      <div className="lnch-recs-grid">
+        {recs.map((r, i) => (
+          <motion.div key={i} className="lnch-rec-card"
+            style={{ borderLeft: `3px solid ${r.color}` }}
+            initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.45, delay: (i % 3) * 0.1 }}>
+            <div className="lnch-rec-head">
+              <span className="lnch-rec-icon">{r.icon}</span>
+              <span className="lnch-rec-n" style={{ color: r.color }}>{r.n}</span>
+            </div>
+            <div className="lnch-rec-title">{r.title}</div>
+            <div className="lnch-rec-problem">
+              <span className="lnch-rec-label">Проблема</span>
+              {r.problem}
+            </div>
+            <div className="lnch-rec-rec">
+              <span className="lnch-rec-label" style={{ color: r.color }}>Рекомендация</span>
+              {r.rec}
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      <div className="ed-pullquote" style={{ marginTop: '2rem' }}>
+        Эти шесть замечаний — не опциональные улучшения. Для marketplace с trust-моделью каждое из них влияет на конверсию и retention с первого дня.
+      </div>
+    </div>
+  )
+}
+
+// SUB 5: Top-10 для запуска
+function SlideAuditTop10() {
+  const original = [
+    { n: 1, name: 'Mobile car wash & detailing', keep: true, reason: 'Оставить' },
+    { n: 2, name: 'Emergency roadside', keep: true, reason: 'Оставить' },
+    { n: 3, name: 'Pickup/drop-off для service', keep: true, reason: 'Core USP' },
+    { n: 4, name: 'Sober driver service', keep: true, reason: 'Уникальный differentiator' },
+    { n: 5, name: 'EV home charger installation', keep: false, reason: 'Не в текущем top-15' },
+    { n: 6, name: 'ADAS calibration coordination', keep: false, reason: 'Отсутствует' },
+    { n: 7, name: 'Inspection handling', keep: false, reason: 'Деприоритизировать' },
+    { n: 8, name: 'Routine maintenance concierge', keep: false, reason: 'Overlap' },
+    { n: 9, name: 'Oil change pickup service', keep: false, reason: 'Ценовая война с Take5' },
+    { n: 10, name: 'Lease return assistance', keep: false, reason: 'Низкая частота' },
+    { n: 11, name: 'Pre-sale car prep', keep: false, reason: 'Overlap' },
+    { n: 12, name: 'Catalytic converter anti-theft cage', keep: false, reason: 'Не в top-15' },
+    { n: 13, name: 'Fleet wash для tradesmen', keep: false, reason: 'B2B не закрыт' },
+    { n: 14, name: 'Mobile pre-purchase inspection', keep: false, reason: '#1 acquisition tool' },
+    { n: 15, name: 'Snowbird vehicle care subscription', keep: false, reason: 'Miami moat' },
+  ]
+
+  const myTop10 = [
+    { n: 1, name: 'Mobile car wash & detailing', tag: 'оставить', tagColor: '#1C6B3A', reason: 'Высокая частота, recurring revenue, знакомая услуга — лучший точка входа.' },
+    { n: 2, name: 'Mobile pre-purchase inspection', tag: '🆕 добавить', tagColor: '#C0392B', reason: '#1 acquisition tool. $200–400 средний чек, привлекает новых клиентов в критический момент решения.' },
+    { n: 3, name: 'Emergency roadside', tag: 'оставить', tagColor: '#1C6B3A', reason: 'Низкая маржа, но высокое вовлечение. Строит доверие в момент стресса.' },
+    { n: 4, name: 'EV home charger installation', tag: '🆕 добавить', tagColor: '#C0392B', reason: 'Premium revenue ($1500–3000 за установку), растущий сегмент в FL. Высокий средний чек.' },
+    { n: 5, name: 'ADAS calibration coordination', tag: '🆕 добавить', tagColor: '#C0392B', reason: 'Mandatory после collision / windshield — обязательная услуга, очень маржинальная.' },
+    { n: 6, name: 'Pickup / drop-off для service', tag: 'оставить', tagColor: '#1C6B3A', reason: 'Core USP платформы. То, чего нет ни у одного конкурента.' },
+    { n: 7, name: 'Catalytic converter anti-theft cage', tag: '🆕 добавить', tagColor: '#C0392B', reason: 'Trending pain point в больших городах. $200–400 за установку, растущий спрос.' },
+    { n: 8, name: 'Sober driver service', tag: 'оставить', tagColor: '#1C6B3A', reason: 'Miami nightlife, эмоциональная связь с брендом. Уникальный — 0 конкурентов.' },
+    { n: 9, name: 'Fleet wash для tradesmen', tag: '🆕 добавить', tagColor: '#C0392B', reason: 'B2B beachhead. Recurring B2B revenue — те же клиенты что у HVAC/plumber/electrician.' },
+    { n: 10, name: 'Snowbird vehicle care subscription', tag: '🆕 добавить', tagColor: '#C0392B', reason: 'Miami-specific moat. $79–199/мес recurring. 0 конкурентов на этой нише.' },
+  ]
+
+  const toRemove = [
+    'Inspection handling — низкая маржа, низкая частота',
+    'Routine maintenance concierge — overlap с pickup/drop-off',
+    'Oil change pickup — commodity, ценовая война с Take5',
+    'Lease return assistance — низкая частота, узкая аудитория',
+    'Pre-sale car prep — overlap с pre-purchase и detailing',
+  ]
+
+  return (
+    <div className="slide-content">
+      <div className="ed-eyebrow">Аудит каталога · Приоритизация</div>
+      <h2 className="ed-title">Top-10 для запуска — пересмотр</h2>
+      <p className="ed-lead">
+        Текущий Top-15 в каталоге — хороший, но 5 позиций стоит заменить на более стратегические
+        для marketplace-модели и Miami-MVP.
+      </p>
+
+      <div className="lnch-top10-wrap">
+        {/* My Top 10 */}
+        <div className="lnch-top10-list">
+          <div className="lnch-top10-header">Рекомендуемый Top-10</div>
+          {myTop10.map((item, i) => (
+            <motion.div key={i} className="lnch-top10-item"
+              initial={{ opacity: 0, x: 16 }} whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }} transition={{ duration: 0.35, delay: i * 0.06 }}>
+              <div className="lnch-top10-num" style={{ color: item.tagColor === '#1C6B3A' ? '#1C6B3A' : '#C0392B' }}>
+                {item.n}
+              </div>
+              <div className="lnch-top10-body">
+                <div className="lnch-top10-name">
+                  {item.name}
+                  <span className="lnch-top10-tag" style={{ background: item.tagColor + '18', color: item.tagColor, border: `1px solid ${item.tagColor}35` }}>
+                    {item.tag}
+                  </span>
+                </div>
+                <div className="lnch-top10-reason">{item.reason}</div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      <WavyDivider />
+
+      <h3 className="ed-section-title" style={{ marginTop: '1.5rem' }}>Что убрать из приоритетов</h3>
+      <div className="lnch-remove-list">
+        {toRemove.map((item, i) => (
+          <div key={i} className="lnch-remove-item">
+            <span className="lnch-remove-x">✕</span>
+            <span>{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+// SUB 6: Конкурентная карта
+function SlideAuditCompetition() {
+  const competitors = [
+    { name: 'YourMechanic', x: 18, y: 72, mobile: true, full: false, color: '#7F8C8D' },
+    { name: 'Wrench', x: 22, y: 62, mobile: true, full: false, color: '#7F8C8D' },
+    { name: 'Spiffy', x: 35, y: 52, mobile: true, full: false, color: '#7F8C8D' },
+    { name: 'Take5', x: 78, y: 25, mobile: false, full: false, color: '#7F8C8D' },
+    { name: 'RepairPal', x: 72, y: 38, mobile: false, full: false, color: '#7F8C8D' },
+    { name: 'CarETA', x: 50, y: 88, mobile: true, full: true, color: '#C8860A' },
+  ]
+
+  const compRows = [
+    { feature: 'Mobile mechanic', ym: true, wr: true, sp: false, rp: false, t5: false, ca: true },
+    { feature: 'Mobile detail', ym: false, wr: false, sp: true, rp: false, t5: false, ca: true },
+    { feature: 'Pickup / drop-off concierge', ym: false, wr: false, sp: false, rp: false, t5: false, ca: true },
+    { feature: 'Marketplace эскроу', ym: false, wr: false, sp: false, rp: false, t5: false, ca: true },
+    { feature: 'Insurance partnership', ym: false, wr: false, sp: false, rp: true, t5: false, ca: true },
+    { feature: 'EV-specific services', ym: 'partial', wr: false, sp: false, rp: false, t5: false, ca: true },
+    { feature: 'Subscription model', ym: false, wr: false, sp: true, rp: false, t5: false, ca: true },
+    { feature: 'Sober driver', ym: false, wr: false, sp: false, rp: false, t5: false, ca: 'unique' },
+    { feature: 'Hurricane prep', ym: false, wr: false, sp: false, rp: false, t5: false, ca: 'unique' },
+    { feature: 'Outcome-based UX', ym: false, wr: false, sp: false, rp: false, t5: false, ca: 'unique' },
+    { feature: '24/7 emergency', ym: 'partial', wr: false, sp: false, rp: false, t5: false, ca: true },
+    { feature: 'BNPL встроен', ym: false, wr: false, sp: false, rp: false, t5: false, ca: true },
+    { feature: 'Multi-tier (X/Comfort/Black)', ym: false, wr: false, sp: false, rp: false, t5: false, ca: 'plan' },
+  ]
+
+  const moats = [
+    { icon: '🌀', title: 'Hurricane prep', desc: 'Никто из конкурентов не покрывает климат-события. Miami-exclusive moat.' },
+    { icon: '🍻', title: 'Sober driver', desc: 'Никто не объединяет night-out service с auto-care в одном приложении.' },
+    { icon: '🎯', title: 'Outcome-based UX', desc: 'Все продают «coolant flush». CarETA продаёт «I\'m stuck». Разные конверсии.' },
+    { icon: '🏖️', title: 'Snowbird care', desc: 'Miami-specific recurring revenue, $79–199/мес. Ноль конкурентов на этой нише.' },
+  ]
+
+  const cellVal = (v) => {
+    if (v === true) return { text: '✓', color: '#1C6B3A' }
+    if (v === false) return { text: '—', color: 'rgba(15,15,14,0.2)' }
+    if (v === 'partial') return { text: '~', color: '#D68910' }
+    if (v === 'unique') return { text: '✓ unique', color: '#C8860A' }
+    if (v === 'plan') return { text: 'план', color: '#1C5C8F' }
+    return { text: '?', color: '#7F8C8D' }
+  }
+
+  return (
+    <div className="slide-content">
+      <div className="ed-eyebrow">Аудит каталога · Рынок</div>
+      <h2 className="ed-title">Конкурентная карта — где CarETA выигрывает</h2>
+      <p className="ed-lead">
+        Ни один из конкурентов не занимает позицию «Mobile-first + Full concierge». CarETA — единственная платформа,
+        объединяющая оба измерения в одном продукте.
+      </p>
+
+      {/* 2x2 Positioning Matrix */}
+      <h3 className="ed-section-title">Матрица позиционирования</h3>
+      <div className="lnch-matrix-wrap">
+        <svg className="lnch-matrix-svg" viewBox="0 0 500 380" preserveAspectRatio="xMidYMid meet">
+          {/* Quadrant backgrounds */}
+          <rect x="0" y="0" width="250" height="190" fill="rgba(28,92,143,0.05)" />
+          <rect x="250" y="0" width="250" height="190" fill="rgba(200,134,10,0.08)" />
+          <rect x="0" y="190" width="250" height="190" fill="rgba(127,140,141,0.04)" />
+          <rect x="250" y="190" width="250" height="190" fill="rgba(127,140,141,0.03)" />
+          {/* Quadrant labels */}
+          <text x="125" y="22" textAnchor="middle" fill="rgba(28,92,143,0.55)" fontSize="9.5" fontFamily="Inter, sans-serif" fontWeight="600" letterSpacing="0.1em">MOBILE + CONCIERGE</text>
+          <text x="375" y="22" textAnchor="middle" fill="rgba(200,134,10,0.55)" fontSize="9.5" fontFamily="Inter, sans-serif" fontWeight="600" letterSpacing="0.1em">MULTI-SERVICE</text>
+          <text x="125" y="210" textAnchor="middle" fill="rgba(127,140,141,0.5)" fontSize="9" fontFamily="Inter, sans-serif">Single service mobile</text>
+          <text x="375" y="210" textAnchor="middle" fill="rgba(127,140,141,0.5)" fontSize="9" fontFamily="Inter, sans-serif">Shop-based single</text>
+          {/* Axes */}
+          <line x1="250" y1="0" x2="250" y2="380" stroke="rgba(15,15,14,0.12)" strokeWidth="1.5" strokeDasharray="5,5" />
+          <line x1="0" y1="190" x2="500" y2="190" stroke="rgba(15,15,14,0.12)" strokeWidth="1.5" strokeDasharray="5,5" />
+          <text x="250" y="372" textAnchor="middle" fill="rgba(15,15,14,0.4)" fontSize="9" fontFamily="Inter, sans-serif">Shop-based ←→ Mobile-first</text>
+          <text x="10" y="195" fill="rgba(15,15,14,0.35)" fontSize="8.5" fontFamily="Inter, sans-serif" transform="rotate(-90,10,190)">Full concierge ↑ / Single service ↓</text>
+          {/* Competitor dots */}
+          {competitors.map((c) => {
+            const cx = (c.x / 100) * 500
+            const cy = (1 - c.y / 100) * 380
+            const isCareta = c.name === 'CarETA'
+            return (
+              <g key={c.name}>
+                <circle cx={cx} cy={cy} r={isCareta ? 22 : 15}
+                  fill={isCareta ? 'rgba(200,134,10,0.18)' : 'rgba(127,140,141,0.12)'}
+                  stroke={c.color} strokeWidth={isCareta ? 2.5 : 1.5} />
+                <text x={cx} y={cy + 1} textAnchor="middle" dominantBaseline="middle"
+                  fill={c.color} fontSize={isCareta ? 11 : 9}
+                  fontFamily="Inter, sans-serif" fontWeight={isCareta ? '700' : '500'}>
+                  {c.name}
+                </text>
+              </g>
+            )
+          })}
+          {/* Star on CarETA */}
+          <circle cx={(50/100)*500} cy={(1-88/100)*380} r="28"
+            fill="none" stroke="rgba(200,134,10,0.3)" strokeWidth="1" strokeDasharray="3,3" />
+        </svg>
+      </div>
+
+      <WavyDivider />
+
+      {/* Comparison table */}
+      <h3 className="ed-section-title" style={{ marginTop: '1.5rem' }}>Сравнительная таблица фич</h3>
+      <div className="lnch-comp-table">
+        <div className="lnch-comp-head">
+          <div>Фича</div>
+          <div>YourMech.</div>
+          <div>Wrench</div>
+          <div>Spiffy</div>
+          <div>RepairPal</div>
+          <div>Take5</div>
+          <div className="lnch-comp-careta">CarETA</div>
+        </div>
+        {compRows.map((row, i) => (
+          <motion.div key={i} className="lnch-comp-row"
+            initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
+            viewport={{ once: true }} transition={{ duration: 0.2, delay: i * 0.04 }}>
+            <div className="lnch-comp-feat">{row.feature}</div>
+            {['ym','wr','sp','rp','t5'].map(k => {
+              const v = cellVal(row[k])
+              return <div key={k} style={{ color: v.color, fontFamily: 'var(--sans)', fontSize: '0.88rem', textAlign: 'center' }}>{v.text}</div>
+            })}
+            <div className="lnch-comp-careta" style={{ color: cellVal(row.ca).color, fontWeight: '600', textAlign: 'center', fontFamily: 'var(--sans)', fontSize: '0.88rem' }}>
+              {cellVal(row.ca).text}
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      <WavyDivider />
+
+      {/* Moats */}
+      <h3 className="ed-section-title" style={{ marginTop: '1.5rem' }}>Конкурентные moat'ы CarETA</h3>
+      <div className="lnch-moats-grid">
+        {moats.map((m, i) => (
+          <motion.div key={i} className="lnch-moat-card"
+            initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.1 }}>
+            <div className="lnch-moat-icon">{m.icon}</div>
+            <div className="lnch-moat-title">{m.title}</div>
+            <div className="lnch-moat-desc">{m.desc}</div>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+// SUB 7: Вопросы к клиенту
+function SlideAuditQuestions() {
+  const questions = [
+    {
+      n: '01',
+      title: 'Geographic strategy',
+      text: 'После Miami — какой второй город? FL Tampa или сразу TX / CA для market test? Выбор влияет на наём шопов и маркетинговый бюджет.',
+      color: '#1C5C8F',
+    },
+    {
+      n: '02',
+      title: 'ICP-приоритет',
+      text: 'Из 8 групп бизнес-модели — какая beachhead для первых 6 месяцев? Рекомендуем busy professionals в Miami: высокий LTV, низкая ценовая чувствительность.',
+      color: '#C0392B',
+    },
+    {
+      n: '03',
+      title: 'EV focus yes / no',
+      text: 'Запускать EV-категорию в MVP или дождаться второго города? В FL доля EV ниже CA, но растёт. Добавление EV требует специализированных шопов.',
+      color: '#D68910',
+    },
+    {
+      n: '04',
+      title: 'B2B pivot',
+      text: 'Запускать B2B (fleet, tradesmen) с первого дня или после product-market fit на B2C? B2B даёт предсказуемый доход, но требует другого sales-процесса.',
+      color: '#1C6B3A',
+    },
+    {
+      n: '05',
+      title: 'Insurance partnership timeline',
+      text: 'Подписание pilot со страховой — Q1 или Q2? Geico / State Farm / Progressive имеют разные procurement-циклы. Чем раньше начать — тем лучше.',
+      color: '#6B3A8F',
+    },
+    {
+      n: '06',
+      title: 'Tier system',
+      text: 'Standard / Premium / White-Glove — реализовать с первого релиза или итеративно? С первого релиза — сложнее, но дешевле переделывать потом.',
+      color: '#B86A00',
+    },
+    {
+      n: '07',
+      title: 'Microinsurance go-live',
+      text: 'Запуск $9.99–59.99 подписок с MVP или после 1000 активных юзеров? Страховые продукты требуют лицензий — начинать compliance работу нужно сейчас.',
+      color: '#C0392B',
+    },
+    {
+      n: '08',
+      title: 'Sober driver licensing',
+      text: 'Проверка регуляторики Florida — есть ли restrictions на этот сервис в FL? В некоторых штатах нужна TNC-лицензия, в других нет.',
+      color: '#1C5C8F',
+    },
+    {
+      n: '09',
+      title: 'AI inspection via phone',
+      text: 'Включать в MVP как differentiator или Phase 2? AI inspection требует ML-модели или партнёра (Ravin AI, Monk AI). Влияет на бюджет и timeline.',
+      color: '#D68910',
+    },
+    {
+      n: '10',
+      title: 'Brand wording final',
+      text: 'Остановиться на «Your car. Zero stress. We handle the rest.» или провести customer research? Tagline влияет на ad copy, onboarding и pitch deck.',
+      color: '#1C6B3A',
+    },
+  ]
+
+  return (
+    <div className="slide-content">
+      <div className="ed-eyebrow">Аудит каталога · Следующий шаг</div>
+      <h2 className="ed-title">Вопросы к клиенту перед финализацией</h2>
+      <p className="ed-lead">
+        10 вопросов, ответы на которые определяют архитектуру MVP, первый город и приоритеты разработки.
+        Рекомендуем разобрать их на первом рабочем звонке.
+      </p>
+
+      <div className="lnch-questions-grid">
+        {questions.map((q, i) => (
+          <motion.div key={i} className="lnch-question-card"
+            style={{ borderTop: `3px solid ${q.color}` }}
+            initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.4, delay: (i % 2) * 0.1 }}>
+            <div className="lnch-question-n" style={{ color: q.color }}>{q.n}</div>
+            <div className="lnch-question-title">{q.title}</div>
+            <div className="lnch-question-text">{q.text}</div>
+          </motion.div>
+        ))}
+      </div>
+
+      <div className="ed-pullquote" style={{ marginTop: '2rem' }}>
+        Эти вопросы — не формальность. Каждый влияет на архитектурные решения, которые дорого менять после старта разработки.
+      </div>
+    </div>
+  )
+}
+
+// SUB 8: Что дальше — первые 30 дней аудита
+function SlideAuditRoadmap() {
+  const weeks = [
+    {
+      period: 'Неделя 1',
+      subtitle: 'После approval этого документа',
+      color: '#C0392B',
+      items: [
+        'Финализация Top-10 услуг для MVP с клиентом',
+        'Workshop с CarETA founder: ICP priority, geo strategy, tier-system decision',
+        'Service catalog v2 — структурированный с Standard / Premium / White-Glove tiers и pricing framework',
+        'Wireframes для outcome-based UX в клиентском приложении',
+      ],
+      result: 'Согласованный Top-10 + pricing framework + wireframes',
+    },
+    {
+      period: 'Неделя 2',
+      subtitle: 'Инфраструктура и партнёры',
+      color: '#D68910',
+      items: [
+        'Onboarding script для первых 50 шопов в Miami (cold outreach + demo)',
+        'API contracts: Stripe Connect эскроу-flow, Twilio SMS-flow, Maps geocoding',
+        'AI-prompts для customer-facing chat (включая outcome detection)',
+        'Dashboard v0 для admin-панели',
+      ],
+      result: 'Onboarding-воронка для шопов + API spec + AI-prompts',
+    },
+    {
+      period: 'Недели 3–4',
+      subtitle: 'Beta и первые реальные заказы',
+      color: '#1C5C8F',
+      items: [
+        'Beta launch private — 5 тестовых клиентов на 3 услуги (mobile wash, roadside, pre-purchase)',
+        'Live tracking первых 50 заказов с full instrumentation',
+        'Iteration loop — еженедельный sprint review',
+        'Insurance partnership outreach: 3 pilot meetings с Geico / State Farm / Progressive',
+      ],
+      result: 'Первые реальные заказы + данные для итерации',
+    },
+  ]
+
+  return (
+    <div className="slide-content">
+      <div className="ed-eyebrow">Аудит каталога · Roadmap</div>
+      <h2 className="ed-title">Что дальше — первые 30 дней</h2>
+      <p className="ed-lead">
+        Конкретный план первого месяца после approval этого документа. Без абстракций — каждая неделя
+        заканчивается конкретным deliverable.
+      </p>
+
+      <div className="lnch-roadmap-wrap">
+        {weeks.map((w, i) => (
+          <motion.div key={i} className="lnch-roadmap-week"
+            initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.15 }}>
+            <div className="lnch-roadmap-connector">
+              <div className="lnch-roadmap-dot" style={{ background: w.color }} />
+              {i < weeks.length - 1 && <div className="lnch-roadmap-line" />}
+            </div>
+            <div className="lnch-roadmap-content">
+              <div className="lnch-roadmap-period" style={{ color: w.color }}>{w.period}</div>
+              <div className="lnch-roadmap-subtitle">{w.subtitle}</div>
+              <ul className="lnch-roadmap-items">
+                {w.items.map((item, j) => (
+                  <li key={j}>{item}</li>
+                ))}
+              </ul>
+              <div className="lnch-roadmap-result">
+                <span className="lnch-roadmap-result-label">Результат:</span>
+                {w.result}
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      <WavyDivider />
+
+      <div className="lnch-milestone-box">
+        <div className="lnch-milestone-label">Milestone Месяц 2</div>
+        <div className="lnch-milestone-text">
+          Public beta в Miami — 50 шопов, 500 клиентов, $50K GMV
+        </div>
+        <div className="lnch-milestone-sub">
+          Это реалистичная цель при правильном onboarding-процессе и маркетинговом бюджете $5–10K.
+        </div>
+      </div>
+    </div>
+  )
+}
+
 // ─── FIRST 30 DAYS ────────────────────────────────────────────────────────────
 function SlideDay30() {
   const days = [
@@ -2140,14 +3613,14 @@ function SlideTechStack() {
     { name: 'Monk AI', accuracy: 'Высокая', use: 'Mobile SDK, 20–30K инспекций/мес в тарифе', cost: 'Subscription', badge: 'Scalable' },
   ]
   const stack = [
-    { layer: 'Мобильные приложения', tech: 'React Native (Expo)', note: 'Единая кодовая база iOS + Android — экономия 40% бюджета' },
-    { layer: 'Backend MVP', tech: 'Node.js + TypeScript', note: 'Быстрый старт, большая экосистема, TypeScript = типобезопасность' },
+    { layer: 'Мобильные приложения', tech: 'Swift (iOS) + Kotlin (Android)', note: 'Нативная разработка — максимальная производительность, UX на уровне Uber/Lyft' },
+    { layer: 'Backend', tech: 'Go (Golang)', note: 'Высокая производительность, конкурентность из коробки — используется Uber, Docker, Kubernetes' },
     { layer: 'База данных', tech: 'PostgreSQL', note: 'Реляционная БД — транзакции, эскроу, заказы' },
     { layer: 'Кэш / очереди', tech: 'Redis + BullMQ', note: 'Push-уведомления, фоновые задачи, rate limiting' },
     { layer: 'Платежи', tech: 'Stripe Connect', note: 'Эскроу, instant payout шопам, KYC автоматически' },
     { layer: 'Карты / GPS', tech: 'Google Maps SDK', note: 'Real-time трекинг заказа, ETA, геолокация шопов' },
     { layer: 'AI / Vision', tech: 'Ravin AI → Tractable', note: 'Начинаем с Ravin, мигрируем на Tractable при scale' },
-    { layer: 'Масштабирование', tech: 'Go / Kotlin (фаза 2)', note: 'Критические сервисы переписываются при росте нагрузки' },
+    { layer: 'Масштабирование', tech: 'Микросервисы + gRPC', note: 'Горизонтальное масштабирование, разделение на сервисы при росте нагрузки' },
   ]
   return (
     <div className="slide-content">
@@ -2246,6 +3719,396 @@ function SlideDevStages() {
 
       <div className="ed-pullquote" style={{ marginTop: '1.5rem' }}>
         Каждый этап заканчивается конкретным артефактом — дизайн-документом, работающим кодом или живым приложением. Никакой «работы в чёрном ящике».
+      </div>
+    </div>
+  )
+}
+
+// ─── ROADMAP & BUDGET ────────────────────────────────────────────────────────
+function SlideRoadmapBudget() {
+  const months = [
+    {
+      n: '1', title: 'Discovery + Архитектура + Дизайн', founders: '$30K', devs: '$7.5K', infra: '$1K', budget: '$38.5K',
+      who: 'Основатели + UI/UX дизайнер ($3K) + Backend Senior ($4.5K)',
+      tasks: [
+        'Архитектура 50+ стр, схема БД (50+ таблиц), API-контракты',
+        'Backend: настройка инфраструктуры, CI/CD, auth (JWT/OAuth)',
+        'Дизайнер: wireframes 30+ экранов, начало дизайн-системы',
+        'Найм остальной команды: JD, скрининг, тестовые задания',
+      ],
+      result: 'Архитектура + wireframes + инфраструктура готовы',
+    },
+    {
+      n: '2', title: 'UI/UX активная фаза + Backend core', founders: '$30K', devs: '$7.5K', infra: '$1K', budget: '$38.5K',
+      who: 'Та же тройка работает на полную',
+      tasks: [
+        'Дизайн клиентского приложения (40+ экранов)',
+        'Дизайн приложения шопа (25+ экранов)',
+        'Backend: модели БД, миграции, CRUD заказов',
+        'Нанимаем Mobile-разработчика #1',
+      ],
+      result: 'Figma-макеты приложений + API auth + заказы',
+    },
+    {
+      n: '3', title: 'UI/UX финал + Backend core', founders: '$30K', devs: '$12K', infra: '$1.5K', budget: '$43.5K',
+      who: '+ Mobile Senior #1 ($4.5K)',
+      tasks: [
+        'Дизайн веб-кабинетов (admin, шоп, accounting)',
+        'Backend: CRUD заказов, статусы, подбор шопа',
+        'Онбординг шопов — backend (верификация, документы)',
+        'Mobile #1 стартует клиентское приложение',
+      ],
+      result: 'Полный дизайн всех интерфейсов + API заказов',
+    },
+    {
+      n: '4', title: 'Backend + Mobile полным ходом', founders: '$30K', devs: '$21K', infra: '$3K', budget: '$54K',
+      who: '+ Mobile #2 ($3.5K) + Frontend ($3.5K) + QA ($2K) — полная команда',
+      tasks: [
+        'Stripe Connect: эскроу, split-платежи, payouts',
+        'GPS-трекинг, push-уведомления (Firebase)',
+        'Онбординг шопов: модерация, Stripe KYC, DocuSign',
+        'Mobile клиент: поиск, каталог, карта шопов',
+      ],
+      result: 'Платежи работают + первые экраны приложений',
+    },
+    {
+      n: '5', title: 'Mobile + Web старт', founders: '$30K', devs: '$21K', infra: '$3K', budget: '$54K',
+      who: 'Полная команда (2 + 6)',
+      tasks: [
+        'Mobile клиент: заказ, оплата, трекинг, чат',
+        'Mobile шоп: входящие заявки, статусы, выплаты',
+        'Кабинет шопа: профиль, прайс, портфолио, расписание',
+        'Backend: рейтинги, отзывы, фото до/после',
+      ],
+      result: 'Оба приложения в alpha + кабинет шопа',
+    },
+    {
+      n: '6', title: 'Mobile + Admin-панели', founders: '$30K', devs: '$21K', infra: '$3K', budget: '$54K',
+      who: 'Полная команда (2 + 6)',
+      tasks: [
+        'Финализация мобильных приложений',
+        'Admin диспетчеров: live dashboard, споры, чат поддержки, GPS-мониторинг',
+        'Admin accounting: выплаты, комиссии, отчёты',
+        'Промокоды и акции в админке',
+      ],
+      result: 'Приложения feature-complete + обе админки',
+    },
+    {
+      n: '7', title: 'Web-кабинеты + AI старт', founders: '$30K', devs: '$21K', infra: '$4K', budget: '$55K',
+      who: 'Полная команда (2 + 6)',
+      tasks: [
+        'Accounting: export QuickBooks, reconciliation',
+        'Портал онбординга шопов — web-интерфейс',
+        'AI чат-бот (Claude/GPT) + голосовой ввод',
+        'Портал партнёров (страховые)',
+      ],
+      result: 'Все кабинеты готовы + AI-ассистент в beta',
+    },
+    {
+      n: '8', title: 'AI + Интеграции', founders: '$30K', devs: '$21K', infra: '$5K', budget: '$56K',
+      who: 'Полная команда (2 + 6)',
+      tasks: [
+        'Фото-диагностика (Ravin AI SDK)',
+        'Affirm/Sunbit (BNPL-рассрочка)',
+        'Twilio (SMS), Google Maps (маршруты, ETA)',
+        'DocuSign для NDA шопов при онбординге',
+      ],
+      result: 'Платформа полностью интегрирована',
+    },
+    {
+      n: '9', title: 'QA + Beta', founders: '$30K', devs: '$21K', infra: '$4K', budget: '$55K',
+      who: 'Полная команда (2 + 6)',
+      tasks: [
+        '500+ авто-тестов, нагрузочное (10K concurrent)',
+        'Security audit всей платформы',
+        'Beta с 20–50 шопами в Майами',
+        'Подготовка App Store / Google Play',
+      ],
+      result: 'Стабильная beta-версия на реальных пользователях',
+    },
+    {
+      n: '10', title: 'Запуск', founders: '$30K', devs: '$17.5K', infra: '$4K', budget: '$51.5K',
+      who: 'Команда сокращается (2 + 5) — дизайнер завершает',
+      tasks: [
+        'Подача в App Store + Google Play',
+        'Production deploy + мониторинг 24/7',
+        'Hot-fixes по фидбеку beta',
+        'Онбординг первых реальных шопов в Майами',
+      ],
+      result: 'Live в Майами — приложения в сторах',
+    },
+    {
+      n: '11', title: 'Стабилизация', founders: '$30K', devs: '$12.5K', infra: '$3K', budget: '$45.5K',
+      who: 'Команда оптимизируется (2 + 4)',
+      tasks: [
+        'Итерации по фидбеку пользователей',
+        'Performance-оптимизация',
+        'Финальная полировка UI',
+        'Документация для handoff / Phase 2',
+      ],
+      result: 'Стабильный production-продукт',
+    },
+  ]
+
+  return (
+    <div className="slide-content">
+      <div className="ed-eyebrow">Разработка · Помесячный план</div>
+      <h2 className="ed-title">11 месяцев — от нуля до production</h2>
+      <p className="ed-lead">
+        Не нужно вкладывать $50K+ с первого дня. Команда растёт постепенно — от $38.5K в первый месяц до $56K на пике. Бюджет увеличивается только вместе с командой и объёмом работ.
+      </p>
+
+      <div className="rm-stats">
+        <motion.div className="rm-stat" initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }}>
+          <div className="rm-stat-num">$<Count to={566} suffix="K" /></div>
+          <div className="rm-stat-label">общий бюджет Standard</div>
+        </motion.div>
+        <motion.div className="rm-stat" initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.08 }}>
+          <div className="rm-stat-num">$<Count to={38} suffix="K" /> → $<Count to={56} suffix="K" /></div>
+          <div className="rm-stat-label">ежемесячный платёж растёт с командой</div>
+        </motion.div>
+        <motion.div className="rm-stat" initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.16 }}>
+          <div className="rm-stat-num"><Count to={11} /> мес</div>
+          <div className="rm-stat-label">до production в Майами</div>
+        </motion.div>
+        <motion.div className="rm-stat" initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.24 }}>
+          <div className="rm-stat-num"><Count to={2} /> + <Count to={6} /></div>
+          <div className="rm-stat-label">основатели + разработчики (пик)</div>
+        </motion.div>
+      </div>
+
+      <div className="rm-timeline">
+        {months.map((m, i) => (
+          <motion.div key={i} className="rm-month"
+            initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.04 }}>
+            <div className="rm-month-head">
+              <div className="rm-month-n">Мес {m.n}</div>
+              <div className="rm-month-title">{m.title}</div>
+              <div className="rm-month-who">{m.who}</div>
+              <div className="rm-month-breakdown">
+                <span>Осн: {m.founders}</span>
+                <span>Dev: {m.devs}</span>
+                <span>Инфра: {m.infra}</span>
+              </div>
+              <div className="rm-month-budget">{m.budget}</div>
+            </div>
+            <ul className="rm-month-tasks">
+              {m.tasks.map((t, j) => <li key={j}>{t}</li>)}
+            </ul>
+            <div className="rm-month-result">{m.result}</div>
+          </motion.div>
+        ))}
+      </div>
+
+      <WavyDivider />
+
+      <h3 className="ed-section-title" style={{ marginTop: '2rem' }}>Что вы получаете на каждом этапе</h3>
+      <p className="ed-lead" style={{ fontSize: '0.92rem', marginBottom: '1.2rem' }}>
+        Каждый продукт проходит путь: архитектура → дизайн → прототип → рабочий код → production. Вот что вы увидите каждый месяц.
+      </p>
+
+      <div className="rm-product-roadmap">
+        <div className="rm-pr-header">
+          <div className="rm-pr-product-label">Продукт</div>
+          {[1,2,3,4,5,6,7,8,9,10,11].map(m => (
+            <div key={m} className="rm-pr-month-label">{m}</div>
+          ))}
+        </div>
+        {[
+          { name: 'Приложение клиента', phases: [
+            { start: 1, end: 2, label: 'Дизайн', color: '#ec4899' },
+            { start: 3, end: 4, label: 'Прототип', color: '#f59e0b' },
+            { start: 5, end: 7, label: 'Разработка', color: '#10b981' },
+            { start: 8, end: 9, label: 'QA + Beta', color: '#8b5cf6' },
+            { start: 10, end: 11, label: 'Production', color: '#6366f1' },
+          ]},
+          { name: 'Приложение шопа', phases: [
+            { start: 1, end: 2, label: 'Дизайн', color: '#ec4899' },
+            { start: 4, end: 5, label: 'Прототип', color: '#f59e0b' },
+            { start: 5, end: 7, label: 'Разработка', color: '#10b981' },
+            { start: 8, end: 9, label: 'QA + Beta', color: '#8b5cf6' },
+            { start: 10, end: 11, label: 'Production', color: '#6366f1' },
+          ]},
+          { name: 'Бэкенд (API)', phases: [
+            { start: 1, end: 1, label: 'Архитектура', color: '#ec4899' },
+            { start: 2, end: 4, label: 'Core API', color: '#10b981' },
+            { start: 5, end: 7, label: 'Интеграции', color: '#f59e0b' },
+            { start: 8, end: 9, label: 'QA + Beta', color: '#8b5cf6' },
+            { start: 10, end: 11, label: 'Production', color: '#6366f1' },
+          ]},
+          { name: 'Кабинет шопа', phases: [
+            { start: 3, end: 3, label: 'Дизайн', color: '#ec4899' },
+            { start: 5, end: 6, label: 'Разработка', color: '#10b981' },
+            { start: 9, end: 9, label: 'QA', color: '#8b5cf6' },
+            { start: 10, end: 10, label: 'Prod', color: '#6366f1' },
+          ]},
+          { name: 'Admin диспетчеров', phases: [
+            { start: 3, end: 3, label: 'Дизайн', color: '#ec4899' },
+            { start: 6, end: 7, label: 'Разработка', color: '#10b981' },
+            { start: 9, end: 9, label: 'QA', color: '#8b5cf6' },
+            { start: 10, end: 10, label: 'Prod', color: '#6366f1' },
+          ]},
+          { name: 'Admin accounting', phases: [
+            { start: 3, end: 3, label: 'Дизайн', color: '#ec4899' },
+            { start: 7, end: 8, label: 'Разработка', color: '#10b981' },
+            { start: 9, end: 9, label: 'QA', color: '#8b5cf6' },
+            { start: 10, end: 10, label: 'Prod', color: '#6366f1' },
+          ]},
+          { name: 'Онбординг шопов', phases: [
+            { start: 1, end: 1, label: 'Проект', color: '#ec4899' },
+            { start: 3, end: 5, label: 'Backend + Web', color: '#10b981' },
+            { start: 9, end: 9, label: 'QA', color: '#8b5cf6' },
+            { start: 10, end: 10, label: 'Prod', color: '#6366f1' },
+          ]},
+          { name: 'AI-ассистент', phases: [
+            { start: 7, end: 8, label: 'Разработка', color: '#10b981' },
+            { start: 9, end: 9, label: 'QA', color: '#8b5cf6' },
+            { start: 10, end: 11, label: 'Production', color: '#6366f1' },
+          ]},
+          { name: 'Портал партнёров', phases: [
+            { start: 7, end: 8, label: 'Разработка', color: '#10b981' },
+            { start: 9, end: 9, label: 'QA', color: '#8b5cf6' },
+            { start: 10, end: 10, label: 'Prod', color: '#6366f1' },
+          ]},
+        ].map((product, i) => (
+          <motion.div key={i} className="rm-pr-row"
+            initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.04 }}>
+            <div className="rm-pr-product">{product.name}</div>
+            <div className="rm-pr-cells">
+              {[1,2,3,4,5,6,7,8,9,10,11].map(m => {
+                const phase = product.phases.find(p => m >= p.start && m <= p.end)
+                return (
+                  <div key={m} className="rm-pr-cell"
+                    style={phase ? { background: phase.color + '20', borderBottom: `2px solid ${phase.color}` } : {}}>
+                    {phase && m === phase.start && (
+                      <span className="rm-pr-label" style={{ color: phase.color }}>{phase.label}</span>
+                    )}
+                  </div>
+                )
+              })}
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      <div className="rm-legend">
+        <span><span className="rm-legend-dot" style={{ background: '#ec4899' }} /> Дизайн / Архитектура</span>
+        <span><span className="rm-legend-dot" style={{ background: '#f59e0b' }} /> Прототип</span>
+        <span><span className="rm-legend-dot" style={{ background: '#10b981' }} /> Разработка</span>
+        <span><span className="rm-legend-dot" style={{ background: '#8b5cf6' }} /> QA / Beta</span>
+        <span><span className="rm-legend-dot" style={{ background: '#6366f1' }} /> Production</span>
+      </div>
+    </div>
+  )
+}
+
+// ─── TEAM & HIRING ───────────────────────────────────────────────────────────
+function SlideTeamHiring() {
+  const founders = [
+    { role: 'Co-founder / CTO', level: 'CA Lead', rate: '$15K/мес', color: '#6366f1', desc: 'Техническое лидерство, архитектура, code review, клиент-коммуникация' },
+    { role: 'Co-founder / CPO', level: 'CA Lead', rate: '$15K/мес', color: '#6366f1', desc: 'Продукт, UX-решения, приоритизация фич, контроль качества, демо клиенту' },
+  ]
+
+  const roles = [
+    { role: 'UI/UX дизайнер', level: 'Mid+', when: 'Месяц 1', rate: '$3K/мес', color: '#ec4899', desc: '100+ экранов, дизайн-система, Figma, HIG + Material 3' },
+    { role: 'Backend-разработчик', level: 'Senior', when: 'Месяц 1', rate: '$4.5K/мес', color: '#f59e0b', desc: 'Go (Golang), Stripe Connect, GPS, высоконагруженный API' },
+    { role: 'iOS-разработчик', level: 'Senior', when: 'Месяц 2', rate: '$4.5K/мес', color: '#10b981', desc: 'Swift/SwiftUI, клиентское + шоп приложение, Apple Pay, GPS' },
+    { role: 'Android-разработчик', level: 'Mid+', when: 'Месяц 4', rate: '$3.5K/мес', color: '#22c55e', desc: 'Kotlin/Jetpack Compose, клиентское + шоп приложение, Google Pay' },
+    { role: 'Frontend (Web)', level: 'Mid+', when: 'Месяц 4', rate: '$3.5K/мес', color: '#f97316', desc: 'Admin-панели, кабинет шопа, accounting, портал партнёров' },
+    { role: 'QA-инженер', level: 'Mid', when: 'Месяц 4', rate: '$2K/мес', color: '#8b5cf6', desc: 'Авто + ручное тестирование, 500+ тестов, нагрузочное' },
+  ]
+
+  const modules = [
+    { name: 'Приложение клиента', platform: 'iOS + Android', user: 'Автовладелец', icon: '1' },
+    { name: 'Приложение шопа', platform: 'iOS + Android', user: 'Мастер / менеджер', icon: '2' },
+    { name: 'Кабинет шопа', platform: 'Web', user: 'Владелец сервиса', icon: '3' },
+    { name: 'Admin — Диспетчеры', platform: 'Web', user: 'Операторы Carreta', icon: '4' },
+    { name: 'Admin — Accounting', platform: 'Web', user: 'Финансовый отдел', icon: '5' },
+    { name: 'Онбординг шопов', platform: 'Web + API', user: 'Шоп + модерация', icon: '6' },
+    { name: 'Портал партнёров', platform: 'Web', user: 'Страховые, франчайзи', icon: '7' },
+    { name: 'Центральный бэкенд', platform: 'Сервер', user: 'Все продукты', icon: '8' },
+    { name: 'AI-ассистент', platform: 'Встроен', user: 'Клиент', icon: '9' },
+  ]
+
+  return (
+    <div className="slide-content">
+      <div className="ed-eyebrow">Разработка · Команда и модули</div>
+      <h2 className="ed-title">Кого нанимаем и что строим</h2>
+      <p className="ed-lead">
+        8 специалистов, 9 продуктовых модулей. Команда масштабируется постепенно — от 3 человек в первый месяц до 8 на пике. Не нанимаем всех сразу — подключаем по мере готовности предыдущих слоёв.
+      </p>
+
+      <h3 className="ed-section-title">Основатели — CA-лидеры проекта</h3>
+      <div className="ht-grid">
+        {founders.map((r, i) => (
+          <motion.div key={i} className="ht-card ht-card-founder"
+            initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.05 }}>
+            <div className="ht-card-head">
+              <div className="ht-dot" style={{ background: r.color }} />
+              <div className="ht-role">{r.role}</div>
+              <div className="ht-level">{r.level}</div>
+            </div>
+            <div className="ht-meta">
+              <span className="ht-when">Весь проект (11 мес)</span>
+              <span className="ht-rate">{r.rate}</span>
+            </div>
+            <div className="ht-desc">{r.desc}</div>
+          </motion.div>
+        ))}
+      </div>
+
+      <h3 className="ed-section-title" style={{ marginTop: '1.5rem' }}>6 разработчиков — Восточная Европа</h3>
+      <div className="ht-grid">
+        {roles.map((r, i) => (
+          <motion.div key={i} className="ht-card"
+            initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.05 }}>
+            <div className="ht-card-head">
+              <div className="ht-dot" style={{ background: r.color }} />
+              <div className="ht-role">{r.role}</div>
+              <div className="ht-level">{r.level}</div>
+            </div>
+            <div className="ht-meta">
+              <span className="ht-when">{r.when}</span>
+              <span className="ht-rate">{r.rate}</span>
+            </div>
+            <div className="ht-desc">{r.desc}</div>
+          </motion.div>
+        ))}
+      </div>
+
+      <WavyDivider />
+
+      <h3 className="ed-section-title" style={{ marginTop: '2rem' }}>9 модулей платформы</h3>
+      <div className="mod-grid">
+        {modules.map((m, i) => (
+          <motion.div key={i} className="mod-card"
+            initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.35, delay: i * 0.04 }}>
+            <div className="mod-icon">{m.icon}</div>
+            <div className="mod-info">
+              <div className="mod-name">{m.name}</div>
+              <div className="mod-platform">{m.platform}</div>
+              <div className="mod-user">{m.user}</div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      <div className="rm-salary-box" style={{ marginTop: '2rem' }}>
+        <div className="rm-salary-title">Как растёт ежемесячный платёж</div>
+        <div className="rm-salary-row"><span>Мес 1–2 — основатели + дизайнер + backend</span><span>$38.5K</span></div>
+        <div className="rm-salary-row"><span>Мес 3 — + mobile #1</span><span>$43.5K</span></div>
+        <div className="rm-salary-row"><span>Мес 4–9 — полная команда (2+6)</span><span>$54–56K</span></div>
+        <div className="rm-salary-row"><span>Мес 10–11 — команда оптимизируется</span><span>$45–51K</span></div>
+        <div className="rm-salary-row total"><span>Итого за 11 месяцев</span><span>~$566K</span></div>
+      </div>
+
+      <div className="ed-pullquote" style={{ marginTop: '1rem' }}>
+        Основатели ($15K × 2) работают все 11 месяцев — это $330K. Остальные $228K — зарплаты 6 разработчиков + инфраструктура. Команда масштабируется постепенно: нет смысла платить за 8 человек, когда работа есть только для троих.
       </div>
     </div>
   )
@@ -2532,6 +4395,8 @@ const GROUPS = [
       { id: 'techstack', label: 'Tech Stack + AI', Component: SlideTechStack },
       { id: 'devstages', label: 'Этапы разработки', Component: SlideDevStages },
       { id: 'phases', label: 'Сроки по фазам', Component: Slide07Phases },
+      { id: 'roadmap', label: 'Помесячный план', Component: SlideRoadmapBudget },
+      { id: 'hiring', label: 'Команда и модули', Component: SlideTeamHiring },
       { id: 'process', label: 'Процесс', Component: Slide11Process },
     ],
   },
@@ -2549,12 +4414,34 @@ const GROUPS = [
     ],
   },
   {
+    id: 'audit', label: 'Аудит',
+    slides: [
+      { id: 'launch-status', label: 'Статус запуска', Component: SlideAuditLaunchStatus },
+      { id: 'catalog-gaps', label: '17 пробелов', Component: SlideAuditGaps },
+      { id: 'full-catalog', label: '100+ услуг', Component: SlideAuditCatalog },
+      { id: 'strategic', label: 'Стратегия', Component: SlideAuditStrategic },
+      { id: 'top10', label: 'Top-10', Component: SlideAuditTop10 },
+      { id: 'competition', label: 'Конкуренты', Component: SlideAuditCompetition },
+      { id: 'questions', label: 'Вопросы', Component: SlideAuditQuestions },
+      { id: 'audit-roadmap', label: 'Roadmap 30 дней', Component: SlideAuditRoadmap },
+    ],
+  },
+  {
     id: 'trust', label: 'Условия',
     slides: [
       { id: 'guarantees', label: 'Защита клиента', Component: SlideGuarantees },
       { id: 'support', label: 'После запуска', Component: SlideSupport },
       { id: 'faq', label: 'Вопросы и ответы', Component: SlideFAQ },
       { id: 'day30', label: 'Первые 30 дней', Component: SlideDay30 },
+    ],
+  },
+  {
+    id: 'partnership', label: 'Партнерство',
+    slides: [
+      { id: 'deal', label: 'Условия 15/15', Component: SlidePartnershipDeal },
+      { id: 'startup-roadmap', label: 'Roadmap найма', Component: SlideRoadmapStartup },
+      { id: 'budget-plan', label: 'Бюджет $30K', Component: SlideBudgetPlan },
+      { id: 'mosco-synergy', label: 'Mosco AI', Component: SlideMoscoSynergy },
     ],
   },
   {
