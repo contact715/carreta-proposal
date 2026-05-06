@@ -2403,6 +2403,52 @@ function SlideKickoffOriginalCatalog() {
         </div>
       </div>
 
+      <WavyDivider />
+
+      {/* What was strong in the original */}
+      <div className="koc-two-col">
+        <div>
+          <h3 className="ed-section-title" style={{ color: '#1C6B3A' }}>Что было сильного в исходнике</h3>
+          <div className="koc-strength-list">
+            {[
+              { icon: '🎯', text: 'Главная идея чёткая и продаваемая: «not a repair shop, a concierge layer over the auto industry» — это позиционирование, а не описание услуг.' },
+              { icon: '📦', text: 'Outcome-based grouping (раздел 25 PDF) — уже маркетинговый инсайт. Клиент думал «I\'m stuck», а не «coolant flush».' },
+              { icon: '⭐', text: 'Топ-15 для старта (раздел 29) реальный и избирательный — не «всё сразу запустим». Правильное мышление.' },
+              { icon: '♻️', text: 'Memberships как стратегия recurring revenue правильно выделены. 16 планов — много, но направление верное.' },
+              { icon: '👥', text: 'Сегментация по аудиториям (women-only, elderly, parents) — готовые нишевые лендинги с высокой конверсией.' },
+              { icon: '✍️', text: 'Brand wording проработан: 7 вариантов слоганов. «Your car. Zero stress. We handle the rest.» — сильный.' },
+            ].map((item, i) => (
+              <motion.div key={i} className="koc-strength-item"
+                initial={{ opacity: 0, x: -12 }} whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }} transition={{ duration: 0.35, delay: i * 0.07 }}>
+                <span className="koc-item-icon">{item.icon}</span>
+                <span>{item.text}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h3 className="ed-section-title" style={{ color: '#1C5C8F' }}>Что мы добавили и усилили</h3>
+          <div className="koc-add-list">
+            {[
+              { icon: '💰', text: 'Цены и юнит-экономика — pricing framework Standard × Premium × White-Glove × Time-tier, 9 ценовых точек, surge-multiplier модель.' },
+              { icon: '⚖️', text: 'Регуляторика — DOT inspection, smog check (CA/NY), VIN verification, lemon law, bonded title, apostille — закрыты полностью.' },
+              { icon: '🎯', text: 'TAM и ICP — 3 beachhead-сегмента приоритезированы: busy professionals, snowbirds, fleet tradesmen. С числами по LTV и CAC.' },
+              { icon: '🗺️', text: 'Конкурентный ландшафт — 5 игроков (YourMechanic, Wrench, Spiffy, RepairPal, Take5) с анализом funding, revenue, моатов CarETA.' },
+              { icon: '🏭', text: 'Provider network strategy — 8 типов провайдеров, количественные targets для Miami MVP, 5 каналов acquisition.' },
+            ].map((item, i) => (
+              <motion.div key={i} className="koc-add-item"
+                initial={{ opacity: 0, x: 12 }} whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }} transition={{ duration: 0.35, delay: i * 0.07 }}>
+                <span className="koc-item-icon">{item.icon}</span>
+                <span>{item.text}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* Navigation hint */}
       <div className="aes-nav-hint" style={{ marginTop: '1.5rem' }}>
         <div className="aes-nav-hint-label">Дальше в этом разделе</div>
@@ -2508,6 +2554,58 @@ function SlideKickoffExecSummary() {
         ))}
       </div>
 
+      <WavyDivider />
+
+      {/* Top-10 actions next 30 days */}
+      <div className="aes-two-bottom">
+        <div>
+          <h3 className="ed-section-title">Топ-10 действий — следующие 30 дней</h3>
+          <div className="aes-checklist">
+            {[
+              { n: 1, text: 'Финализировать Top-10 услуг для MVP с клиентом' },
+              { n: 2, text: 'Workshop с founder: ICP priority, geo strategy, tier-system decision' },
+              { n: 3, text: 'Service catalog v2 — 3-tier pricing framework + Standard/Premium/WG' },
+              { n: 4, text: 'Provider onboarding script для первых 50 шопов Miami' },
+              { n: 5, text: 'API contracts: Stripe Connect эскроу-flow, Twilio, Maps' },
+              { n: 6, text: 'AI-prompts для customer-facing chat (outcome detection)' },
+              { n: 7, text: 'Beta launch private — 5 клиентов на 3 услуги' },
+              { n: 8, text: 'Live tracking первых 50 заказов с full instrumentation' },
+              { n: 9, text: 'Insurance partnership outreach — 3 pilot meetings (Geico/SF/Progressive)' },
+              { n: 10, text: 'Iteration sprint-review — weekly cadence с CarETA founder' },
+            ].map((item, i) => (
+              <motion.div key={i} className="aes-check-item"
+                initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.05 }}>
+                <span className="aes-check-n">{item.n}</span>
+                <span className="aes-check-box">☐</span>
+                <span>{item.text}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h3 className="ed-section-title">Метрики успеха — месяц 1</h3>
+          <div className="aes-kpis">
+            {[
+              { kpi: 'Подключённые провайдеры', target: '≥ 20', color: '#1C6B3A' },
+              { kpi: 'Зарегистрированные клиенты', target: '≥ 200', color: '#1C5C8F' },
+              { kpi: 'Завершённые заказы', target: '≥ 50', color: '#D68910' },
+              { kpi: 'Agreement rate (shadow mode)', target: '≥ 85%', color: '#6B3A8F' },
+              { kpi: 'NPS первых клиентов', target: '≥ 50', color: '#C0392B' },
+            ].map((kpi, i) => (
+              <motion.div key={i} className="aes-kpi-row"
+                style={{ borderLeft: `3px solid ${kpi.color}` }}
+                initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }} transition={{ duration: 0.35, delay: i * 0.07 }}>
+                <span className="aes-kpi-label">{kpi.kpi}</span>
+                <span className="aes-kpi-target" style={{ color: kpi.color }}>{kpi.target}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* Navigation hint */}
       <div className="aes-nav-hint">
         <div className="aes-nav-hint-label">Дальше в этом разделе</div>
@@ -2592,10 +2690,18 @@ function SlideKickoffLaunchStatus() {
   const trackers = [
     { label: 'Frontend MVP', pct: 65, color: '#1C5C8F' },
     { label: 'Backend MVP', pct: 70, color: '#1C6B3A' },
+    { label: 'AI Engine', pct: 50, color: '#C8860A' },
+    { label: 'Stripe эскроу-flow', pct: 80, color: '#D68910' },
     { label: 'Admin-панель', pct: 40, color: '#B86A00' },
-    { label: 'Shop-кабинет', pct: 35, color: '#6B3A8F' },
-    { label: 'AI-ассистент', pct: 25, color: '#C8860A' },
-    { label: 'Onboarding (шопы)', pct: 30, color: '#1C6B3A' },
+    { label: 'Provider onboarding', pct: 25, color: '#6B3A8F' },
+    { label: 'Compliance docs', pct: 90, color: '#1C6B3A' },
+  ]
+
+  const team = [
+    { role: 'Founder · Castells', name: 'Продукт + Sales', desc: 'Архитектура продукта, клиент-коммуникация, стратегия', color: '#C8860A', status: 'Активен' },
+    { role: 'CTO · Yura', name: 'Backend + AI', desc: 'ex-Vohha TMS — backend архитектура, AI-движок, API', color: '#1C5C8F', status: 'Активен' },
+    { role: 'Frontend · Nikel', name: 'UI + Design', desc: 'Клиентское app, дизайн-система, все интерфейсы', color: '#1C6B3A', status: 'Активен' },
+    { role: 'Dev #4–9 · план', name: '6 разработчиков', desc: 'Восточная Европа, Senior/Mid+. По roadmap — месяц 1–4', color: '#7F8C8D', status: 'Найм' },
   ]
 
   return (
@@ -2655,6 +2761,32 @@ function SlideKickoffLaunchStatus() {
         ))}
       </div>
 
+      <WavyDivider />
+
+      <h3 className="ed-section-title">Команда сейчас</h3>
+      <div className="lnch-team-grid">
+        {team.map((m, i) => (
+          <motion.div key={i} className="lnch-team-card"
+            style={{ borderTop: `3px solid ${m.color}` }}
+            initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.08 }}>
+            <div className="lnch-team-avatar" style={{ background: m.color + '20', color: m.color }}>
+              {m.role[0]}
+            </div>
+            <div className="lnch-team-info">
+              <div className="lnch-team-role" style={{ color: m.color }}>{m.role}</div>
+              <div className="lnch-team-name">{m.name}</div>
+              <div className="lnch-team-desc">{m.desc}</div>
+            </div>
+            <span className="lnch-team-status" style={{
+              background: m.status === 'Найм' ? 'rgba(127,140,141,0.12)' : 'rgba(28,107,58,0.12)',
+              color: m.status === 'Найм' ? '#7F8C8D' : '#1C6B3A',
+              border: `1px solid ${m.status === 'Найм' ? 'rgba(127,140,141,0.3)' : 'rgba(28,107,58,0.3)'}`,
+            }}>{m.status}</span>
+          </motion.div>
+        ))}
+      </div>
+
       <div className="ed-pullquote" style={{ marginTop: '2rem' }}>
         Это не питч «мы планируем». Это питч «мы уже строим». Каждый день в репозитории появляются новые коммиты.
       </div>
@@ -2665,23 +2797,23 @@ function SlideKickoffLaunchStatus() {
 // SUB 2: 17 пробелов
 function SlideKickoffGaps() {
   const gaps = [
-    { n: 1, title: 'EV-сегмент почти не закрыт', priority: 'High', color: '#C0392B', services: 14, why: '9% новых машин в США — электрики, в Калифорнии уже 20%+. Текущий каталог упоминает EV лишь в 3 пунктах. Растущий сегмент без конкурентного покрытия — открытое окно для захвата.', icon: '⚡' },
-    { n: 2, title: 'ADAS calibration отсутствует', priority: 'High', color: '#C0392B', services: 7, why: 'После любой замены лобового стекла, бампера или зеркала — обязательна по NHTSA с 2024 года. Очень маржинальная услуга, слабо конкурентная на marketplace.', icon: '🎯' },
-    { n: 3, title: 'Aftermarket / customization', priority: 'High', color: '#C0392B', services: 22, why: 'Рынок $60B+ в год в США. Идеальный формат для marketplace: разнотипные шопы, высокий средний чек, низкая ценовая эластичность.', icon: '🔧' },
-    { n: 4, title: 'Anti-theft / Security', priority: 'Medium', color: '#D68910', services: 10, why: 'Кражи каталитических конвертеров взорвались с 2021 года. Отдельная маржинальная ниша с нарастающим спросом в Miami и крупных городах.', icon: '🔒' },
-    { n: 5, title: 'Glass / windshield (полная категория)', priority: 'High', color: '#C0392B', services: 11, why: 'В каталоге слабо представлен. Rock chip repair — до $100, идеальна для мобильной модели. Высокая частота, быстрая сделка.', icon: '🪟' },
-    { n: 6, title: 'RV / Camper / Trailer / Boat', priority: 'Medium', color: '#D68910', services: 14, why: 'Огромный рынок Florida / Arizona / Texas. В текущем каталоге только "motor home cleaning". Сезонный но высокочековый сегмент.', icon: '🚐' },
-    { n: 7, title: 'Motorcycle / Powersports', priority: 'Low', color: '#27AE60', services: 8, why: 'Если CarETA = «всё что катается» — мотоциклы и ATV дают трафик и ширину охвата без существенных затрат на добавление.', icon: '🏍️' },
-    { n: 8, title: 'Pre-purchase / Selling — отдельный продукт', priority: 'High', color: '#C0392B', services: 11, why: 'Decision-point с максимальной готовностью платить. Mobile pre-purchase inspection — $200–400 средний чек, привлекает новых клиентов в воронку.', icon: '🔍' },
-    { n: 9, title: 'Hurricane / disaster services', priority: 'High', color: '#C0392B', services: 11, why: 'Miami-specific! Hurricane season — идеальный moment of relevance. В текущем каталоге — ноль. Конкурентный moat для регионального лидерства.', icon: '🌀' },
-    { n: 10, title: 'Microinsurance / warranty', priority: 'High', color: '#C0392B', services: 12, why: 'В бизнес-модели отдельный revenue stream ($12–20/мес), но в services list нет конкретных продуктов. Огромная упущенная подписочная категория.', icon: '🛡️' },
-    { n: 11, title: 'B2B сегменты не закрыты', priority: 'High', color: '#C0392B', services: 13, why: 'Used car dealers, auctions, rental cleanup, last-mile vans, government fleets — упущены. B2B дает предсказуемый recurring revenue с первого месяца.', icon: '🏢' },
-    { n: 12, title: 'Childcare / accessibility', priority: 'Medium', color: '#D68910', services: 9, why: 'CPST-сертифицированный inspection — премиум-услуга. Wheelchair conversion и hand controls — медленный рост, но высокая лояльность и уникальность.', icon: '👶' },
-    { n: 13, title: 'Documentation / digital twin', priority: 'High', color: '#C0392B', services: 12, why: 'Retention moat для платформы. Digital vehicle file = customer lock-in. Клиент уходит туда, где хранится история его машины.', icon: '📋' },
-    { n: 14, title: 'Outcome-based packages', priority: 'High', color: '#C0392B', services: 8, why: 'В разделе 25 обозначено, но не доведено. Для marketplace критично: клиент выбирает «I\'m stuck», а не «coolant flush».', icon: '📦' },
-    { n: 15, title: 'Membership tiers недостаточно дифференцированы', priority: 'Medium', color: '#D68910', services: 0, why: '16 планов без чёткой иерархии. Нужно 4–5 tier\'ов с upgrade path и visible value gap между уровнями.', icon: '⭐' },
-    { n: 16, title: 'Регуляторно-критичные услуги', priority: 'High', color: '#C0392B', services: 13, why: 'DOT inspection, smog check, VIN verification, bonded title, lemon law — compliance-pieces, обязательные для полноты платформы и доверия клиентов.', icon: '⚖️' },
-    { n: 17, title: 'Modern trends 2026', priority: 'Medium', color: '#D68910', services: 11, why: 'AI inspection via phone, live mechanic video consult, OBD-prediction — создают «wow it\'s 2026» ощущение и укрепляют бренд как инновационную платформу.', icon: '🤖' },
+    { n: 1, title: 'EV-сегмент почти не закрыт', priority: 'High', color: '#C0392B', services: 14, why: '9% новых машин в США — электрики, в Калифорнии уже 20%+. Текущий каталог упоминает EV лишь в 3 пунктах. Растущий сегмент без конкурентного покрытия — открытое окно для захвата.', icon: '⚡', tam: '$42B', growth: '+28%', ticket: '$250–3000', whynow: '9% новых машин EV, в CA 20%+' },
+    { n: 2, title: 'ADAS calibration отсутствует', priority: 'High', color: '#C0392B', services: 7, why: 'После любой замены лобового стекла, бампера или зеркала — обязательна по NHTSA с 2024 года. Очень маржинальная услуга, слабо конкурентная на marketplace.', icon: '🎯', tam: '$4.2B', growth: '+35%', ticket: '$250–650', whynow: 'NHTSA mandate 2024+' },
+    { n: 3, title: 'Aftermarket / customization', priority: 'High', color: '#C0392B', services: 22, why: 'Рынок $60B+ в год в США. Идеальный формат для marketplace: разнотипные шопы, высокий средний чек, низкая ценовая эластичность.', icon: '🔧', tam: '$60B', growth: '+6%', ticket: '$150–2500', whynow: 'Gen Z personalization wave' },
+    { n: 4, title: 'Anti-theft / Security', priority: 'Medium', color: '#D68910', services: 10, why: 'Кражи каталитических конвертеров взорвались с 2021 года. Отдельная маржинальная ниша с нарастающим спросом в Miami и крупных городах.', icon: '🔒', tam: '$2.8B', growth: '+47%', ticket: '$80–400', whynow: 'Cat converter thefts +1500% с 2019' },
+    { n: 5, title: 'Glass / windshield (полная категория)', priority: 'High', color: '#C0392B', services: 11, why: 'В каталоге слабо представлен. Rock chip repair — до $100, идеальна для мобильной модели. Высокая частота, быстрая сделка.', icon: '🪟', tam: '$7.1B', growth: '+8%', ticket: '$80–1200', whynow: 'ADAS recalibration требует certified shops' },
+    { n: 6, title: 'RV / Camper / Trailer / Boat', priority: 'Medium', color: '#D68910', services: 14, why: 'Огромный рынок Florida / Arizona / Texas. В текущем каталоге только "motor home cleaning". Сезонный но высокочековый сегмент.', icon: '🚐', tam: '$11.4B', growth: '+12%', ticket: '$200–2000', whynow: 'Post-COVID RV boom продолжается' },
+    { n: 7, title: 'Motorcycle / Powersports', priority: 'Low', color: '#27AE60', services: 8, why: 'Если CarETA = «всё что катается» — мотоциклы и ATV дают трафик и ширину охвата без существенных затрат на добавление.', icon: '🏍️', tam: '$4.6B', growth: '+4%', ticket: '$50–800', whynow: 'Secondary трафик при low CAC' },
+    { n: 8, title: 'Pre-purchase / Selling — отдельный продукт', priority: 'High', color: '#C0392B', services: 11, why: 'Decision-point с максимальной готовностью платить. Mobile pre-purchase inspection — $200–400 средний чек, привлекает новых клиентов в воронку.', icon: '🔍', tam: '$850M', growth: '+18%', ticket: '$200–450', whynow: 'Used car market + scam fears' },
+    { n: 9, title: 'Hurricane / disaster services', priority: 'High', color: '#C0392B', services: 11, why: 'Miami-specific! Hurricane season — идеальный moment of relevance. В текущем каталоге — ноль. Конкурентный moat для регионального лидерства.', icon: '🌀', tam: '$1.2B (FL)', growth: '+22%', ticket: '$89–389', whynow: '2024 — самый разрушительный season' },
+    { n: 10, title: 'Microinsurance / warranty', priority: 'High', color: '#C0392B', services: 12, why: 'В бизнес-модели отдельный revenue stream ($12–20/мес), но в services list нет конкретных продуктов. Огромная упущенная подписочная категория.', icon: '🛡️', tam: '$5.5B', growth: '+24%', ticket: '$5–25/мес', whynow: 'Insurtech boom + chargeback fatigue' },
+    { n: 11, title: 'B2B сегменты не закрыты', priority: 'High', color: '#C0392B', services: 13, why: 'Used car dealers, auctions, rental cleanup, last-mile vans, government fleets — упущены. B2B дает предсказуемый recurring revenue с первого месяца.', icon: '🏢', tam: '$32B', growth: '+9%', ticket: '$1K–15K/мес', whynow: 'Gig-economy fleet growth + labor shortage' },
+    { n: 12, title: 'Childcare / accessibility', priority: 'Medium', color: '#D68910', services: 9, why: 'CPST-сертифицированный inspection — премиум-услуга. Wheelchair conversion и hand controls — медленный рост, но высокая лояльность и уникальность.', icon: '👶', tam: '$1.8B', growth: '+7%', ticket: '$50–400', whynow: 'Aging population + CPST awareness' },
+    { n: 13, title: 'Documentation / digital twin', priority: 'High', color: '#C0392B', services: 12, why: 'Retention moat для платформы. Digital vehicle file = customer lock-in. Клиент уходит туда, где хранится история его машины.', icon: '📋', tam: '$720M', growth: '+31%', ticket: '$5–15/мес', whynow: 'Data portability laws (CA, NY)' },
+    { n: 14, title: 'Outcome-based packages', priority: 'High', color: '#C0392B', services: 8, why: 'В разделе 25 обозначено, но не доведено. Для marketplace критично: клиент выбирает «I\'m stuck», а не «coolant flush».', icon: '📦', tam: 'UX концепция', growth: 'Conv +35%', ticket: 'Bundled', whynow: 'Gen Z prefers outcome over feature' },
+    { n: 15, title: 'Membership tiers недостаточно дифференцированы', priority: 'Medium', color: '#D68910', services: 0, why: '16 планов без чёткой иерархии. Нужно 4–5 tier\'ов с upgrade path и visible value gap между уровнями.', icon: '⭐', tam: 'Retention', growth: 'LTV +220%', ticket: '$19–199/мес', whynow: 'DashPass аналог — subscription pays' },
+    { n: 16, title: 'Регуляторно-критичные услуги', priority: 'High', color: '#C0392B', services: 13, why: 'DOT inspection, smog check, VIN verification, bonded title, lemon law — compliance-pieces, обязательные для полноты платформы и доверия клиентов.', icon: '⚖️', tam: '$2.1B', growth: '+5%', ticket: '$40–300', whynow: 'State-by-state regulatory expansion' },
+    { n: 17, title: 'Modern trends 2026', priority: 'Medium', color: '#D68910', services: 11, why: 'AI inspection via phone, live mechanic video consult, OBD-prediction — создают «wow it\'s 2026» ощущение и укрепляют бренд как инновационную платформу.', icon: '🤖', tam: 'Differentiator', growth: 'Critical', ticket: 'Premium', whynow: '2026 customer expects AI-first UX' },
   ]
 
   const priorityLabel = { High: 'Высокий', Medium: 'Средний', Low: 'Низкий' }
@@ -2776,6 +2908,25 @@ function SlideKickoffGaps() {
             </div>
             <div className="lnch-gap-title">{g.title}</div>
             <div className="lnch-gap-why">{g.why}</div>
+            {/* TAM data block */}
+            <div className="gap-data-block">
+              <div className="gap-data-item">
+                <span className="gap-data-label">TAM</span>
+                <span className="gap-data-val" style={{ color: g.color }}>{g.tam}</span>
+              </div>
+              <div className="gap-data-item">
+                <span className="gap-data-label">Рост</span>
+                <span className="gap-data-val" style={{ color: '#1C6B3A' }}>{g.growth}</span>
+              </div>
+              <div className="gap-data-item">
+                <span className="gap-data-label">Чек</span>
+                <span className="gap-data-val">{g.ticket}</span>
+              </div>
+              <div className="gap-data-why">
+                <span className="gap-data-label">Почему сейчас</span>
+                <span>{g.whynow}</span>
+              </div>
+            </div>
             <div className="lnch-gap-footer">
               <span className="lnch-priority-badge" style={{ background: g.color + '15', color: g.color, border: `1px solid ${g.color}40` }}>
                 {priorityLabel[g.priority]}
@@ -3103,23 +3254,23 @@ function SlideKickoffCatalog() {
   ]
 
   const outcomePkgs = [
-    { scenario: '«Рожать поехала, машина не заводится»', trigger: '911-style', stack: 'jump-start mobile + 24/7 dispatch + emergency rideshare credit', tier: 'Premium', color: '#C0392B' },
-    { scenario: '«Завтра показ в риэлтор-агентстве»', trigger: 'Same-day', stack: 'exterior wash + interior vacuum + tire shine + freshener (2hr)', tier: 'Express', color: '#D68910' },
-    { scenario: '«Ушёл на свадьбу, нужно домой»', trigger: 'Late night', stack: 'sober driver + drive-home-in-your-car', tier: 'Standard', color: '#1C5C8F' },
-    { scenario: '«Лизинг возвращать через неделю»', trigger: 'Schedule', stack: 'inspection + spot detail + minor cosmetic + paperwork', tier: 'Lease Return', color: '#6B3A8F' },
-    { scenario: '«Купил машину, не знаю что с ней»', trigger: 'Onboarding', stack: 'full inspection + service history pull + mech consultation + plan', tier: 'New Owner', color: '#1C6B3A' },
-    { scenario: '«Уезжаю на 3 месяца»', trigger: 'Schedule', stack: 'storage prep + battery tender + cover + monthly check-in', tier: 'Snowbird', color: '#B86A00' },
-    { scenario: '«Ребёнка отвезти на первый день школы»', trigger: 'Trigger', stack: 'car wash + air freshener + child seat check', tier: 'Family', color: '#27AE60' },
-    { scenario: '«Hurricane на горизонте»', trigger: 'Weather alert', stack: 'move to higher ground + window taping + emergency kit', tier: 'Storm', color: '#8B2E2E' },
+    { scenario: '«Рожать поехала, машина не заводится»', trigger: '911-style', stack: 'jump-start mobile + 24/7 dispatch + emergency rideshare credit', tier: 'Premium', color: '#C0392B', cost: '$299' },
+    { scenario: '«Завтра показ в риэлтор-агентстве»', trigger: 'Same-day', stack: 'exterior wash + interior vacuum + tire shine + freshener (2hr)', tier: 'Express', color: '#D68910', cost: '$189' },
+    { scenario: '«Ушёл на свадьбу, нужно домой»', trigger: 'Late night', stack: 'sober driver + drive-home-in-your-car', tier: 'Standard', color: '#1C5C8F', cost: '$129' },
+    { scenario: '«Лизинг возвращать через неделю»', trigger: 'Schedule', stack: 'inspection + spot detail + minor cosmetic + paperwork', tier: 'Lease Return', color: '#6B3A8F', cost: '$349' },
+    { scenario: '«Купил машину, не знаю что с ней»', trigger: 'Onboarding', stack: 'full inspection + service history pull + mech consultation + plan', tier: 'New Owner', color: '#1C6B3A', cost: '$499' },
+    { scenario: '«Уезжаю на 3 месяца»', trigger: 'Schedule', stack: 'storage prep + battery tender + cover + monthly check-in', tier: 'Snowbird', color: '#B86A00', cost: '$89/мес×3' },
+    { scenario: '«Ребёнка отвезти на первый день школы»', trigger: 'Trigger', stack: 'car wash + air freshener + child seat check', tier: 'Family', color: '#27AE60', cost: '$79' },
+    { scenario: '«Hurricane на горизонте»', trigger: 'Weather alert', stack: 'move to higher ground + window taping + emergency kit', tier: 'Storm', color: '#8B2E2E', cost: '$89–389' },
   ]
 
   const memberTiers = [
-    { tier: 'Free', price: '$0', included: '1 заявка/мес, скидка 5%', who: 'Онбординг', color: '#7F8C8D' },
-    { tier: 'Essential', price: '$19', included: '3 заявки/мес, 10% off, бесплатный jump-start', who: 'Бытовой', color: '#1C5C8F' },
-    { tier: 'Pro', price: '$49', included: 'Unlimited, 15% off, pickup, priority booking', who: 'Busy professional', color: '#1C6B3A' },
-    { tier: 'Family', price: '$79', included: 'До 3 машин, kid services, school-run backup', who: 'Семья', color: '#D68910' },
-    { tier: 'Executive', price: '$199', included: 'Concierge + chauffeur 4hrs/мес + white-glove', who: 'Premium', color: '#B86A00' },
-    { tier: 'Fleet', price: 'от $299', included: 'Per-vehicle, multi-vehicle dashboard', who: 'B2B', color: '#6B3A8F' },
+    { tier: 'Free', price: '$0', included: '1 заявка/мес, скидка 5%', who: 'Онбординг', color: '#7F8C8D', margin: '$0 (acquisition)', targetPct: '40%' },
+    { tier: 'Essential', price: '$19', included: '3 заявки/мес, 10% off, бесплатный jump-start', who: 'Бытовой', color: '#1C5C8F', margin: '$14 (74%)', targetPct: '25%' },
+    { tier: 'Pro', price: '$49', included: 'Unlimited, 15% off, pickup, priority booking', who: 'Busy professional', color: '#1C6B3A', margin: '$32 (65%)', targetPct: '20%' },
+    { tier: 'Family', price: '$79', included: 'До 3 машин, kid services, school-run backup', who: 'Семья', color: '#D68910', margin: '$50 (63%)', targetPct: '8%' },
+    { tier: 'Executive', price: '$199', included: 'Concierge + chauffeur 4hrs/мес + white-glove', who: 'Premium', color: '#B86A00', margin: '$115 (58%)', targetPct: '5%' },
+    { tier: 'Fleet', price: 'от $299', included: 'Per-vehicle, multi-vehicle dashboard', who: 'B2B', color: '#6B3A8F', margin: 'Varies', targetPct: '2%' },
   ]
 
   return (
@@ -3182,6 +3333,7 @@ function SlideKickoffCatalog() {
           <div>Trigger</div>
           <div>Состав пакета</div>
           <div>Tier</div>
+          <div>Цена</div>
         </div>
         {outcomePkgs.map((pkg, i) => (
           <motion.div key={i} className="lnch-outcomes-row"
@@ -3195,6 +3347,7 @@ function SlideKickoffCatalog() {
             <div>
               <span className="lnch-tier-badge" style={{ background: pkg.color, color: '#fff' }}>{pkg.tier}</span>
             </div>
+            <div className="lnch-outcomes-cost" style={{ color: pkg.color }}>{pkg.cost}</div>
           </motion.div>
         ))}
       </div>
@@ -3216,6 +3369,16 @@ function SlideKickoffCatalog() {
             <div className="lnch-tier-price">{t.price}</div>
             <div className="lnch-tier-who">{t.who}</div>
             <div className="lnch-tier-included">{t.included}</div>
+            <div className="lnch-tier-meta">
+              <div className="lnch-tier-meta-row">
+                <span className="lnch-tier-meta-label">Маржа</span>
+                <span className="lnch-tier-meta-val" style={{ color: t.color }}>{t.margin}</span>
+              </div>
+              <div className="lnch-tier-meta-row">
+                <span className="lnch-tier-meta-label">Целевой %</span>
+                <span className="lnch-tier-meta-val">{t.targetPct}</span>
+              </div>
+            </div>
           </motion.div>
         ))}
       </div>
@@ -3387,6 +3550,52 @@ function SlideKickoffPricing() {
           </div>
         </div>
       </div>
+
+      <WavyDivider />
+
+      {/* Maria case study */}
+      <h3 className="ed-section-title">Real-world: как работает фреймворк для живого клиента</h3>
+      <motion.div className="apx-case-study"
+        initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }} transition={{ duration: 0.5 }}>
+        <div className="apx-case-study-header">
+          <div className="apx-case-study-avatar">👩</div>
+          <div className="apx-case-study-who">
+            <div className="apx-case-study-name">Мария, 34 года, Miami Beach</div>
+            <div className="apx-case-study-desc">Риэлтор, 2021 Tesla Model Y, Essential Member ($19/мес)</div>
+          </div>
+        </div>
+        <div className="apx-case-study-scenario">
+          «Завтра утром большой показ дома — приезжают 4 покупателя. Машина грязная после поездки в Everglades.
+          Уже вечер, и мне некогда ехать на мойку. Нужно что-то прямо сейчас.»
+        </div>
+        <div className="apx-case-steps">
+          {[
+            { n: '1', text: 'Мария открывает CarETA → тапает «Хочу помыть» → AI спрашивает: «Когда нужно? Срочно или завтра утром?»' },
+            { n: '2', text: 'Она отвечает: «Сегодня вечером, желательно до 9pm». AI определяет: Same-day tier, Premium.' },
+            { n: '3', text: 'Три варианта: Standard сегодня-вечером $83 (10% скидка члена) / Premium $117 / White-Glove $207. Она выбирает Premium.' },
+            { n: '4', text: 'Провайдер приезжает в 7:40pm. Exterior + interior detail, tire shine. Фото до/после в приложении.' },
+            { n: '5', text: 'Итоговый чек: $117 − 10% = $105.30. CarETA получает 20% = $21. Провайдер — $84.' },
+          ].map((s, i) => (
+            <div key={i} className="apx-case-step">
+              <span className="apx-case-step-n">{s.n}</span>
+              <span>{s.text}</span>
+            </div>
+          ))}
+        </div>
+        <div className="apx-case-result">
+          {[
+            { label: 'Цена для Марии', val: '$105.30' },
+            { label: 'Доход CarETA', val: '$21.06' },
+            { label: 'Доход провайдера', val: '$84.24' },
+          ].map((c, i) => (
+            <div key={i} className="apx-case-result-cell">
+              <span className="apx-case-result-label">{c.label}</span>
+              <span className="apx-case-result-val">{c.val}</span>
+            </div>
+          ))}
+        </div>
+      </motion.div>
     </div>
   )
 }
@@ -3410,6 +3619,12 @@ function SlideKickoffJourney() {
         { icon: '📦', label: '«Лизинг возвращаю»' },
         { icon: '❓', label: '«Что-то ещё»' },
       ],
+      metrics: [
+        { label: 'Time to screen', val: '0 сек' },
+        { label: 'Tap-to-proceed', val: '1 тап' },
+        { label: 'Drop-off target', val: '< 15%' },
+      ],
+      cialdini: { principle: 'Liking', note: 'Визуальный язык «ситуации» снижает тревогу — клиент видит себя, а не «coolant flush».' },
     },
     {
       n: '02',
@@ -3423,6 +3638,12 @@ function SlideKickoffJourney() {
         { icon: '📸', label: 'Прикрепить фото (опц.)' },
         { icon: '🤖', label: 'AI подбирает услугу + tier' },
       ],
+      metrics: [
+        { label: 'Avg dialog length', val: '2–3 сообщения' },
+        { label: 'Intent accuracy', val: '≥ 88%' },
+        { label: 'Time to quote', val: '< 60 сек' },
+      ],
+      cialdini: { principle: 'Authority', note: 'AI задаёт умные вопросы → клиент воспринимает платформу как эксперта, а не таксометр.' },
     },
     {
       n: '03',
@@ -3436,6 +3657,12 @@ function SlideKickoffJourney() {
         { icon: '📊', label: 'Standard / Premium / WG' },
         { icon: '💳', label: 'Confirm / Compare / Human' },
       ],
+      metrics: [
+        { label: 'Tier upgrade rate', val: 'цель 35%' },
+        { label: 'Time to confirm', val: '< 90 сек' },
+        { label: 'Abandon at price', val: '< 20%' },
+      ],
+      cialdini: { principle: 'Anchoring', note: 'White-Glove показан первым — Standard кажется «выгодной» альтернативой, Premium — «разумным» выбором.' },
     },
     {
       n: '04',
@@ -3449,6 +3676,12 @@ function SlideKickoffJourney() {
         { icon: '💬', label: 'Чат с техником' },
         { icon: '⏱️', label: 'Таймер ожидания' },
       ],
+      metrics: [
+        { label: 'Push open rate', val: '> 60%' },
+        { label: 'In-app chat usage', val: 'цель 40%' },
+        { label: 'Cancellation rate', val: '< 5%' },
+      ],
+      cialdini: { principle: 'Commitment', note: 'Клиент наблюдает за движением техника — психологически уже «в процессе», отмена воспринимается как потеря.' },
     },
     {
       n: '05',
@@ -3462,6 +3695,12 @@ function SlideKickoffJourney() {
         { icon: '💝', label: 'Чаевые технику' },
         { icon: '🔄', label: 'Upsell подписки' },
       ],
+      metrics: [
+        { label: 'Rating completion', val: '> 70%' },
+        { label: 'Tip rate', val: 'цель 25%' },
+        { label: 'Subscription upsell', val: 'цель 12%' },
+      ],
+      cialdini: { principle: 'Reciprocity', note: 'Фото до/после + чаевые-предложение активируют взаимность: клиент получил нечто ценное → хочет отдать (оценка, чаевые, подписка).' },
     },
   ]
 
@@ -3511,6 +3750,20 @@ function SlideKickoffJourney() {
                   </div>
                 ))}
               </div>
+            </div>
+            {/* Per-stage metrics */}
+            <div className="ajm-stage-metrics">
+              {step.metrics.map((m, j) => (
+                <div key={j} className="ajm-metric-row">
+                  <span className="ajm-metric-label">{m.label}</span>
+                  <span className="ajm-metric-val" style={{ color: step.color }}>{m.val}</span>
+                </div>
+              ))}
+            </div>
+            {/* Cialdini anchor */}
+            <div className="ajm-cialdini-strip">
+              <span className="ajm-cialdini-label">{step.cialdini.principle}:</span>
+              {step.cialdini.note}
             </div>
             {/* Connector arrow — not on last */}
             {i < steps.length - 1 && (

@@ -6389,3 +6389,471 @@ body {
   color: var(--fg-mid);
   line-height: 1.5;
 }
+
+/* ═══════════════════════════════════════════════════════════
+   WAVE 3 — ENRICHMENT STYLES
+   SlideKickoffOriginalCatalog, ExecSummary, LaunchStatus,
+   Gaps, Catalog, Pricing, Journey
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── koc-two-col: strength / additions blocks ── */
+.koc-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.8rem;
+  margin-top: 1.5rem;
+}
+@media (max-width: 860px) {
+  .koc-two-col { grid-template-columns: 1fr; }
+}
+
+.koc-strength-list,
+.koc-add-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.koc-strength-item,
+.koc-add-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--fg-mid);
+}
+
+.koc-item-icon {
+  font-size: 1.0rem;
+  flex-shrink: 0;
+  margin-top: 0.05rem;
+}
+
+/* ── aes-two-bottom: checklist + KPIs side by side ── */
+.aes-two-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 0.5rem;
+}
+@media (max-width: 860px) {
+  .aes-two-bottom { grid-template-columns: 1fr; }
+}
+
+.aes-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-top: 0.8rem;
+}
+
+.aes-check-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-family: var(--sans);
+  font-size: 0.86rem;
+  color: var(--fg-mid);
+  line-height: 1.4;
+  padding: 0.35rem 0.5rem;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+.aes-check-item:hover { background: var(--bg-card); }
+
+.aes-check-n {
+  font-family: var(--serif);
+  font-size: 0.75rem;
+  color: var(--accent);
+  min-width: 1.1rem;
+  flex-shrink: 0;
+}
+
+.aes-check-box {
+  color: var(--border-strong);
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.aes-kpis {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-top: 0.8rem;
+}
+
+.aes-kpi-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.55rem 0.85rem;
+  background: var(--bg-card);
+  border-radius: 4px;
+}
+
+.aes-kpi-label {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--fg-mid);
+}
+
+.aes-kpi-target {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* ── lnch-team-grid: team cards in LaunchStatus ── */
+.lnch-team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+@media (max-width: 900px) {
+  .lnch-team-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px) {
+  .lnch-team-grid { grid-template-columns: 1fr; }
+}
+
+.lnch-team-card {
+  background: var(--bg-card);
+  border-radius: 6px;
+  padding: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  position: relative;
+}
+
+.lnch-team-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.lnch-team-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 1;
+}
+
+.lnch-team-role {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.lnch-team-name {
+  font-family: var(--serif);
+  font-size: 1.0rem;
+  font-weight: 600;
+  color: var(--fg);
+  line-height: 1.2;
+}
+
+.lnch-team-desc {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  color: var(--fg-mid);
+  line-height: 1.45;
+}
+
+.lnch-team-status {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 20px;
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+/* ── gap-data-block: TAM/growth/ticket/whynow in gap cards ── */
+.gap-data-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.35rem;
+  margin-top: 0.6rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--border);
+}
+
+.gap-data-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.gap-data-label {
+  font-family: var(--sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-mid);
+  opacity: 0.7;
+}
+
+.gap-data-val {
+  font-family: var(--serif);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--fg);
+  line-height: 1.1;
+}
+
+.gap-data-why {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin-top: 0.25rem;
+}
+
+.gap-data-why span:last-child {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  color: var(--fg-mid);
+  line-height: 1.4;
+  font-style: italic;
+}
+
+/* ── lnch-tier-meta: margin / target% in tier cards ── */
+.lnch-tier-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.lnch-tier-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lnch-tier-meta-label {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--fg-mid);
+  opacity: 0.7;
+}
+
+.lnch-tier-meta-val {
+  font-family: var(--serif);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--fg);
+}
+
+/* ── lnch-outcomes-cost: cost column in outcome packages ── */
+.lnch-outcomes-head {
+  grid-template-columns: 2.2fr 0.9fr 2.2fr 0.8fr 0.8fr !important;
+}
+
+.lnch-outcomes-row {
+  grid-template-columns: 2.2fr 0.9fr 2.2fr 0.8fr 0.8fr !important;
+}
+
+.lnch-outcomes-cost {
+  font-family: var(--serif);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--fg);
+}
+
+/* ── apx-case-study: Maria case study in Pricing ── */
+.apx-case-study {
+  background: linear-gradient(135deg, rgba(200,134,10,0.06) 0%, rgba(28,92,143,0.04) 100%);
+  border: 1px solid rgba(200,134,10,0.2);
+  border-left: 4px solid var(--accent);
+  border-radius: 6px;
+  padding: 1.4rem 1.6rem;
+  margin-top: 1.5rem;
+}
+
+.apx-case-study-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.apx-case-study-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(200,134,10,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.apx-case-study-who {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.apx-case-study-name {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--fg);
+}
+
+.apx-case-study-desc {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  color: var(--fg-mid);
+}
+
+.apx-case-study-scenario {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  color: var(--fg-mid);
+  line-height: 1.55;
+  font-style: italic;
+  margin-bottom: 1rem;
+  padding: 0.7rem 1rem;
+  background: rgba(15,15,14,0.03);
+  border-radius: 4px;
+}
+
+.apx-case-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.apx-case-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  font-family: var(--sans);
+  font-size: 0.86rem;
+  color: var(--fg-mid);
+  line-height: 1.4;
+}
+
+.apx-case-step-n {
+  font-family: var(--serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent);
+  min-width: 1.2rem;
+  flex-shrink: 0;
+}
+
+.apx-case-result {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 0.75rem;
+}
+
+.apx-case-result-cell {
+  background: var(--bg);
+  padding: 0.65rem 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.apx-case-result-label {
+  font-family: var(--sans);
+  font-size: 0.67rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-mid);
+  opacity: 0.7;
+}
+
+.apx-case-result-val {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* ── ajm-stage-metrics: per-stage KPI in Journey ── */
+.ajm-stage-metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-top: 0.7rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--border);
+}
+
+.ajm-metric-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--sans);
+  font-size: 0.76rem;
+}
+
+.ajm-metric-label {
+  color: var(--fg-mid);
+}
+
+.ajm-metric-val {
+  font-weight: 700;
+  color: var(--fg);
+}
+
+.ajm-cialdini-strip {
+  margin-top: 0.55rem;
+  padding: 0.35rem 0.6rem;
+  background: rgba(200,134,10,0.08);
+  border-radius: 4px;
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  color: var(--accent);
+  font-style: italic;
+}
+
+.ajm-cialdini-label {
+  font-weight: 700;
+  font-style: normal;
+  margin-right: 0.3em;
+}
+
+/* ── Responsive tweaks for enriched slides ── */
+@media (max-width: 640px) {
+  .gap-data-block { grid-template-columns: 1fr 1fr; }
+  .apx-case-result { grid-template-columns: 1fr; }
+  .aes-kpi-row { flex-direction: column; align-items: flex-start; gap: 0.2rem; }
+}
