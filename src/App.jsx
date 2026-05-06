@@ -2308,10 +2308,221 @@ function SlideMoscoSynergy() {
   )
 }
 
-// ─── CHAPTER: ЗАПУСК УЖЕ ИДЁТ ────────────────────────────────────────────────
+// ─── CHAPTER: НАЧАЛО РАБОТЫ (KICKOFF) ────────────────────────────────────────
+
+// KICKOFF SLIDE 0: Original PDF catalog
+function SlideKickoffOriginalCatalog() {
+  const categories = [
+    { n: 1, name: 'Basic maintenance services', count: '~50 услуг', icon: '🔧' },
+    { n: 2, name: 'Repair services', count: '~50 услуг', icon: '⚙️' },
+    { n: 3, name: 'Minor quick-fix services', count: '~30 услуг', icon: '🪛' },
+    { n: 4, name: 'Car wash and detailing services', count: '~50 услуг', icon: '✨' },
+    { n: 5, name: 'Roadside assistance services', count: '~30 услуг', icon: '🚨' },
+    { n: 6, name: '«We handle it for you» concierge', count: '~30 услуг', icon: '🤝' },
+    { n: 7, name: 'Sober driver / designated driver', count: '~20 услуг', icon: '🍻' },
+    { n: 8, name: 'Chauffeur and personal driver', count: '~20 услуг', icon: '🚗' },
+    { n: 9, name: 'Vehicle pickup, delivery, relocation', count: '~20 услуг', icon: '📍' },
+    { n: 10, name: 'Inspection and compliance', count: '~17 услуг', icon: '📋' },
+    { n: 11, name: 'Tire services', count: '~25 услуг', icon: '🛞' },
+    { n: 12, name: 'Battery and electrical support', count: '~22 услуги', icon: '⚡' },
+    { n: 13, name: 'Seasonal services', count: '~17 услуг', icon: '🌡️' },
+    { n: 14, name: 'Emergency and convenience', count: '~15 услуг', icon: '🆘' },
+    { n: 15, name: 'Accident and post-accident support', count: '~17 услуг', icon: '🚧' },
+    { n: 16, name: 'Car buying and selling support', count: '~17 услуг', icon: '🏷️' },
+    { n: 17, name: 'Registration, documentation, admin', count: '~15 услуг', icon: '📄' },
+    { n: 18, name: 'Subscription / membership-based', count: '16 планов', icon: '♻️' },
+    { n: 19, name: 'Services for specific customer groups', count: 'busy/family/elderly', icon: '👥' },
+    { n: 20, name: 'Fleet and business vehicle services', count: '~15 услуг', icon: '🏢' },
+    { n: 21, name: 'Add-on convenience services', count: '~17 услуг', icon: '➕' },
+    { n: 22, name: 'Cosmetic and appearance services', count: '~16 услуг', icon: '🎨' },
+    { n: 23, name: 'Advanced concierge packages', count: '8 пакетов', icon: '💎' },
+    { n: 24, name: 'Luxury white-glove services', count: '~15 услуг', icon: '🤍' },
+    { n: 25, name: 'Outcome-based grouping', count: '7 outcome-групп', icon: '🎯' },
+    { n: 26, name: 'Simple service categories (web)', count: '8 секций', icon: '🌐' },
+    { n: 27, name: 'Extra service ideas — modern', count: '~13 услуг', icon: '🚀' },
+    { n: 28, name: 'Powerful wording — brand options', count: '7 опций', icon: '✍️' },
+    { n: 29, name: 'Best high-value services (Top-15)', count: 'Top-15 список', icon: '⭐' },
+    { n: 30, name: 'Business positioning thought', count: '7 selling angles', icon: '💡' },
+    { n: 31, name: 'Car wrap service', count: '~50 wrap-услуг', icon: '🎁' },
+  ]
+
+  // Group by type for colour coding
+  const typeColor = (n) => {
+    if (n <= 8) return '#1C5C8F'   // core services — blue
+    if (n <= 16) return '#1C6B3A'  // specialized — green
+    if (n <= 22) return '#D68910'  // niche/add-on — amber
+    if (n <= 26) return '#6B3A8F'  // packages — purple
+    return '#7F8C8D'               // strategy docs — grey
+  }
+
+  return (
+    <div className="slide-content">
+      <div className="ed-eyebrow">Начало работы · Отправная точка</div>
+      <h2 className="ed-title">Исходный каталог клиента — отправная точка</h2>
+
+      <div className="koc-quote">
+        «We take care of everything related to your car, so you don't have to.»
+      </div>
+
+      <p className="ed-lead">
+        5 ноября клиент CarETA прислал PDF с описанием концепции и каталогом услуг — 31 категория,
+        ~250 атомарных услуг. Это база с которой мы начали работу. Ниже — структура того PDF,
+        чтобы видеть откуда стартовали и куда движемся.
+      </p>
+
+      {/* 31-card grid */}
+      <div className="koc-grid">
+        {categories.map((cat, i) => (
+          <motion.div key={cat.n} className="koc-card"
+            style={{ borderTop: `3px solid ${typeColor(cat.n)}` }}
+            initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.35, delay: (i % 5) * 0.06 }}>
+            <div className="koc-card-top">
+              <span className="koc-card-n" style={{ color: typeColor(cat.n) }}>{cat.n}</span>
+              <span className="koc-card-icon">{cat.icon}</span>
+            </div>
+            <div className="koc-card-name">{cat.name}</div>
+            <div className="koc-card-count" style={{ color: typeColor(cat.n) }}>{cat.count}</div>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Footer stats */}
+      <div className="koc-footer-stats">
+        <div className="koc-footer-stat">
+          <div className="koc-footer-num">31</div>
+          <div className="koc-footer-label">категория</div>
+        </div>
+        <div className="koc-footer-stat">
+          <div className="koc-footer-num">~250</div>
+          <div className="koc-footer-label">атомарных услуг</div>
+        </div>
+        <div className="koc-footer-stat koc-footer-plus">
+          <div className="koc-footer-num koc-footer-note-num">+</div>
+          <div className="koc-footer-label">yearly packages, detailing bundles,<br/>AI-prices, motor home cleaning</div>
+        </div>
+      </div>
+
+      {/* Navigation hint */}
+      <div className="aes-nav-hint" style={{ marginTop: '1.5rem' }}>
+        <div className="aes-nav-hint-label">Дальше в этом разделе</div>
+        <div className="aes-nav-hint-steps">
+          {['Главное', 'Статус', '17 пробелов', '100+ услуг', 'Цены', 'Путь клиента', 'Стратегия', 'Top-10', 'Конкуренты', 'Импакт', 'Провайдеры', 'Вопросы', 'Roadmap'].map((step, i, arr) => (
+            <span key={i} className="aes-nav-step">{step}{i < arr.length - 1 ? ' →' : ''}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// SLIDE A: Executive Summary
+function SlideKickoffExecSummary() {
+  const heroStats = [
+    { from: 31, to: 48, label: 'категорий услуг', suffix: '', note: 'было → станет', color: '#C8860A' },
+    { from: 250, to: 360, label: 'атомарных услуг', suffix: '+', note: 'расширение каталога', color: '#1C5C8F' },
+    { from: 0, to: 17, label: 'выявленных пробелов', suffix: '', note: 'в текущем каталоге', color: '#C0392B' },
+    { from: 0, to: 10, label: 'high-impact gaps', suffix: '', note: 'приоритет первого дня', color: '#1C6B3A' },
+  ]
+
+  const takeaways = [
+    {
+      n: '01',
+      title: 'EV-сегмент критически недоразвит',
+      text: 'Только 3 EV-услуги в текущем каталоге. В 2026 — #1 миграция трафика из traditional auto. Добавляем 14 услуг, включая home charger installation ($1500–3000 средний чек).',
+      color: '#C0392B',
+      icon: '⚡',
+    },
+    {
+      n: '02',
+      title: 'Marketplace требует 3-сторонней структуры',
+      text: 'Текущий список смешивает атомарные услуги, customer scenarios и provider categories. Для двустороннего marketplace нужно разделить на три отдельных сущности.',
+      color: '#1C5C8F',
+      icon: '🏗️',
+    },
+    {
+      n: '03',
+      title: 'Tier-система отсутствует',
+      text: 'Каждая услуга должна иметь Standard / Premium / White-Glove × Emergency / Same-day / Scheduled = 9 ценовых точек. Это даёт upsell, segmentation, price discrimination.',
+      color: '#6B3A8F',
+      icon: '📊',
+    },
+    {
+      n: '04',
+      title: 'Hurricane prep — Miami-only moat',
+      text: 'Никто из конкурентов не покрывает климат-события. Запуск в hurricane season даёт уникальное PR-окно и эмоциональный hook, недоступный для федеральных игроков.',
+      color: '#D68910',
+      icon: '🌀',
+    },
+    {
+      n: '05',
+      title: 'B2B-канал упущен',
+      text: 'Used car dealers, last-mile delivery, tradesmen vans, rental cleanup — 13 услуг с recurring B2B-выручкой. Beachhead — наши собственные клиенты Castells (HVAC, plumbing).',
+      color: '#1C6B3A',
+      icon: '🏢',
+    },
+  ]
+
+  return (
+    <div className="slide-content">
+      <div className="ed-eyebrow">Аудит каталога · Executive Summary</div>
+      <h2 className="ed-title">Аудит каталога услуг — главное</h2>
+      <p className="ed-lead">
+        TLDR для быстрого прочтения. Все детали, 100+ конкретных услуг, конкурентная карта
+        и дорожная карта — в следующих слайдах этой вкладки.
+      </p>
+
+      {/* Hero stats */}
+      <div className="aes-hero-grid">
+        {heroStats.map((s, i) => (
+          <motion.div key={i} className="aes-hero-stat"
+            style={{ borderTop: `3px solid ${s.color}` }}
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}>
+            <div className="aes-hero-num" style={{ color: s.color }}>
+              <Count to={s.to} suffix={s.suffix} />
+            </div>
+            <div className="aes-hero-label">{s.label}</div>
+            <div className="aes-hero-note">{s.note}</div>
+          </motion.div>
+        ))}
+      </div>
+
+      <WavyDivider />
+
+      {/* 5 key takeaways */}
+      <h3 className="ed-section-title">5 ключевых выводов</h3>
+      <div className="aes-takeaways">
+        {takeaways.map((t, i) => (
+          <motion.div key={i} className="aes-takeaway"
+            style={{ borderLeft: `3px solid ${t.color}` }}
+            initial={{ opacity: 0, x: -16 }} whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.45, delay: i * 0.08 }}>
+            <div className="aes-takeaway-head">
+              <span className="aes-takeaway-icon">{t.icon}</span>
+              <span className="aes-takeaway-n" style={{ color: t.color }}>{t.n}</span>
+              <span className="aes-takeaway-title">{t.title}</span>
+            </div>
+            <div className="aes-takeaway-text">{t.text}</div>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Navigation hint */}
+      <div className="aes-nav-hint">
+        <div className="aes-nav-hint-label">Дальше в этом разделе</div>
+        <div className="aes-nav-hint-steps">
+          {['Статус', '17 пробелов', '100+ услуг', 'Цены', 'Путь клиента', 'Стратегия', 'Top-10', 'Конкуренты', 'Импакт', 'Провайдеры', 'Вопросы', 'Roadmap'].map((step, i, arr) => (
+            <span key={i} className="aes-nav-step">{step}{i < arr.length - 1 ? ' →' : ''}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
 
 // SUB 1: Статус запуска
-function SlideAuditLaunchStatus() {
+function SlideKickoffLaunchStatus() {
   const [activeTracker, setActiveTracker] = useState(null)
 
   const columns = [
@@ -2452,7 +2663,7 @@ function SlideAuditLaunchStatus() {
 }
 
 // SUB 2: 17 пробелов
-function SlideAuditGaps() {
+function SlideKickoffGaps() {
   const gaps = [
     { n: 1, title: 'EV-сегмент почти не закрыт', priority: 'High', color: '#C0392B', services: 14, why: '9% новых машин в США — электрики, в Калифорнии уже 20%+. Текущий каталог упоминает EV лишь в 3 пунктах. Растущий сегмент без конкурентного покрытия — открытое окно для захвата.', icon: '⚡' },
     { n: 2, title: 'ADAS calibration отсутствует', priority: 'High', color: '#C0392B', services: 7, why: 'После любой замены лобового стекла, бампера или зеркала — обязательна по NHTSA с 2024 года. Очень маржинальная услуга, слабо конкурентная на marketplace.', icon: '🎯' },
@@ -2581,7 +2792,7 @@ function SlideAuditGaps() {
 }
 
 // SUB 3: 100+ услуг — полный каталог
-function SlideAuditCatalog() {
+function SlideKickoffCatalog() {
   const [openSection, setOpenSection] = useState([0, 1, 7, 9, 10])
 
   const toggleSection = (i) => {
@@ -3012,8 +3223,590 @@ function SlideAuditCatalog() {
   )
 }
 
+// SLIDE B: Ценовой фреймворк
+function SlideKickoffPricing() {
+  const tiers = ['Standard', 'Premium', 'White-Glove']
+  const times = [
+    { label: 'Emergency', mult: '×2.0', color: '#C0392B', bg: 'rgba(192,57,43,0.06)' },
+    { label: 'Same-day', mult: '×1.4', color: '#D68910', bg: 'rgba(214,137,16,0.06)' },
+    { label: 'Scheduled', mult: '×1.0', color: '#1C6B3A', bg: 'rgba(28,107,58,0.06)' },
+  ]
+  const tierColors = ['#7F8C8D', '#1C5C8F', '#6B3A8F']
+
+  const matrix = [
+    [
+      { service: 'Roadside jump-start', price: '$99' },
+      { service: 'Mobile wash', price: '$59' },
+      { service: 'Oil change', price: '$49' },
+    ],
+    [
+      { service: 'Roadside + tow', price: '$199' },
+      { service: 'Detail + interior', price: '$149' },
+      { service: 'Pickup detail', price: '$99' },
+    ],
+    [
+      { service: '24/7 personal manager', price: '$499' },
+      { service: 'Same-day concierge full', price: '$349' },
+      { service: 'Scheduled white-glove', price: '$249' },
+    ],
+  ]
+
+  const examples = [
+    {
+      title: 'Mobile pre-purchase inspection',
+      icon: '🔍',
+      rows: [
+        { tier: 'Standard', time: 'Scheduled', price: '$200', note: 'Стандартный инспектор, запись на завтра' },
+        { tier: 'Premium', time: 'Same-day', price: '$280', note: '×1.4 — senior механик, в тот же день' },
+        { tier: 'White-Glove', time: 'Emergency', price: '$560', note: 'Выехал на дилершип через час после звонка, сертифицированный мастер' },
+      ],
+    },
+    {
+      title: 'EV home charger installation',
+      icon: '⚡',
+      rows: [
+        { tier: 'Standard', time: 'Scheduled', price: '$1,500', note: 'Запись на след. неделю, стандартный electrician' },
+        { tier: 'Premium', time: 'Same-day', price: '$2,100', note: '×1.4 — EV-сертифицированный, в тот же день' },
+        { tier: 'White-Glove', time: 'Emergency', price: 'N/A', note: 'Электромонтажные работы не делаются «в спешке» по safety-протоколу' },
+      ],
+    },
+    {
+      title: 'Hurricane vehicle prep',
+      icon: '🌀',
+      rows: [
+        { tier: 'Standard', time: 'Scheduled', price: '$89', note: 'За 48 часов до hurricane, стандартный пакет' },
+        { tier: 'Premium', time: 'Same-day', price: '$189', note: 'За 12 часов до шторма' },
+        { tier: 'White-Glove', time: 'Emergency', price: '$389', note: 'За 4 часа до landfall — команда выезжает на дом' },
+      ],
+    },
+  ]
+
+  const timeColColors = ['#C0392B', '#D68910', '#1C6B3A']
+
+  return (
+    <div className="slide-content">
+      <div className="ed-eyebrow">Аудит каталога · Цены</div>
+      <h2 className="ed-title">Ценовой фреймворк — Standard × Premium × White-Glove × Time-tier</h2>
+      <p className="ed-lead">
+        Девять ценовых точек на каждую услугу: три уровня качества на три временных приоритета.
+        Как Uber Surge, только для авто-сервиса — прозрачно и с явным согласием клиента.
+      </p>
+
+      {/* 3×3 Matrix */}
+      <div className="apx-matrix-wrap">
+        {/* Column headers: time tiers */}
+        <div className="apx-matrix-grid">
+          {/* Empty top-left corner */}
+          <div className="apx-corner" />
+          {times.map((t, ti) => (
+            <div key={ti} className="apx-col-header" style={{ background: t.bg, borderTop: `3px solid ${t.color}` }}>
+              <div className="apx-col-label" style={{ color: t.color }}>{t.label}</div>
+              <div className="apx-col-mult" style={{ color: t.color }}>{t.mult}</div>
+            </div>
+          ))}
+          {/* Rows */}
+          {tiers.map((tier, ri) => (
+            <>
+              <div key={`row-${ri}`} className="apx-row-header" style={{ borderLeft: `3px solid ${tierColors[ri]}` }}>
+                <span className="apx-row-label" style={{ color: tierColors[ri] }}>{tier}</span>
+              </div>
+              {matrix[ri].map((cell, ci) => (
+                <motion.div key={`cell-${ri}-${ci}`} className="apx-cell"
+                  style={{ background: times[ci].bg }}
+                  initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }} transition={{ duration: 0.35, delay: (ri * 3 + ci) * 0.05 }}>
+                  <div className="apx-cell-service">{cell.service}</div>
+                  <div className="apx-cell-price" style={{ color: tierColors[ri] }}>{cell.price}</div>
+                </motion.div>
+              ))}
+            </>
+          ))}
+        </div>
+      </div>
+
+      <WavyDivider />
+
+      {/* Worked examples */}
+      <h3 className="ed-section-title">Примеры расчёта по фреймворку</h3>
+      <div className="apx-examples">
+        {examples.map((ex, ei) => (
+          <motion.div key={ei} className="apx-example"
+            initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.4, delay: ei * 0.12 }}>
+            <div className="apx-ex-title">
+              <span className="apx-ex-icon">{ex.icon}</span>
+              {ex.title}
+            </div>
+            <div className="apx-ex-table">
+              <div className="apx-ex-head">
+                <div>Tier</div>
+                <div>Время</div>
+                <div>Цена</div>
+                <div>Детали</div>
+              </div>
+              {ex.rows.map((row, ri) => (
+                <div key={ri} className="apx-ex-row">
+                  <div>
+                    <span className="apx-ex-tier-badge" style={{ background: tierColors[ri] + '18', color: tierColors[ri], border: `1px solid ${tierColors[ri]}35` }}>
+                      {row.tier}
+                    </span>
+                  </div>
+                  <div>
+                    <span className="apx-time-tag" style={{ background: timeColColors[ri < 1 ? 2 : ri === 1 ? 1 : 0] + '18', color: timeColColors[ri < 1 ? 2 : ri === 1 ? 1 : 0] }}>
+                      {row.time}
+                    </span>
+                  </div>
+                  <div className="apx-ex-price" style={{ color: row.price === 'N/A' ? '#7F8C8D' : tierColors[ri] }}>
+                    {row.price}
+                  </div>
+                  <div className="apx-ex-note">{row.note}</div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      <WavyDivider />
+
+      {/* Footer note */}
+      <div className="apx-footer-note">
+        <div className="apx-footer-label">Surge pricing — как это работает</div>
+        <div className="apx-footer-grid">
+          <div className="apx-footer-item">
+            <span className="apx-footer-mult" style={{ color: '#1C6B3A' }}>×0.85–1.0</span>
+            <span>Off-peak, много провайдеров свободны</span>
+          </div>
+          <div className="apx-footer-item">
+            <span className="apx-footer-mult" style={{ color: '#D68910' }}>×1.0–1.5</span>
+            <span>Normal range, стандартный спрос</span>
+          </div>
+          <div className="apx-footer-item">
+            <span className="apx-footer-mult" style={{ color: '#C0392B' }}>×2.0+</span>
+            <span>Emergency tier — явное согласие клиента в UI перед оплатой</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// SLIDE C: Customer Journey Map
+function SlideKickoffJourney() {
+  const steps = [
+    {
+      n: '01',
+      title: 'Какая проблема?',
+      subtitle: 'Главный экран',
+      color: '#C8860A',
+      desc: 'Не список услуг, а 8 больших визуальных кнопок. Клиент выбирает ситуацию, а не название услуги.',
+      screen: [
+        { icon: '🔧', label: '«Машина не заводится»' },
+        { icon: '🚗', label: '«Хочу помыть»' },
+        { icon: '🛞', label: '«Спустило колесо»' },
+        { icon: '📋', label: '«Регулярное ТО»' },
+        { icon: '🍻', label: '«Нужен трезвый водитель»' },
+        { icon: '🛒', label: '«Хочу купить машину»' },
+        { icon: '📦', label: '«Лизинг возвращаю»' },
+        { icon: '❓', label: '«Что-то ещё»' },
+      ],
+    },
+    {
+      n: '02',
+      title: 'AI уточняет',
+      subtitle: 'AI-ассистент',
+      color: '#1C5C8F',
+      desc: 'Чат определяет конкретную услугу + tier + time-priority. Photo upload опционален.',
+      screen: [
+        { icon: '💬', label: 'Где находится машина?' },
+        { icon: '⏰', label: 'Когда нужно? Срочно?' },
+        { icon: '📸', label: 'Прикрепить фото (опц.)' },
+        { icon: '🤖', label: 'AI подбирает услугу + tier' },
+      ],
+    },
+    {
+      n: '03',
+      title: 'Цена и провайдер',
+      subtitle: 'Выбор и оплата',
+      color: '#1C6B3A',
+      desc: 'Три варианта (Standard / Premium / White-Glove), фото шопа, рейтинг, ETA, pricing с multiplier breakdown.',
+      screen: [
+        { icon: '⭐', label: 'Рейтинг и фото шопа' },
+        { icon: '🕐', label: 'ETA и цена' },
+        { icon: '📊', label: 'Standard / Premium / WG' },
+        { icon: '💳', label: 'Confirm / Compare / Human' },
+      ],
+    },
+    {
+      n: '04',
+      title: 'Live tracking',
+      subtitle: 'В процессе',
+      color: '#6B3A8F',
+      desc: 'Карта с движением техника. Push-уведомления: выехал, прибыл, начал, завершил. Чат с техником.',
+      screen: [
+        { icon: '🗺️', label: 'Карта движения техника' },
+        { icon: '🔔', label: 'Push: выехал / прибыл' },
+        { icon: '💬', label: 'Чат с техником' },
+        { icon: '⏱️', label: 'Таймер ожидания' },
+      ],
+    },
+    {
+      n: '05',
+      title: 'Результат',
+      subtitle: 'Retention hook',
+      color: '#C0392B',
+      desc: 'Photo report до/после. Rating. Чаевые. Subscription upsell. Авто-добавление в digital vehicle file.',
+      screen: [
+        { icon: '📷', label: 'Фото до/после' },
+        { icon: '⭐', label: 'Оценить шоп' },
+        { icon: '💝', label: 'Чаевые технику' },
+        { icon: '🔄', label: 'Upsell подписки' },
+      ],
+    },
+  ]
+
+  const comparison = [
+    { param: 'Стартовый экран', traditional: 'Список из 30+ услуг', careta: 'Описание проблемы — 8 кнопок' },
+    { param: 'Time to confirm', traditional: '5–8 минут', careta: '90 секунд' },
+    { param: 'Domain knowledge', traditional: 'Нужно знать «coolant flush»', careta: 'Не нужно — AI разберётся' },
+    { param: 'Upsell hook', traditional: 'Cross-sell реклама', careta: 'Tier upsell в момент решения' },
+    { param: 'Retention hook', traditional: 'Email reminder через месяц', careta: 'Авто-наполнение digital vehicle file' },
+  ]
+
+  return (
+    <div className="slide-content">
+      <div className="ed-eyebrow">Аудит каталога · UX</div>
+      <h2 className="ed-title">Путь клиента — outcome-based, не service-based</h2>
+      <p className="ed-lead">
+        Традиционные auto-приложения продают услуги. CarETA продаёт результат.
+        Клиент описывает ситуацию, AI сам определяет что нужно и предлагает 3 варианта цены.
+      </p>
+
+      {/* 5-step journey flow */}
+      <div className="ajm-flow">
+        {steps.map((step, i) => (
+          <motion.div key={i} className="ajm-step"
+            style={{ borderTop: `3px solid ${step.color}` }}
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.45, delay: i * 0.1 }}>
+            <div className="ajm-step-header">
+              <span className="ajm-step-n" style={{ color: step.color }}>{step.n}</span>
+              <div>
+                <div className="ajm-step-title">{step.title}</div>
+                <div className="ajm-step-subtitle">{step.subtitle}</div>
+              </div>
+            </div>
+            <div className="ajm-step-desc">{step.desc}</div>
+            {/* App screen mockup */}
+            <div className="ajm-screen-mock" style={{ borderColor: step.color + '30' }}>
+              <div className="ajm-screen-bar" style={{ background: step.color }}>
+                <span>CarETA</span>
+                <span style={{ opacity: 0.7, fontSize: '0.6rem' }}>{step.subtitle}</span>
+              </div>
+              <div className="ajm-screen-items">
+                {step.screen.map((item, j) => (
+                  <div key={j} className="ajm-screen-item">
+                    <span>{item.icon}</span>
+                    <span>{item.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* Connector arrow — not on last */}
+            {i < steps.length - 1 && (
+              <div className="ajm-arrow" style={{ color: step.color }}>→</div>
+            )}
+          </motion.div>
+        ))}
+      </div>
+
+      <WavyDivider />
+
+      {/* Comparison table */}
+      <h3 className="ed-section-title">Сравнение с traditional UX</h3>
+      <div className="ajm-compare-table">
+        <div className="ajm-compare-head">
+          <div>Параметр</div>
+          <div>Traditional auto-app</div>
+          <div className="ajm-careta-col">CarETA outcome-based</div>
+        </div>
+        {comparison.map((row, i) => (
+          <motion.div key={i} className="ajm-compare-row"
+            initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
+            viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.05 }}>
+            <div className="ajm-compare-param">{row.param}</div>
+            <div className="ajm-compare-trad">{row.traditional}</div>
+            <div className="ajm-careta-col ajm-compare-ca">{row.careta}</div>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+// SLIDE D: Импакт на dev-roadmap
+function SlideKickoffImpact() {
+  const current = [
+    '6 интерфейсов (4 MVP + 2 Phase 2)',
+    'Бэкенд + AI-движок + 4 интеграции',
+    '11 месяцев до production',
+    '6 разработчиков Восточная Европа',
+    'Stripe Connect, Twilio, Maps, Claude/OpenAI',
+  ]
+
+  const noChange = [
+    'Новые услуги — это data в каталоге, не новый код',
+    'Provider категории — справочник в admin-панели',
+    'Outcome-based UX — frontend-логика, уже в плане',
+    'Membership tiers — billing-модуль уже спроектирован',
+    'Pricing tier × time tier — pricing engine в плане',
+  ]
+
+  const smallScope = [
+    { item: 'ADAS calibration coordination', detail: 'Отдельный flow + partner network для шопов', effort: '+2 нед' },
+    { item: 'EV home charger installation', detail: 'Onboarding лицензированных electricians, отдельный flow', effort: '+1 нед' },
+    { item: 'Hurricane / disaster mode', detail: 'Weather API integration + activation logic', effort: '+1 нед' },
+  ]
+
+  const phase2 = [
+    { item: 'AI vehicle inspection via phone', detail: 'Требует CV-модели или партнёра (Ravin AI, Monk AI)' },
+    { item: 'B2B fleet portal', detail: 'Отдельный кабинет для fleet-клиентов' },
+    { item: 'Insurance-claim-flow integration', detail: 'Требует подписанного pilot со страховой' },
+    { item: 'Microinsurance products', detail: 'Требует licensing + underwriter partner' },
+  ]
+
+  const regulatory = [
+    { item: 'VIN verification (CA, HI)', detail: 'Нужна аккредитация в этих штатах' },
+    { item: 'DOT inspection', detail: 'Federal license для коммерческих ТС' },
+    { item: 'Smog check (CA, NY)', detail: 'Государственная сертификация шопов' },
+  ]
+
+  return (
+    <div className="slide-content">
+      <div className="ed-eyebrow">Аудит каталога · Dev Impact</div>
+      <h2 className="ed-title">Что эти добавления значат для timeline и budget</h2>
+      <p className="ed-lead">
+        Из 17 пробелов только 3 требуют дополнительного dev-scope в Phase 1.
+        Остальные 14 — это data, content и partnership. Текущий roadmap не меняется.
+      </p>
+
+      <div className="adv-two-col">
+        {/* Current plan */}
+        <div className="adv-col">
+          <div className="adv-col-header adv-header-current">Текущий план</div>
+          <div className="adv-col-body">
+            {current.map((item, i) => (
+              <div key={i} className="adv-item adv-item-current">
+                <span className="adv-dot adv-dot-current">●</span>
+                <span>{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* What changes */}
+        <div className="adv-col">
+          <div className="adv-col-header adv-header-changes">Что меняется</div>
+          <div className="adv-col-body">
+            <div className="adv-group-label" style={{ color: '#1C6B3A' }}>✅ Без изменений</div>
+            {noChange.map((item, i) => (
+              <div key={i} className="adv-item">
+                <span className="adv-dot" style={{ color: '#1C6B3A' }}>✓</span>
+                <span>{item}</span>
+              </div>
+            ))}
+
+            <div className="adv-group-label" style={{ color: '#D68910', marginTop: '1rem' }}>➕ Небольшой scope (+2–4 нед. Phase 1)</div>
+            {smallScope.map((item, i) => (
+              <div key={i} className="adv-item adv-item-scope">
+                <span className="adv-dot" style={{ color: '#D68910' }}>+</span>
+                <div>
+                  <div className="adv-item-name">{item.item}</div>
+                  <div className="adv-item-detail">{item.detail}</div>
+                </div>
+                <span className="adv-effort-badge">{item.effort}</span>
+              </div>
+            ))}
+
+            <div className="adv-group-label" style={{ color: '#1C5C8F', marginTop: '1rem' }}>🟡 Phase 2 candidates</div>
+            {phase2.map((item, i) => (
+              <div key={i} className="adv-item">
+                <span className="adv-dot" style={{ color: '#1C5C8F' }}>◷</span>
+                <div>
+                  <div className="adv-item-name">{item.item}</div>
+                  <div className="adv-item-detail">{item.detail}</div>
+                </div>
+              </div>
+            ))}
+
+            <div className="adv-group-label" style={{ color: '#C0392B', marginTop: '1rem' }}>⚠️ Регуляторные блокеры (не code)</div>
+            {regulatory.map((item, i) => (
+              <div key={i} className="adv-item">
+                <span className="adv-dot" style={{ color: '#C0392B' }}>!</span>
+                <div>
+                  <div className="adv-item-name">{item.item}</div>
+                  <div className="adv-item-detail">{item.detail}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <WavyDivider />
+
+      {/* Bottom line */}
+      <div className="adv-callout">
+        <div className="adv-callout-label">Bottom line</div>
+        <div className="adv-callout-text">
+          Из 17 пробелов только 3 требуют dev-work в Phase 1.
+          Остальные 14 — data, content, partnership.
+          Текущий 11-месячный roadmap <strong>не меняется</strong>.
+        </div>
+        <div className="adv-callout-budget">
+          Бюджет на ADAS / EV / Hurricane модули
+          <span className="adv-callout-num">+$15–25K</span>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// SLIDE E: Provider Network Strategy
+function SlideKickoffProviders() {
+  const providers = [
+    { n: 1, type: 'Mobile mechanics (1099)', priority: 'P0', pColor: '#C0392B', miamiTarget: '12–15', services: 'Roadside, diagnostics, repair', angle: 270 },
+    { n: 2, type: 'Mobile detailing teams', priority: 'P0', pColor: '#C0392B', miamiTarget: '8–10', services: 'Wash, detail, ceramic coating', angle: 315 },
+    { n: 3, type: 'Body shops / collision', priority: 'P0', pColor: '#C0392B', miamiTarget: '5–8', services: 'Collision repair, ADAS, glass', angle: 0 },
+    { n: 4, type: 'Pickup/delivery drivers', priority: 'P0', pColor: '#C0392B', miamiTarget: '10–15', services: 'Concierge transport, sober driver', angle: 45 },
+    { n: 5, type: 'EV-certified electricians', priority: 'P1', pColor: '#D68910', miamiTarget: '3–5', services: 'Home charger install, V2H', angle: 90 },
+    { n: 6, type: 'Tire & wheel mobile', priority: 'P1', pColor: '#D68910', miamiTarget: '4–6', services: 'Mobile tire service, TPMS', angle: 135 },
+    { n: 7, type: 'Glass repair specialists', priority: 'P1', pColor: '#D68910', miamiTarget: '3–5', services: 'Windshield, rock chip repair', angle: 180 },
+    { n: 8, type: 'Speciality (RV, motorcycle)', priority: 'P2', pColor: '#27AE60', miamiTarget: '2–3', services: 'RV winterize, moto service', angle: 225 },
+  ]
+
+  const channels = [
+    { n: 1, title: 'Cold outreach + AI', desc: 'Первые 30–50 шопов закрываем личными встречами и AI-персонализированным outreach' },
+    { n: 2, title: 'Industry associations', desc: 'Florida Auto Dealers Association, IDA (International Detailing Association), MEMA' },
+    { n: 3, title: 'Inverse marketing', desc: 'Собрать 200 клиентов в waitlist в Miami — шопы сами приходят за лидами' },
+    { n: 4, title: 'Referral bonus', desc: '$200 за каждого приведённого верифицированного шопа — реферальная цепочка' },
+    { n: 5, title: 'Equipment partnerships', desc: 'XPEL / 3M рекомендуют CarETA своим дистрибьюторам и студиям' },
+  ]
+
+  const priorityLabel = { P0: 'Критично', P1: 'Важно', P2: 'Желательно' }
+
+  return (
+    <div className="slide-content">
+      <div className="ed-eyebrow">Аудит каталога · Провайдеры</div>
+      <h2 className="ed-title">Кого подключаем в первые 6 месяцев</h2>
+      <p className="ed-lead">
+        100+ услуг требуют 8 типов провайдеров. Для Miami MVP цель — 47–67 активных шопов.
+        Это на ~30% больше текущего плана в 20–50 за счёт расширенного каталога.
+      </p>
+
+      {/* Hub-and-spoke SVG */}
+      <div className="apv-hub-wrap">
+        <svg className="apv-hub-svg" viewBox="0 0 500 400" preserveAspectRatio="xMidYMid meet">
+          {/* Center hub */}
+          <circle cx="250" cy="200" r="48" fill="rgba(200,134,10,0.12)" stroke="var(--accent)" strokeWidth="2" />
+          <text x="250" y="195" textAnchor="middle" fill="var(--accent)" fontSize="13" fontFamily="Inter, sans-serif" fontWeight="700">CarETA</text>
+          <text x="250" y="212" textAnchor="middle" fill="var(--accent)" fontSize="9" fontFamily="Inter, sans-serif">Marketplace</text>
+          {/* Spokes and nodes */}
+          {providers.map((p) => {
+            const rad = (p.angle * Math.PI) / 180
+            const spokeLen = 145
+            const nx = 250 + Math.cos(rad) * spokeLen
+            const ny = 200 + Math.sin(rad) * spokeLen
+            const labelX = 250 + Math.cos(rad) * (spokeLen + 28)
+            const labelY = 200 + Math.sin(rad) * (spokeLen + 28)
+            return (
+              <g key={p.n}>
+                <line x1={250 + Math.cos(rad) * 48} y1={200 + Math.sin(rad) * 48}
+                  x2={nx - Math.cos(rad) * 20} y2={ny - Math.sin(rad) * 20}
+                  stroke={p.pColor} strokeWidth="1.5" strokeDasharray={p.priority === 'P2' ? '4,3' : p.priority === 'P1' ? '6,2' : 'none'} strokeOpacity="0.6" />
+                <circle cx={nx} cy={ny} r="20" fill={p.pColor + '18'} stroke={p.pColor} strokeWidth="1.5" />
+                <text x={nx} y={ny + 1} textAnchor="middle" dominantBaseline="middle" fill={p.pColor} fontSize="9" fontFamily="Inter, sans-serif" fontWeight="700">{p.n}</text>
+                <text x={labelX} y={labelY - 5} textAnchor="middle" fill="var(--fg-mid)" fontSize="7.5" fontFamily="Inter, sans-serif" fontWeight="500">
+                  {p.type.split(' ').slice(0, 2).join(' ')}
+                </text>
+                <text x={labelX} y={labelY + 7} textAnchor="middle" fill={p.pColor} fontSize="7" fontFamily="Inter, sans-serif">
+                  {p.miamiTarget}
+                </text>
+              </g>
+            )
+          })}
+          {/* Legend */}
+          <g transform="translate(8, 360)">
+            <circle cx="8" cy="8" r="6" fill="rgba(192,57,43,0.15)" stroke="#C0392B" strokeWidth="1.5" />
+            <text x="18" y="12" fill="var(--fg-mid)" fontSize="8" fontFamily="Inter, sans-serif">P0 — приоритет</text>
+          </g>
+          <g transform="translate(110, 360)">
+            <circle cx="8" cy="8" r="6" fill="rgba(214,137,16,0.15)" stroke="#D68910" strokeWidth="1.5" />
+            <text x="18" y="12" fill="var(--fg-mid)" fontSize="8" fontFamily="Inter, sans-serif">P1 — важно</text>
+          </g>
+          <g transform="translate(190, 360)">
+            <circle cx="8" cy="8" r="6" fill="rgba(39,174,96,0.15)" stroke="#27AE60" strokeWidth="1.5" />
+            <text x="18" y="12" fill="var(--fg-mid)" fontSize="8" fontFamily="Inter, sans-serif">P2 — желательно</text>
+          </g>
+        </svg>
+      </div>
+
+      {/* Provider table */}
+      <div className="apv-table">
+        <div className="apv-table-head">
+          <div>#</div>
+          <div>Тип провайдера</div>
+          <div>Приоритет</div>
+          <div>Цель Miami</div>
+          <div>Покрывает услуги</div>
+        </div>
+        {providers.map((p, i) => (
+          <motion.div key={i} className="apv-table-row"
+            initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.05 }}>
+            <div className="apv-table-n" style={{ color: p.pColor }}>{p.n}</div>
+            <div className="apv-table-type">{p.type}</div>
+            <div>
+              <span className="apv-priority-badge" style={{ background: p.pColor + '18', color: p.pColor, border: `1px solid ${p.pColor}35` }}>
+                {p.priority} {priorityLabel[p.priority]}
+              </span>
+            </div>
+            <div className="apv-table-target">{p.miamiTarget}</div>
+            <div className="apv-table-services">{p.services}</div>
+          </motion.div>
+        ))}
+        <div className="apv-table-total">
+          <div></div>
+          <div>Итого Miami MVP</div>
+          <div></div>
+          <div style={{ fontWeight: 700, color: 'var(--accent)' }}>47–67</div>
+          <div style={{ color: 'var(--fg-mid)', fontSize: '0.82rem' }}>провайдеров за 6 месяцев</div>
+        </div>
+      </div>
+
+      <WavyDivider />
+
+      {/* Acquisition channels */}
+      <h3 className="ed-section-title">Каналы привлечения провайдеров</h3>
+      <div className="apv-channels">
+        {channels.map((c, i) => (
+          <motion.div key={i} className="apv-channel"
+            initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.38, delay: i * 0.08 }}>
+            <div className="apv-channel-n">{c.n}</div>
+            <div>
+              <div className="apv-channel-title">{c.title}</div>
+              <div className="apv-channel-desc">{c.desc}</div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 // SUB 4: Стратегические замечания
-function SlideAuditStrategic() {
+function SlideKickoffStrategic() {
   const recs = [
     {
       n: '01',
@@ -3105,7 +3898,7 @@ function SlideAuditStrategic() {
 }
 
 // SUB 5: Top-10 для запуска
-function SlideAuditTop10() {
+function SlideKickoffTop10() {
   const original = [
     { n: 1, name: 'Mobile car wash & detailing', keep: true, reason: 'Оставить' },
     { n: 2, name: 'Emergency roadside', keep: true, reason: 'Оставить' },
@@ -3195,7 +3988,7 @@ function SlideAuditTop10() {
 }
 
 // SUB 6: Конкурентная карта
-function SlideAuditCompetition() {
+function SlideKickoffCompetition() {
   const competitors = [
     { name: 'YourMechanic', x: 18, y: 72, mobile: true, full: false, color: '#7F8C8D' },
     { name: 'Wrench', x: 22, y: 62, mobile: true, full: false, color: '#7F8C8D' },
@@ -3339,7 +4132,7 @@ function SlideAuditCompetition() {
 }
 
 // SUB 7: Вопросы к клиенту
-function SlideAuditQuestions() {
+function SlideKickoffQuestions() {
   const questions = [
     {
       n: '01',
@@ -3433,7 +4226,7 @@ function SlideAuditQuestions() {
 }
 
 // SUB 8: Что дальше — первые 30 дней аудита
-function SlideAuditRoadmap() {
+function SlideKickoffRoadmap() {
   const weeks = [
     {
       period: 'Неделя 1',
@@ -4414,19 +5207,6 @@ const GROUPS = [
     ],
   },
   {
-    id: 'audit', label: 'Аудит',
-    slides: [
-      { id: 'launch-status', label: 'Статус запуска', Component: SlideAuditLaunchStatus },
-      { id: 'catalog-gaps', label: '17 пробелов', Component: SlideAuditGaps },
-      { id: 'full-catalog', label: '100+ услуг', Component: SlideAuditCatalog },
-      { id: 'strategic', label: 'Стратегия', Component: SlideAuditStrategic },
-      { id: 'top10', label: 'Top-10', Component: SlideAuditTop10 },
-      { id: 'competition', label: 'Конкуренты', Component: SlideAuditCompetition },
-      { id: 'questions', label: 'Вопросы', Component: SlideAuditQuestions },
-      { id: 'audit-roadmap', label: 'Roadmap 30 дней', Component: SlideAuditRoadmap },
-    ],
-  },
-  {
     id: 'trust', label: 'Условия',
     slides: [
       { id: 'guarantees', label: 'Защита клиента', Component: SlideGuarantees },
@@ -4448,6 +5228,25 @@ const GROUPS = [
     id: 'cta', label: 'Старт',
     slides: [
       { id: 'cta', label: 'Начать', Component: Slide12CTA },
+    ],
+  },
+  {
+    id: 'kickoff', label: 'Начало работы', isKickoff: true,
+    slides: [
+      { id: 'original-catalog', label: 'Исходный PDF', Component: SlideKickoffOriginalCatalog },
+      { id: 'exec-summary', label: 'Главное', Component: SlideKickoffExecSummary },
+      { id: 'launch-status', label: 'Статус', Component: SlideKickoffLaunchStatus },
+      { id: 'catalog-gaps', label: '17 пробелов', Component: SlideKickoffGaps },
+      { id: 'full-catalog', label: '100+ услуг', Component: SlideKickoffCatalog },
+      { id: 'pricing', label: 'Цены', Component: SlideKickoffPricing },
+      { id: 'journey', label: 'Путь клиента', Component: SlideKickoffJourney },
+      { id: 'strategic', label: 'Стратегия', Component: SlideKickoffStrategic },
+      { id: 'top10', label: 'Top-10', Component: SlideKickoffTop10 },
+      { id: 'competition', label: 'Конкуренты', Component: SlideKickoffCompetition },
+      { id: 'dev-impact', label: 'Импакт', Component: SlideKickoffImpact },
+      { id: 'providers', label: 'Провайдеры', Component: SlideKickoffProviders },
+      { id: 'questions', label: 'Вопросы', Component: SlideKickoffQuestions },
+      { id: 'kickoff-roadmap', label: 'Roadmap', Component: SlideKickoffRoadmap },
     ],
   },
 ]
@@ -4499,8 +5298,9 @@ export default function App() {
         <nav className="deck-tabs">
           {GROUPS.map((g, i) => (
             <button key={g.id}
-              className={`deck-tab${i === groupIdx ? ' deck-tab-active' : ''}`}
+              className={`deck-tab${i === groupIdx ? ' deck-tab-active' : ''}${g.isKickoff ? ' deck-tab-kickoff' : ''}`}
               onClick={() => handleGroupChange(i)}>
+              {g.isKickoff && <span className="deck-tab-kickoff-dot" />}
               {g.label}
             </button>
           ))}
