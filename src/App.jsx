@@ -2358,7 +2358,7 @@ function SlideKickoffOriginalCatalog() {
   return (
     <div className="slide-content">
       <div className="ed-eyebrow">Начало работы · Отправная точка</div>
-      <h2 className="ed-title">Исходный каталог клиента — отправная точка</h2>
+      <h2 className="ed-title">Исходный каталог партнёра — отправная точка</h2>
 
       <div className="koc-quote">
         «We take care of everything related to your car, so you don't have to.»
@@ -2565,7 +2565,7 @@ function SlideKickoffExecSummary() {
           <h3 className="ed-section-title">Топ-10 действий — следующие 30 дней</h3>
           <div className="aes-checklist">
             {[
-              { n: 1, text: 'Финализировать Top-10 услуг для MVP с клиентом' },
+              { n: 1, text: 'Финализировать Top-10 услуг для MVP с командой CarETA' },
               { n: 2, text: 'Workshop с founder: ICP priority, geo strategy, tier-system decision' },
               { n: 3, text: 'Service catalog v2 — 3-tier pricing framework + Standard/Premium/WG' },
               { n: 4, text: 'Provider onboarding script для первых 50 шопов Miami' },
@@ -2701,7 +2701,7 @@ function SlideKickoffLaunchStatus() {
   ]
 
   const team = [
-    { role: 'Founder · Castells', name: 'Продукт + Sales', desc: 'Архитектура продукта, клиент-коммуникация, стратегия', color: '#C8860A', status: 'Активен' },
+    { role: 'Founder · Castells', name: 'Продукт + Sales', desc: 'Архитектура продукта, коммуникация с партнёром, стратегия', color: '#C8860A', status: 'Активен' },
     { role: 'CTO · Yura', name: 'Backend + AI', desc: 'ex-Vohha TMS — backend архитектура, AI-движок, API', color: '#1C5C8F', status: 'Активен' },
     { role: 'Frontend · Nikel', name: 'UI + Design', desc: 'Клиентское app, дизайн-система, все интерфейсы', color: '#1C6B3A', status: 'Активен' },
     { role: 'Dev #4–9 · план', name: '6 разработчиков', desc: 'Восточная Европа, Senior/Mid+. По roadmap — месяц 1–4', color: '#7F8C8D', status: 'Найм' },
