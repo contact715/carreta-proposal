@@ -5880,6 +5880,31 @@ body {
 /* ══════════════════════════════════════════════════
    SLIDE C — CUSTOMER JOURNEY MAP
 ══════════════════════════════════════════════════ */
+/* ── Journey explainer block (wave 4) ── */
+.ajm-explainer-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-bottom: 1.5rem;
+  padding: 1.3rem 1.6rem;
+  background: rgba(200,134,10,0.05);
+  border-left: 3px solid rgba(200,134,10,0.35);
+  border-radius: 0 6px 6px 0;
+}
+
+.ajm-explainer-text {
+  font-family: var(--sans);
+  font-size: 1.0rem;
+  line-height: 1.65;
+  color: var(--fg-mid);
+  max-width: 680px;
+}
+
+.ajm-explainer-text strong {
+  color: var(--fg);
+  font-weight: 600;
+}
+
 .ajm-flow {
   display: flex;
   gap: 0;
@@ -7289,4 +7314,143 @@ body {
   .adv-risk-head { display: none; }
   .adv-risk-row { grid-template-columns: 1fr 1fr; }
   .lnch-top10-economics { display: none; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   WAVE 4 — PLAIN-LANGUAGE + READABILITY PASS
+   Larger text, better spacing, kickoff-scoped overrides
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Make body/description text larger & easier to read ── */
+.lnch-gap-why,
+.lnch-rec-problem,
+.lnch-rec-rec,
+.lnch-rec-analog,
+.lnch-rec-action,
+.lnch-top10-reason,
+.lnch-question-text,
+.lnch-question-why,
+.lnch-question-what,
+.lnch-roadmap-subtitle,
+.apv-channel-desc,
+.apv-lifecycle-steps li,
+.adv-risk-mitigation,
+.adv-risk-name,
+.apv-comp-deep-row,
+.lnch-comp-deep-row {
+  font-size: 0.95rem !important;
+  line-height: 1.65 !important;
+}
+
+/* ── Card titles larger ── */
+.lnch-gap-title,
+.lnch-rec-title,
+.lnch-top10-name,
+.lnch-question-title,
+.apv-channel-title,
+.lnch-moat-title,
+.lnch-comp-deep-name,
+.apv-lifecycle-label {
+  font-size: 1.05rem !important;
+}
+
+/* ── Section paragraph text larger ── */
+.lnch-status-items .lnch-status-item,
+.lnch-remove-item {
+  font-size: 0.95rem !important;
+  line-height: 1.55 !important;
+}
+
+/* ── Table cells easier to read ── */
+.lnch-outcomes-scenario,
+.lnch-outcomes-stack,
+.apv-table-type,
+.apv-table-services,
+.lnch-m1-service {
+  font-size: 0.92rem !important;
+  line-height: 1.5 !important;
+}
+
+/* ── Increase card internal padding ── */
+.lnch-gap-card {
+  padding: 1.3rem !important;
+}
+
+.lnch-rec-card {
+  padding: 1.4rem 1.5rem !important;
+}
+
+.lnch-question-card {
+  padding: 1.3rem 1.4rem !important;
+}
+
+.apv-channel {
+  padding: 1.1rem 1.3rem !important;
+}
+
+.lnch-moat-card {
+  padding: 1.3rem !important;
+}
+
+/* ── Outcome table rows ── */
+.lnch-outcomes-row,
+.lnch-outcomes-head {
+  padding: 0.85rem 1rem !important;
+}
+
+/* ── lnch-question-why-label and what-label readability ── */
+.lnch-question-why-label {
+  color: var(--fg-mid) !important;
+  margin-bottom: 0.3rem;
+}
+
+.lnch-question-what-label {
+  margin-bottom: 0.3rem;
+}
+
+/* ── Provider table readability ── */
+.apv-table-row {
+  padding: 0.8rem 1rem !important;
+}
+
+/* ── Roadmap items ── */
+.lnch-roadmap-items li {
+  font-size: 0.97rem !important;
+  line-height: 1.6 !important;
+  margin-bottom: 0.2rem;
+}
+
+.lnch-roadmap-result {
+  font-size: 0.95rem !important;
+  line-height: 1.55 !important;
+}
+
+/* ── Tracker labels ── */
+.lnch-tracker-label {
+  font-size: 0.92rem !important;
+}
+
+/* ── Status board items ── */
+.lnch-status-item {
+  font-size: 0.93rem !important;
+  line-height: 1.5 !important;
+  padding: 0.5rem 0 !important;
+}
+
+/* ── Comp table feature names ── */
+.lnch-comp-feat {
+  font-size: 0.9rem !important;
+}
+
+/* ── Risk badge size ── */
+.adv-risk-badge {
+  font-size: 0.75rem !important;
+  padding: 0.3rem 0.65rem !important;
+}
+
+/* ── Mobile readable sizes ── */
+@media (max-width: 768px) {
+  .lnch-gap-title { font-size: 1.0rem !important; }
+  .ajm-explainer-text { font-size: 0.95rem !important; }
+  .lnch-question-text { font-size: 0.9rem !important; }
 }

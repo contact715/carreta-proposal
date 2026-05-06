@@ -2365,9 +2365,10 @@ function SlideKickoffOriginalCatalog() {
       </div>
 
       <p className="ed-lead">
-        5 ноября клиент CarETA прислал PDF с описанием концепции и каталогом услуг — 31 категория,
-        ~250 атомарных услуг. Это база с которой мы начали работу. Ниже — структура того PDF,
-        чтобы видеть откуда стартовали и куда движемся.
+        Партнёры из CarETA поделились с нами своим видением продукта в PDF — концепция, каталог услуг, идея бренда.
+        31 категория, около 250 услуг, плюс блоки про позиционирование и слоганы.
+        Это база с которой мы начали совместную работу. Ниже — структура того, что они нам дали,
+        чтобы видеть точку отсчёта и направление движения.
       </p>
 
       {/* 31-card grid */}
@@ -2474,36 +2475,36 @@ function SlideKickoffExecSummary() {
   const takeaways = [
     {
       n: '01',
-      title: 'EV-сегмент критически недоразвит',
-      text: 'Только 3 EV-услуги в текущем каталоге. В 2026 — #1 миграция трафика из traditional auto. Добавляем 14 услуг, включая home charger installation ($1500–3000 средний чек).',
+      title: 'Электромобили почти не охвачены',
+      text: 'Только 3 EV-услуги в текущем каталоге. В 2026 году это уже 9% всех новых машин в США — растущий сегмент без конкурентного покрытия. Мы добавляем 14 услуг, включая установку домашней зарядной станции (средний чек $1500–3000).',
       color: '#C0392B',
       icon: '⚡',
     },
     {
       n: '02',
-      title: 'Marketplace требует 3-сторонней структуры',
-      text: 'Текущий список смешивает атомарные услуги, customer scenarios и provider categories. Для двустороннего marketplace нужно разделить на три отдельных сущности.',
+      title: 'Маркетплейс требует трёх отдельных частей',
+      text: 'Текущий список смешивает всё в один файл. Для платформы-посредника нужны три отдельных раздела: каталог услуг для исполнителей, сценарии для клиентов («не заводится», «хочу помыть»), и категории типов шопов для подключения.',
       color: '#1C5C8F',
       icon: '🏗️',
     },
     {
       n: '03',
-      title: 'Tier-система отсутствует',
-      text: 'Каждая услуга должна иметь Standard / Premium / White-Glove × Emergency / Same-day / Scheduled = 9 ценовых точек. Это даёт upsell, segmentation, price discrimination.',
+      title: 'Нет уровней обслуживания',
+      text: 'Каждая услуга должна иметь три уровня: Standard / Premium / White-Glove (как UberX / Comfort / Black) и три уровня срочности: запись / сегодня / срочно. Это даёт 9 ценовых точек на одну услугу и возможность зарабатывать больше с каждого заказа.',
       color: '#6B3A8F',
       icon: '📊',
     },
     {
       n: '04',
-      title: 'Hurricane prep — Miami-only moat',
-      text: 'Никто из конкурентов не покрывает климат-события. Запуск в hurricane season даёт уникальное PR-окно и эмоциональный hook, недоступный для федеральных игроков.',
+      title: 'Подготовка к урагану — уникальная ниша для Miami',
+      text: 'Ни один из конкурентов не покрывает климатические события. Запуск в сезон ураганов даёт уникальный PR-момент и эмоциональную связь с брендом — то, что крупные федеральные игроки скопировать не смогут.',
       color: '#D68910',
       icon: '🌀',
     },
     {
       n: '05',
-      title: 'B2B-канал упущен',
-      text: 'Used car dealers, last-mile delivery, tradesmen vans, rental cleanup — 13 услуг с recurring B2B-выручкой. Beachhead — наши собственные клиенты Castells (HVAC, plumbing).',
+      title: 'B2B-сегмент не охвачен',
+      text: 'Автодилеры, компании с рабочими машинами (сантехники, HVAC-мастера), аренда, службы доставки — 13 услуг с предсказуемым ежемесячным доходом. Первая точка входа — наши собственные B2B-клиенты Castells: HVAC и сантехнические компании.',
       color: '#1C6B3A',
       icon: '🏢',
     },
@@ -2514,8 +2515,10 @@ function SlideKickoffExecSummary() {
       <div className="ed-eyebrow">Аудит каталога · Executive Summary</div>
       <h2 className="ed-title">Аудит каталога услуг — главное</h2>
       <p className="ed-lead">
-        TLDR для быстрого прочтения. Все детали, 100+ конкретных услуг, конкурентная карта
-        и дорожная карта — в следующих слайдах этой вкладки.
+        Краткое резюме для быстрого прочтения. Все детали — 100+ конкретных услуг, карта конкурентов
+        и дорожная карта — в следующих вкладках этого раздела.
+        CarETA — это маркетплейс (платформа-посредник между автовладельцами и автосервисами, как Uber между пассажирами и водителями).
+        Мы провели полный аудит каталога услуг партнёров, выявили пробелы и подготовили план действий.
       </p>
 
       {/* Hero stats */}
@@ -2706,11 +2709,12 @@ function SlideKickoffLaunchStatus() {
 
   return (
     <div className="slide-content">
-      <div className="ed-eyebrow">Запуск уже идёт · Статус</div>
-      <h2 className="ed-title">Что уже в работе</h2>
+      <div className="ed-eyebrow">Начало работы · Статус</div>
+      <h2 className="ed-title">Что уже сделано и что строится прямо сейчас</h2>
       <p className="ed-lead">
-        Команда Castells начала разработку платформы. Ниже — актуальный статус по каждому направлению.
-        Зелёное уже сделано. Оранжевое строится прямо сейчас.
+        Команда Castells совместно с партнёрами из CarETA уже ведёт разработку платформы.
+        Это не питч «мы планируем» — это питч «мы уже строим».
+        Зелёное — готово. Оранжевое — в активной разработке. Синее — следующий этап. Фиолетовое — Q3 и далее.
       </p>
 
       <div className="lnch-status-board">
@@ -2851,9 +2855,11 @@ function SlideKickoffGaps() {
       </p>
 
       {/* Heatmap — Impact vs Effort */}
-      <h3 className="ed-section-title">Матрица Impact × Effort</h3>
-      <p style={{ fontFamily: 'var(--sans)', fontSize: '0.9rem', color: 'var(--fg-mid)', marginBottom: '1rem' }}>
-        Высокий Impact + низкий Effort = приоритет первого дня
+      <h3 className="ed-section-title">Матрица Impact × Effort — что добавить в первую очередь</h3>
+      <p style={{ fontFamily: 'var(--sans)', fontSize: '1.0rem', color: 'var(--fg-mid)', marginBottom: '1rem', lineHeight: 1.6 }}>
+        На горизонтальной оси — сколько усилий требует добавление каждого пробела (данные, разработка, партнёрства).
+        На вертикальной — насколько сильно это влияет на выручку и позицию на рынке.
+        Верхний левый угол = добавить в первую очередь.
       </p>
       <div className="lnch-heatmap-wrap">
         <svg className="lnch-heatmap-svg" viewBox="0 0 500 340" preserveAspectRatio="xMidYMid meet">
@@ -2895,7 +2901,13 @@ function SlideKickoffGaps() {
 
       <WavyDivider />
 
-      <h3 className="ed-section-title" style={{ marginTop: '1.5rem' }}>Все 17 пробелов с деталями</h3>
+      <h3 className="ed-section-title" style={{ marginTop: '1.5rem' }}>Все 17 пробелов — что за ниша, сколько можно заработать</h3>
+      <p style={{ fontFamily: 'var(--sans)', fontSize: '1.0rem', color: 'var(--fg-mid)', marginBottom: '1.2rem', lineHeight: 1.6 }}>
+        В каждой карточке: <strong>TAM</strong> — общий объём этого рынка в США в год (насколько большая ниша).
+        <strong> Рост</strong> — как быстро растёт в год.
+        <strong> Чек</strong> — сколько платит клиент за одну услугу.
+        <strong> Почему сейчас</strong> — главная причина добавить именно в 2026.
+      </p>
       <div className="lnch-gaps-grid">
         {gaps.map((g, i) => (
           <motion.div key={g.n} className="lnch-gap-card"
@@ -3275,11 +3287,13 @@ function SlideKickoffCatalog() {
 
   return (
     <div className="slide-content">
-      <div className="ed-eyebrow">Аудит каталога · Полный список</div>
-      <h2 className="ed-title">100+ услуг к добавлению</h2>
+      <div className="ed-eyebrow">Начало работы · Полный список</div>
+      <h2 className="ed-title">100+ конкретных услуг для добавления в каталог</h2>
       <p className="ed-lead">
-        Конкретные услуги по каждому из 17 пробелов. Список не финальный — у клиента будет возможность
-        отметить must-have / nice-to-have и приоритизировать перед MVP-релизом.
+        Конкретные услуги по каждому из 17 выявленных пробелов. Список сгруппирован по тематикам —
+        нажмите на любую группу чтобы раскрыть и посмотреть что входит.
+        Список не финальный — команда CarETA сможет отметить что запускать в первую очередь,
+        а что оставить на потом.
       </p>
 
       {/* Accordion catalog */}
@@ -3323,9 +3337,10 @@ function SlideKickoffCatalog() {
       <WavyDivider />
 
       {/* Outcome-based packages */}
-      <h3 className="ed-section-title" style={{ marginTop: '1.5rem' }}>Outcome-based packages — 8 сценариев</h3>
-      <p style={{ fontFamily: 'var(--sans)', fontSize: '0.95rem', color: 'var(--fg-mid)', marginBottom: '1.2rem' }}>
-        Клиент выбирает сценарий «I'm stuck», а не «coolant flush». Каждый пакет — конкретный job-to-be-done.
+      <h3 className="ed-section-title" style={{ marginTop: '1.5rem' }}>Готовые пакеты под конкретную ситуацию — 8 сценариев</h3>
+      <p style={{ fontFamily: 'var(--sans)', fontSize: '1.0rem', color: 'var(--fg-mid)', marginBottom: '1.2rem', lineHeight: 1.6 }}>
+        Вместо отдельных услуг — готовые пакеты «под ситуацию». Клиент не выбирает «промывку системы охлаждения» —
+        он выбирает «я уезжаю на 3 месяца, позаботьтесь о машине». Мы сами подбираем что нужно сделать.
       </p>
       <div className="lnch-outcomes-table">
         <div className="lnch-outcomes-head">
@@ -3355,9 +3370,11 @@ function SlideKickoffCatalog() {
       <WavyDivider />
 
       {/* Membership tiers */}
-      <h3 className="ed-section-title" style={{ marginTop: '1.5rem' }}>Membership tiers — реструктура</h3>
-      <p style={{ fontFamily: 'var(--sans)', fontSize: '0.95rem', color: 'var(--fg-mid)', marginBottom: '1.2rem' }}>
-        5 уровней с чётким upgrade path. Каждый tier имеет видимый value gap.
+      <h3 className="ed-section-title" style={{ marginTop: '1.5rem' }}>Уровни подписки — как зарабатывать повторяющийся доход каждый месяц</h3>
+      <p style={{ fontFamily: 'var(--sans)', fontSize: '1.0rem', color: 'var(--fg-mid)', marginBottom: '1.2rem', lineHeight: 1.6 }}>
+        Подписка — это предсказуемый доход каждый месяц, независимо от количества заказов.
+        5 уровней с понятным шагом: каждый следующий уровень даёт ощутимо больше, чем предыдущий.
+        Маржа — сколько остаётся платформе после выплат провайдерам. Целевой % — сколько клиентов должны быть на этом уровне.
       </p>
       <div className="lnch-tiers-grid">
         {memberTiers.map((t, i) => (
@@ -3448,11 +3465,13 @@ function SlideKickoffPricing() {
 
   return (
     <div className="slide-content">
-      <div className="ed-eyebrow">Аудит каталога · Цены</div>
-      <h2 className="ed-title">Ценовой фреймворк — Standard × Premium × White-Glove × Time-tier</h2>
+      <div className="ed-eyebrow">Начало работы · Цены</div>
+      <h2 className="ed-title">Как работает ценообразование — три уровня × три скорости</h2>
       <p className="ed-lead">
-        Девять ценовых точек на каждую услугу: три уровня качества на три временных приоритета.
-        Как Uber Surge, только для авто-сервиса — прозрачно и с явным согласием клиента.
+        Девять ценовых точек на каждую услугу: три уровня сервиса (Standard / Premium / White-Glove — как разные классы в Uber)
+        на три уровня срочности (запись / сегодня / прямо сейчас). Как Uber Surge-ценообразование,
+        только для авто-сервисов — прозрачно, с разбивкой цены и явным согласием клиента перед оплатой.
+        Никакого сюрприза на кассе.
       </p>
 
       {/* 3×3 Matrix */}
@@ -3605,10 +3624,10 @@ function SlideKickoffJourney() {
   const steps = [
     {
       n: '01',
-      title: 'Какая проблема?',
+      title: 'Что случилось с машиной?',
       subtitle: 'Главный экран',
       color: '#C8860A',
-      desc: 'Не список услуг, а 8 больших визуальных кнопок. Клиент выбирает ситуацию, а не название услуги.',
+      desc: 'Не список из 30 услуг, а 8 больших кнопок с ситуациями. Человек выбирает что произошло — не что нужно заказать. Это покрывает около 80% всех обращений.',
       screen: [
         { icon: '🔧', label: '«Машина не заводится»' },
         { icon: '🚗', label: '«Хочу помыть»' },
@@ -3628,10 +3647,10 @@ function SlideKickoffJourney() {
     },
     {
       n: '02',
-      title: 'AI уточняет',
+      title: 'AI задаёт несколько вопросов',
       subtitle: 'AI-ассистент',
       color: '#1C5C8F',
-      desc: 'Чат определяет конкретную услугу + tier + time-priority. Photo upload опционален.',
+      desc: 'Открывается чат. AI по очереди — не все сразу — задаёт уточняющие вопросы. По ответам сам определяет что конкретно нужно, насколько срочно, и какой уровень сервиса подходит.',
       screen: [
         { icon: '💬', label: 'Где находится машина?' },
         { icon: '⏰', label: 'Когда нужно? Срочно?' },
@@ -3647,10 +3666,10 @@ function SlideKickoffJourney() {
     },
     {
       n: '03',
-      title: 'Цена и провайдер',
+      title: 'Выбор цены и исполнителя',
       subtitle: 'Выбор и оплата',
       color: '#1C6B3A',
-      desc: 'Три варианта (Standard / Premium / White-Glove), фото шопа, рейтинг, ETA, pricing с multiplier breakdown.',
+      desc: 'AI показывает три варианта: Standard (обычная цена) / Premium (+40%) / White-Glove (премиум). Для каждого — фото шопа, рейтинг, через сколько минут приедет, и что конкретно входит в цену. Никакого сюрприза при оплате.',
       screen: [
         { icon: '⭐', label: 'Рейтинг и фото шопа' },
         { icon: '🕐', label: 'ETA и цена' },
@@ -3666,10 +3685,10 @@ function SlideKickoffJourney() {
     },
     {
       n: '04',
-      title: 'Live tracking',
+      title: 'Видишь, где исполнитель — в реальном времени',
       subtitle: 'В процессе',
       color: '#6B3A8F',
-      desc: 'Карта с движением техника. Push-уведомления: выехал, прибыл, начал, завершил. Чат с техником.',
+      desc: 'Как в Uber — карта с движущейся точкой. Push-уведомления на каждом этапе: выехал, через 5 минут, прибыл, начал, завершил. Чат с исполнителем доступен в любой момент. Кнопка отмены — до приезда, бесплатно.',
       screen: [
         { icon: '🗺️', label: 'Карта движения техника' },
         { icon: '🔔', label: 'Push: выехал / прибыл' },
@@ -3685,10 +3704,10 @@ function SlideKickoffJourney() {
     },
     {
       n: '05',
-      title: 'Результат',
-      subtitle: 'Retention hook',
+      title: 'Отчёт, оценка и следующий шаг',
+      subtitle: 'После завершения',
       color: '#C0392B',
-      desc: 'Photo report до/после. Rating. Чаевые. Subscription upsell. Авто-добавление в digital vehicle file.',
+      desc: 'Фото до/после в приложении — видно что сделали. Оценка шопа. Чаевые мастеру — опционально. Работа автоматически записывается в «цифровой файл машины» — через год это будет как история болезни, только для автомобиля.',
       screen: [
         { icon: '📷', label: 'Фото до/после' },
         { icon: '⭐', label: 'Оценить шоп' },
@@ -3705,23 +3724,41 @@ function SlideKickoffJourney() {
   ]
 
   const comparison = [
-    { param: 'Стартовый экран', traditional: 'Список из 30+ услуг', careta: 'Описание проблемы — 8 кнопок' },
-    { param: 'Time to confirm', traditional: '5–8 минут', careta: '90 секунд' },
-    { param: 'Domain knowledge', traditional: 'Нужно знать «coolant flush»', careta: 'Не нужно — AI разберётся' },
-    { param: 'Upsell hook', traditional: 'Cross-sell реклама', careta: 'Tier upsell в момент решения' },
-    { param: 'Retention hook', traditional: 'Email reminder через месяц', careta: 'Авто-наполнение digital vehicle file' },
+    { param: 'Первый экран', traditional: 'Список из 30+ услуг', careta: '8 кнопок-ситуаций — выбираешь что произошло' },
+    { param: 'Время до оплаты', traditional: '5–8 минут', careta: '90 секунд' },
+    { param: 'Нужно ли разбираться в авто', traditional: 'Да — нужно знать «flush охлаждайки»', careta: 'Нет — AI сам определит что нужно' },
+    { param: 'Как зарабатывают больше с клиента', traditional: 'Показывают рекламу попутных услуг', careta: 'Предлагают Premium-уровень в момент выбора' },
+    { param: 'Как удерживают клиента', traditional: 'Email через месяц «пора на ТО»', careta: 'Цифровой файл машины пополняется автоматически' },
   ]
 
   return (
     <div className="slide-content">
       <div className="ed-eyebrow">Аудит каталога · UX</div>
-      <h2 className="ed-title">Путь клиента — outcome-based, не service-based</h2>
+      <h2 className="ed-title">Как будет выглядеть путь обычного человека в приложении CarETA</h2>
       <p className="ed-lead">
-        Традиционные auto-приложения продают услуги. CarETA продаёт результат.
-        Клиент описывает ситуацию, AI сам определяет что нужно и предлагает 3 варианта цены.
+        Большинство автомобильных приложений работают так: открываешь app, видишь длинный список
+        услуг — «замена масла», «диагностика подвески», «промывка тормозной системы». Чтобы
+        что-то заказать, нужно знать, что тебе нужно. А обычный человек не знает. Он чувствует,
+        что машина странно себя ведёт, или ему срочно нужно куда-то ехать, или жена попросила помыть к выходным.
       </p>
 
+      <div className="ajm-explainer-block">
+        <p className="ajm-explainer-text">
+          CarETA строится иначе. Главный экран не показывает каталог — он показывает <strong>ситуации</strong>.
+          «Машина не заводится». «Хочу помыть». «Спустило колесо». «Купил машину, не знаю что с ней».
+          Человек выбирает свою ситуацию, а не пытается угадать название услуги — и AI-ассистент
+          сам уточняет детали и предлагает решение.
+        </p>
+        <p className="ajm-explainer-text">
+          Это маленькое изменение даёт большой эффект. Конверсия выше — людям не нужно думать что они хотят.
+          Время до заказа короче — 90 секунд вместо 5–8 минут. Лояльность выше — приложение «понимает» меня,
+          а не отправляет в каталог. Меньше ошибок — человек не закажет «промывку охлаждающей жидкости»
+          когда нужна была просто диагностика.
+        </p>
+      </div>
+
       {/* 5-step journey flow */}
+      <h3 className="ed-section-title" style={{ marginTop: '2rem' }}>Пять шагов — как это выглядит в приложении</h3>
       <div className="ajm-flow">
         {steps.map((step, i) => (
           <motion.div key={i} className="ajm-step"
@@ -3776,12 +3813,15 @@ function SlideKickoffJourney() {
       <WavyDivider />
 
       {/* Comparison table */}
-      <h3 className="ed-section-title">Сравнение с traditional UX</h3>
+      <h3 className="ed-section-title">Сравнение с обычными автомобильными приложениями</h3>
+      <p style={{ fontFamily: 'var(--sans)', fontSize: '0.95rem', color: 'var(--fg-mid)', marginBottom: '1rem' }}>
+        Все приложения левой колонки реально существуют и работают. CarETA строится принципиально иначе.
+      </p>
       <div className="ajm-compare-table">
         <div className="ajm-compare-head">
-          <div>Параметр</div>
-          <div>Traditional auto-app</div>
-          <div className="ajm-careta-col">CarETA outcome-based</div>
+          <div>Что сравниваем</div>
+          <div>Обычное авто-приложение</div>
+          <div className="ajm-careta-col">CarETA</div>
         </div>
         {comparison.map((row, i) => (
           <motion.div key={i} className="ajm-compare-row"
@@ -3836,11 +3876,12 @@ function SlideKickoffImpact() {
 
   return (
     <div className="slide-content">
-      <div className="ed-eyebrow">Аудит каталога · Dev Impact</div>
-      <h2 className="ed-title">Что эти добавления значат для timeline и budget</h2>
+      <div className="ed-eyebrow">Начало работы · Влияние на разработку</div>
+      <h2 className="ed-title">Что новые услуги значат для сроков и бюджета разработки</h2>
       <p className="ed-lead">
-        Из 17 пробелов только 3 требуют дополнительного dev-scope в Phase 1.
-        Остальные 14 — это data, content и partnership. Текущий roadmap не меняется.
+        Из 17 выявленных пробелов только 3 требуют дополнительной разработки в Phase 1.
+        Остальные 14 — это данные в базе, контент и партнёрства с шопами, а не новый код.
+        Текущий 11-месячный план разработки не меняется — мы просто добавляем записи в каталог.
       </p>
 
       <div className="adv-two-col">
@@ -3925,9 +3966,10 @@ function SlideKickoffImpact() {
       <WavyDivider />
 
       {/* Risk Register */}
-      <h3 className="ed-section-title" style={{ marginTop: '1.5rem' }}>Risk Register — 8 рисков</h3>
-      <p style={{ fontFamily: 'var(--sans)', fontSize: '0.9rem', color: 'var(--fg-mid)', marginBottom: '1rem' }}>
-        Идентифицированные риски с уровнем, митигацией и ответственным. Цвет = вероятность × влияние.
+      <h3 className="ed-section-title" style={{ marginTop: '1.5rem' }}>8 рисков и как с ними работать</h3>
+      <p style={{ fontFamily: 'var(--sans)', fontSize: '1.0rem', color: 'var(--fg-mid)', marginBottom: '1rem', lineHeight: 1.6 }}>
+        Каждый запуск продукта имеет риски. Мы их описали заранее, чтобы не столкнуться с ними неожиданно.
+        HIGH — нужно разбираться прямо сейчас. MED — важно, но есть время. LOW — следим, не критично.
       </p>
       <div className="adv-risk-table">
         <div className="adv-risk-head">
@@ -3989,11 +4031,13 @@ function SlideKickoffProviders() {
 
   return (
     <div className="slide-content">
-      <div className="ed-eyebrow">Аудит каталога · Провайдеры</div>
+      <div className="ed-eyebrow">Начало работы · Провайдеры</div>
       <h2 className="ed-title">Кого подключаем в первые 6 месяцев</h2>
       <p className="ed-lead">
-        100+ услуг требуют 8 типов провайдеров. Для Miami MVP цель — 47–67 активных шопов.
-        Это на ~30% больше текущего плана в 20–50 за счёт расширенного каталога.
+        Маркетплейс без исполнителей — это пустая витрина. 100+ новых услуг, которые мы добавляем,
+        требуют 8 разных типов партнёров-провайдеров. Для старта в Miami цель — 47–67 активных шопов.
+        Это на ~30% больше первоначального плана (20–50) — за счёт расширенного каталога.
+        Ниже: схема, таблица по типам шопов, экономика одного провайдера, и как мы их привлекаем.
       </p>
 
       {/* Hub-and-spoke SVG */}
@@ -4079,9 +4123,11 @@ function SlideKickoffProviders() {
       <WavyDivider />
 
       {/* Provider Economics */}
-      <h3 className="ed-section-title">Юнит-экономика провайдера</h3>
-      <p style={{ fontFamily: 'var(--sans)', fontSize: '0.9rem', color: 'var(--fg-mid)', marginBottom: '1rem' }}>
-        Расчёт на примере мобильного мастера (P0 категория, 8 заказов/день, 5 дней/нед).
+      <h3 className="ed-section-title">Сколько зарабатывает провайдер на платформе</h3>
+      <p style={{ fontFamily: 'var(--sans)', fontSize: '1.0rem', color: 'var(--fg-mid)', marginBottom: '1rem', lineHeight: 1.6 }}>
+        Чтобы подключить 47–67 шопов в Miami — нужно показать им реальные цифры.
+        Расчёт ниже — для активного мобильного мастера, 8 заказов в день, 5 рабочих дней в неделю.
+        CarETA берёт 20% от каждого заказа (стандарт для маркетплейсов — как Uber берёт ~25% с водителя).
       </p>
       <div className="apv-econ-grid">
         {[
@@ -4222,11 +4268,12 @@ function SlideKickoffStrategic() {
 
   return (
     <div className="slide-content">
-      <div className="ed-eyebrow">Аудит каталога · Стратегия</div>
+      <div className="ed-eyebrow">Начало работы · Стратегия</div>
       <h2 className="ed-title">Стратегические замечания — 6 ключевых</h2>
       <p className="ed-lead">
-        После полного аудита каталога выявились системные проблемы, которые важнее отдельных пробелов.
-        Каждое замечание — с реальным аналогом из рынка и первым конкретным шагом.
+        Аудит каталога выявил не только пробелы в отдельных услугах, но и системные архитектурные вопросы.
+        Каждое из этих замечаний влияет на продукт в целом. Ниже — проблема, рекомендация, реальный пример
+        из рынка и первое конкретное действие.
       </p>
 
       <div className="lnch-recs-grid">
@@ -4307,7 +4354,8 @@ function SlideKickoffTop10() {
       <h2 className="ed-title">Top-10 для запуска — пересмотр</h2>
       <p className="ed-lead">
         Текущий Top-15 в каталоге — хороший, но 5 позиций стоит заменить на более стратегические
-        для marketplace-модели и Miami-MVP. Каждый пункт — с реальной юнит-экономикой.
+        для Miami-MVP. Каждая позиция — с данными по экономике.
+        <br /><span style={{ fontSize: '0.9em', opacity: 0.8 }}>CAC — сколько стоит привлечь одного клиента. Чек — средняя сумма одного заказа. LTV — сколько клиент приносит за 12 месяцев.</span>
       </p>
 
       <div className="lnch-top10-wrap">
@@ -4433,11 +4481,12 @@ function SlideKickoffCompetition() {
 
   return (
     <div className="slide-content">
-      <div className="ed-eyebrow">Аудит каталога · Рынок</div>
+      <div className="ed-eyebrow">Начало работы · Рынок</div>
       <h2 className="ed-title">Конкурентная карта — где CarETA выигрывает</h2>
       <p className="ed-lead">
-        Ни один из конкурентов не занимает позицию «Mobile-first + Full concierge». CarETA — единственная платформа,
-        объединяющая оба измерения в одном продукте.
+        На американском рынке авто-сервисов уже работает 5 крупных игроков. Мы изучили каждого — откуда деньги,
+        что умеют, где дыры. Ни один из них не занимает позицию «мобильный + полный консьерж» одновременно.
+        CarETA — первая платформа, которая объединяет оба измерения в одном продукте.
       </p>
 
       {/* 2x2 Positioning Matrix */}
@@ -4708,10 +4757,11 @@ function SlideKickoffQuestions() {
 
   return (
     <div className="slide-content">
-      <div className="ed-eyebrow">Аудит каталога · Следующий шаг</div>
+      <div className="ed-eyebrow">Начало работы · Следующий шаг</div>
       <h2 className="ed-title">10 вопросов перед финализацией — разбираем вместе</h2>
       <p className="ed-lead">
         Это не список «подумайте сами». Каждый вопрос ниже — с нашим видением ответа и объяснением почему он важен именно сейчас.
+        Ответы на них определяют архитектуру MVP, первый рынок и распределение бюджета.
         Рекомендуем разобрать на первом рабочем звонке — уйдёт 45–60 минут.
       </p>
 
@@ -4795,11 +4845,12 @@ function SlideKickoffRoadmap() {
 
   return (
     <div className="slide-content">
-      <div className="ed-eyebrow">Аудит каталога · Roadmap</div>
-      <h2 className="ed-title">Что дальше — первые 30 дней</h2>
+      <div className="ed-eyebrow">Начало работы · Roadmap</div>
+      <h2 className="ed-title">Что дальше — план первых 30 дней</h2>
       <p className="ed-lead">
-        Конкретный план первого месяца после approval этого документа. Каждая неделя заканчивается чётким
-        deliverable, ответственным и критерием успеха.
+        Конкретный план первого месяца после одобрения этого документа. Без абстракций — каждая неделя
+        заканчивается конкретным результатом, у каждого задания есть ответственный,
+        и есть чёткий критерий «как понять что сделано хорошо».
       </p>
 
       <div className="lnch-roadmap-wrap">
